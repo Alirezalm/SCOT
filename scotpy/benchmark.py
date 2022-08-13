@@ -373,9 +373,9 @@ class TimeBenchmark:
     def __run(self):
         max_time_lin = self.bench_settings.max_t / 3
         step = 0.5
-        default_time_list_1 = np.linspace(step, max_time_lin, 30)  # todo:
+        default_time_list_1 = np.linspace(step, max_time_lin, 15)  # todo:
         default_time_list_2 = np.linspace(
-            max_time_lin + step, self.bench_settings.max_t, 20)
+            max_time_lin + step, self.bench_settings.max_t, 35)
         self.default_time = default_time_list_1.tolist() + default_time_list_2.tolist()
 
         benchmark_results = {}
@@ -432,13 +432,13 @@ class TimeBenchmark:
 
 if __name__ == '__main__':
     bs = BenchmarkSettings(
-        max_t = 15,
-        max_n = 5,
+        max_t = 100,
+        max_n = 10,
         max_m = 100,
-        min_n = 3,
+        min_n = 5,
         min_m = 50,
         density_level = 10,
-        n_problems = 5,
+        n_problems = 20,
         n_nodes = 4,
         name = "benchmark",
         verbose = False,
