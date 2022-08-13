@@ -130,7 +130,7 @@ class MINLP:
             status = res.solver.termination_condition
             gap = res.solution.gap
 
-            # print(f"solver: {solver_name}, gap: {gap:6.4f}, status: {status}")
+            print(f"solver: {solver_name}, gap: {gap:6.4f}, status: {status}")
         except Exception as err:
             print("error: ", err)
             return -1
@@ -432,11 +432,11 @@ class TimeBenchmark:
 
 if __name__ == '__main__':
     bs = BenchmarkSettings(
-        max_t = 100,
-        max_n = 10,
-        max_m = 100,
-        min_n = 5,
-        min_m = 50,
+        max_t = 20,
+        max_n = 20,
+        max_m = 1000,
+        min_n = 10,
+        min_m = 500,
         density_level = 10,
         n_problems = 20,
         n_nodes = 4,
