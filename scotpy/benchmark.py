@@ -433,12 +433,12 @@ class TimeBenchmark:
 if __name__ == '__main__':
     bs = BenchmarkSettings(
         max_t = 15,
-        max_n = 20,
-        max_m = 2500,
-        min_n = 10,
-        min_m = 1500,
+        max_n = 5,
+        max_m = 100,
+        min_n = 3,
+        min_m = 50,
         density_level = 10,
-        n_problems = 20,
+        n_problems = 5,
         n_nodes = 4,
         name = "benchmark",
         verbose = False,
