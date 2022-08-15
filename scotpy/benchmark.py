@@ -16,6 +16,18 @@ import matplotlib.pyplot as plt
 BIG_M = 30
 
 
+class Colors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
 class Solvers(Enum):
     SCOT = "dipoa"
     SCOTH = "dihoa"
@@ -27,19 +39,16 @@ class Solvers(Enum):
     KNITRO = "knitro"
 
 
-
 DEFAULT_SOLVER_LIST = [
-    Solvers.BONMIN,
     Solvers.SHOT,
+    Solvers.BONMIN,
     Solvers.SCOT,
     Solvers.BONMINH,
     Solvers.SHOTH,
     Solvers.SCOTH,
     Solvers.KNITRO,
 
-
 ]
-
 
 
 class MINLP:
@@ -72,6 +81,7 @@ class MINLP:
                          "Dual.MIP.Solver=1",
                          "Model.Convexity.AssumeConvex=1",
                          "$offecho"]
+
             options += shot_opts
 
             solver_str = "shot"
@@ -113,7 +123,7 @@ class MINLP:
                            # "stop  0",
                            # f"optca {eps}",
                            # f"optcr {0}",
-                            f"MAXCYCLES 100",
+                           f"MAXCYCLES 100",
 
                            "$offecho"]
 
@@ -130,18 +140,26 @@ class MINLP:
             status = res.solver.termination_condition
             gap = res.solution.gap
 
-            print(f"solver: {solver_name}, gap: {gap:6.4f}, status: {status}")
         except Exception as err:
             print("error: ", err)
             return -1
 
-        if not math.isnan(gap) and gap <= eps:
-            return 0
+        # if (not math.isnan(gap) and gap <= eps) and (status == "optimal"):
+        if not math.isnan(gap):
+            if gap <= eps:
+                print(
+                    Colors.OKGREEN + Colors.BOLD + f"solver: {solver_name}, gap: {gap:6.4f}, status: {status}" + Colors.ENDC)
+                return 0
+            else:
+                print(
+                    Colors.WARNING + Colors.BOLD + f"solver: {solver_name}, gap: {gap:6.4f}, status: not optimal" + Colors.ENDC)
         else:
+            print(Colors.WARNING + Colors.BOLD + f"solver: {solver_name}, status: {status}" + Colors.ENDC)
             return -1
 
     def create(self, kappa: int):
         self.model = ConcreteModel()
+
         self.model.x = Var(range(self.n_features))
         self.model.delta = Var(range(self.n_features), within = Binary)
 
@@ -271,13 +289,12 @@ class Benchmark:
             minlp_solver = MINLP(
                 filepath = path, filename = filename, total_size = self.n_nodes)
             minlp_solver.create(kappa = self.kappa)
-            return_code = minlp_solver.solve(
-                solver_name = solver.value, time_limit = settings.tlim, eps = settings.rgap, verbose = settings.verbose)
+            return_code = minlp_solver.solve(solver_name = solver.value, time_limit = settings.tlim,
+                                             eps = settings.rgap, verbose = settings.verbose)
 
             if return_code == 0:
                 num_prob_solved += 1
-            print(
-                f"solver: {solver.value}, solved problem {num_prob_solved} / {self.n_problems}")
+            print(f"solver: {solver.value}, solved problem {num_prob_solved} / {self.n_problems}")
         return num_prob_solved
 
     def __run_scot(self, settings: ScotSettings):
@@ -373,9 +390,9 @@ class TimeBenchmark:
     def __run(self):
         max_time_lin = self.bench_settings.max_t / 3
         step = 0.5
-        default_time_list_1 = np.linspace(step, max_time_lin, 15)  # todo:
+        default_time_list_1 = np.linspace(step, max_time_lin, 20)  # todo:
         default_time_list_2 = np.linspace(
-            max_time_lin + step, self.bench_settings.max_t, 35)
+            max_time_lin + step, self.bench_settings.max_t, 30)
         self.default_time = default_time_list_1.tolist() + default_time_list_2.tolist()
 
         benchmark_results = {}
@@ -385,14 +402,17 @@ class TimeBenchmark:
             benchmark_results[solver.value] = []
             for time in self.default_time:
                 if num_prob_solved == self.bench_settings.n_problems:
-                    benchmark_results[solver.value].append(self.bench_settings.n_problems)
+                    benchmark_results[solver.value].append(num_prob_solved)
                 else:
                     solver_settings = SolverSettings(rgap = self.bench_settings.solver_gap,
                                                      tlim = time,
                                                      verbose = self.bench_settings.verbose)
+
                     num_prob_solved = self.benchmark.run(solver = solver, settings = solver_settings)
+
                     benchmark_results[solver.value].append(num_prob_solved)
 
+            benchmark_results["time"] = self.default_time
             self.__to_json(benchmark_res = benchmark_results)
         return benchmark_results
 
@@ -413,7 +433,7 @@ class TimeBenchmark:
         self.benchmark.generate_random_problems()
 
         res = self.__run()
-        self.__visualize_results(results = res)
+        # self.__visualize_results(results = res)
         return res
 
     def __visualize_results(self, results: Dict[str, List[float]]):
@@ -430,16 +450,35 @@ class TimeBenchmark:
         plt.show()
 
 
+def plot_results_from_file(filename: str):
+    with open(filename, 'r') as reader:
+        results = json.load(reader)
+
+    fig, ax = plt.subplots()
+
+    for key, res in results.items():
+        # ax.plot(res, label = solver)
+        if key != "time":
+            ax.step(results["time"], res, label = key)
+
+    ax.legend()
+    ax.set_xlabel("time (seconds)")
+    ax.set_ylabel("number of problems")
+
+    plt.grid()
+    plt.show()
+
+
 if __name__ == '__main__':
     bs = BenchmarkSettings(
-        max_t = 20,
-        max_n = 20,
-        max_m = 1000,
-        min_n = 10,
-        min_m = 500,
+        max_t = 10,
+        max_n = 25,
+        max_m = 1500,
+        min_n = 20,
+        min_m = 1000,
         density_level = 10,
-        n_problems = 20,
-        n_nodes = 4,
+        n_problems = 10,
+        n_nodes = 2,
         name = "benchmark",
         verbose = False,
         solver_gap = 1e-3
