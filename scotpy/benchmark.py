@@ -80,6 +80,9 @@ class MINLP:
                          "Dual.TreeStrategy=0",
                          "Dual.MIP.Solver=1",
                          "Model.Convexity.AssumeConvex=1",
+                         "Model.BoundTightening.FeasibilityBased.Use=false",
+                         "Model.BoundTightening.FeasibilityBased.UseNonlinear=false",
+                         "Model.BoundTightening.InitialPOA.Use=false",
                          "$offecho"]
 
             options += shot_opts
@@ -91,7 +94,9 @@ class MINLP:
                          "Model.Convexity.AssumeConvex=1",
                          "Dual.TreeStrategy=1",
                          "Dual.MIP.Solver=1",
-
+                         "Model.BoundTightening.FeasibilityBased.Use=false",
+                         "Model.BoundTightening.FeasibilityBased.UseNonlinear=false",
+                         "Model.BoundTightening.InitialPOA.Use=false",
                          "$offecho"]
 
             options += shot_opts
@@ -390,9 +395,9 @@ class TimeBenchmark:
     def __run(self):
         max_time_lin = self.bench_settings.max_t / 3
         step = 0.5
-        default_time_list_1 = np.linspace(step, max_time_lin, 20)  # todo:
+        default_time_list_1 = np.linspace(step, max_time_lin, 10)  # todo:
         default_time_list_2 = np.linspace(
-            max_time_lin + step, self.bench_settings.max_t, 30)
+            max_time_lin + step, self.bench_settings.max_t, 20)
         self.default_time = default_time_list_1.tolist() + default_time_list_2.tolist()
 
         benchmark_results = {}
@@ -471,13 +476,13 @@ def plot_results_from_file(filename: str):
 
 if __name__ == '__main__':
     bs = BenchmarkSettings(
-        max_t = 10,
+        max_t = 50,
         max_n = 25,
-        max_m = 1500,
+        max_m = 5000,
         min_n = 20,
         min_m = 1000,
         density_level = 10,
-        n_problems = 10,
+        n_problems = 20,
         n_nodes = 2,
         name = "benchmark",
         verbose = False,
