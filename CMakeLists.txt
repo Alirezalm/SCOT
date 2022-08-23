@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(DOSE)
 include_directories(DOSE/include)
 include_directories(ExternLibs/spdlog)
-include_directories(/home/alireza/opt/gurobi951/linux64/include)
-link_directories(/home/alireza/opt/gurobi951/linux64/lib ) #todo : must be changed
+include_directories(/home/alireza/gurobi952/linux64/include)
+link_directories(/home/alireza/gurobi952/linux64/lib ) #todo : must be changed
 add_executable(${PROJECT_NAME}
         src/scot.cpp
         DOSE/include/DOSE.h

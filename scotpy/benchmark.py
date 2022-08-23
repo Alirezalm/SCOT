@@ -40,13 +40,13 @@ class Solvers(Enum):
 
 
 DEFAULT_SOLVER_LIST = [
-    Solvers.SHOT,
-    Solvers.BONMIN,
+    # Solvers.SHOT,
+    # Solvers.BONMIN,
     Solvers.SCOT,
-    Solvers.BONMINH,
-    Solvers.SHOTH,
+    # Solvers.BONMINH,
+    # Solvers.SHOTH,
     Solvers.SCOTH,
-    Solvers.KNITRO,
+    # Solvers.KNITRO,
 
 ]
 
@@ -267,7 +267,7 @@ class Benchmark:
 
             success = self.__run_scot(scot_settings)
             print(
-                f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}")
+               Colors.UNDERLINE + Colors.OKBLUE + Colors.BOLD +  f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}" + Colors.ENDC)
             return success
 
         elif solver == Solvers.SCOTH:
@@ -279,7 +279,8 @@ class Benchmark:
                 algorithm = AlgorithmType.DIHOA
             )
             success = self.__run_scot(scot_settings)
-            print(f"{solver.value} -> Number of problem solved: {success} / {self.n_problems}")
+            print(
+               Colors.UNDERLINE + Colors.OKBLUE + Colors.BOLD +  f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}" + Colors.ENDC)
             return success
         else:
             success = self.__run_gms_solver(solver = solver, settings = settings)
@@ -428,7 +429,7 @@ class TimeBenchmark:
                                  indent = 4,
                                  separators = (',', ': '))
 
-        res_json = f"results_{self.bench_settings.n_problems}_mrow_{self.bench_settings.max_m * self.bench_settings.n_nodes}.json"
+        res_json = f"results_n_{self.bench_settings.max_n}_p_{self.bench_settings.n_problems}_m_{self.bench_settings.max_m * self.bench_settings.n_nodes}.json"
 
         with open(res_json, 'w') as jsonwriter:
             jsonwriter.write(json_string)
@@ -458,14 +459,14 @@ class TimeBenchmark:
 def plot_results_from_file(filename: str):
     with open(filename, 'r') as reader:
         results = json.load(reader)
-
+        
+    markers = ["o", "s", "*", "h", "+", "x", "D"]
     fig, ax = plt.subplots()
-
+    i = 0
     for key, res in results.items():
-        # ax.plot(res, label = solver)
         if key != "time":
-            ax.step(results["time"], res, label = key)
-
+            ax.step(results["time"], res, label = key, marker=markers[i])
+        i += 1
     ax.legend()
     ax.set_xlabel("time (seconds)")
     ax.set_ylabel("number of problems")
@@ -477,13 +478,13 @@ def plot_results_from_file(filename: str):
 if __name__ == '__main__':
     bs = BenchmarkSettings(
         max_t = 50,
-        max_n = 25,
-        max_m = 5000,
-        min_n = 20,
+        max_n = 100,
+        max_m = 10000,
+        min_n = 25,
         min_m = 1000,
         density_level = 10,
         n_problems = 20,
-        n_nodes = 2,
+        n_nodes = 4,
         name = "benchmark",
         verbose = False,
         solver_gap = 1e-3
