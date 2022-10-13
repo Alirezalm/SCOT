@@ -40,13 +40,13 @@ class Solvers(Enum):
 
 
 DEFAULT_SOLVER_LIST = [
-    Solvers.SHOT,
-    Solvers.BONMIN,
+    # Solvers.SHOT,
+    # Solvers.BONMIN,
     Solvers.SCOT,
-    Solvers.BONMINH,
-    Solvers.SHOTH,
+    # Solvers.BONMINH,
+    # Solvers.SHOTH,
     Solvers.SCOTH,
-    Solvers.KNITRO,
+    # Solvers.KNITRO,
 
 ]
 
@@ -470,22 +470,24 @@ def plot_results_from_file(filename: str):
     ax.legend()
     ax.set_xlabel("time (seconds)")
     ax.set_ylabel("number of problems")
-
     plt.grid()
-    plt.show()
+    figname = filename.split(".")[0] + ".pdf"
+    plt.savefig(f"./figs/{figname}", format = "pdf")
+
+    # plt.show()
 
 
 if __name__ == '__main__':
     bs = BenchmarkSettings(
         max_t = 50,
-        max_n = 30,
-        max_m = 2500,
+        max_n = 100,
+        max_m = 75000,
         min_n = 20,
         min_m = 1000,
-        density_level = 10,
+        density_level = 20,
         n_problems = 20,
-        n_nodes = 2,
-        name = "benchmark",
+        n_nodes = 4,
+        name = "benchmark_2",
         verbose = False,
         solver_gap = 1e-3
     )
