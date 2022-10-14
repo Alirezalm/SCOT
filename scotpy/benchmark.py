@@ -5,6 +5,7 @@ import json
 import os
 from typing import Dict, List
 import numpy as np
+from matplotlib.ticker import MaxNLocator
 from sklearn.datasets import make_classification
 
 from scotpy import AlgorithmType, ProblemType, ScotModel, ScotPy, ScotSettings
@@ -267,7 +268,7 @@ class Benchmark:
 
             success = self.__run_scot(scot_settings)
             print(
-               Colors.UNDERLINE + Colors.OKBLUE + Colors.BOLD +  f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}" + Colors.ENDC)
+                Colors.UNDERLINE + Colors.OKBLUE + Colors.BOLD + f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}" + Colors.ENDC)
             return success
 
         elif solver == Solvers.SCOTH:
@@ -280,7 +281,7 @@ class Benchmark:
             )
             success = self.__run_scot(scot_settings)
             print(
-               Colors.UNDERLINE + Colors.OKBLUE + Colors.BOLD +  f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}" + Colors.ENDC)
+                Colors.UNDERLINE + Colors.OKBLUE + Colors.BOLD + f"{solver.name} -> Number of problem solved: {success} / {self.n_problems}" + Colors.ENDC)
             return success
         else:
             success = self.__run_gms_solver(solver = solver, settings = settings)
@@ -459,17 +460,21 @@ class TimeBenchmark:
 def plot_results_from_file(filename: str):
     with open(filename, 'r') as reader:
         results = json.load(reader)
-        
+    fs = 10
     markers = ["o", "s", "*", "h", "+", "x", "D"]
-    fig, ax = plt.subplots()
+    colors = ['midnightblue', 'mediumslateblue', 'mediumorchid', 'mediumseagreen', 'slategray', 'olive', 'red']
+    fig, ax = plt.subplots(figsize = (5, 4))
     i = 0
     for key, res in results.items():
         if key != "time":
-            ax.step(results["time"], res, label = key, marker=markers[i])
+            ax.step(results["time"], res, label = key, marker = markers[i], markersize = 4, color = colors[i])
+            # ax.yaxis.set_major_locator(MaxNLocator(integer = True))
+        ax.set_yticks(range(0, 20 + 1, 2))
         i += 1
-    ax.legend()
-    ax.set_xlabel("time (seconds)")
-    ax.set_ylabel("number of problems")
+    plt.legend(bbox_to_anchor = (0, 1.02, 1, 0.2), loc = "lower left",
+               mode = "expand", borderaxespad = 0, ncol = 4, fontsize = fs)
+    ax.set_xlabel("time (seconds)", fontsize = fs)
+    ax.set_ylabel("number of problems", fontsize = fs)
     plt.grid()
     figname = filename.split(".")[0] + ".pdf"
     plt.savefig(f"./figs/{figname}", format = "pdf")
