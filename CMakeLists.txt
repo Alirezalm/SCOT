@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(DOSE)
 include_directories(DOSE/include)
 include_directories(ExternLibs/spdlog)
-include_directories(/home/goder/gurobi/gurobi952/linux64/include)
-link_directories(/home/goder/gurobi/gurobi952/linux64/lib ) #todo : must be changed
+include_directories(/home/alireza/opt/gurobi1001/linux64/include)
+link_directories(/home/alireza/opt/gurobi1001/linux64/lib ) #todo : must be changed
 add_executable(${PROJECT_NAME}
         src/scot.cpp
         DOSE/include/DOSE.h
@@ -97,4 +97,4 @@ target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/DOSE/lib/libDOSE.a)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/fmt/lib/libfmt.a)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/spdlog/lib/libspdlog.a)
 target_link_libraries(${PROJECT_NAME} gurobi_c++)
-target_link_libraries(${PROJECT_NAME} gurobi95)
+target_link_libraries(${PROJECT_NAME} gurobi100)
