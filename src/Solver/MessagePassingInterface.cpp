@@ -3,7 +3,7 @@
 //
 
 #include "MessagePassingInterface.h"
-#include "Exceptions.h"
+#include "include/Exceptions.h"
 #include "../Solver/Logger.h"
 
 namespace scot {

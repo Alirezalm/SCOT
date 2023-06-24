@@ -9,7 +9,7 @@
 #include "memory"
 #include "Enums.h"
 
-#include "DOSE.h"
+#include "include/DOSE.h"
 
 namespace scot {
 

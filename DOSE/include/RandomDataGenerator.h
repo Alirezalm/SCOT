@@ -34,14 +34,11 @@ namespace dose {
         int nrows;
         int ncols;
         ProblemType ptype;
-        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::default_random_engine generator;
         std::normal_distribution<double> normal_distribution_doubles;
         std::uniform_int_distribution<int> uniform_distribution_ints;
         VectorDouble response;
         VectorDouble2D dataSet;
-        std::random_device rd;
-        std::mt19937 mt;
 
     };
 

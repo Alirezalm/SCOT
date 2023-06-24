@@ -5,15 +5,18 @@ set(CMAKE_CXX_FLAGS "-march=native -O2")
 
 set(CMAKE_CXX_COMPILER mpicxx)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(DOSE)
-include_directories(DOSE/include)
+
+add_subdirectory(DOSE)
 include_directories(ExternLibs/spdlog)
-include_directories(/home/alireza/opt/gurobi1001/linux64/include)
-link_directories(/home/alireza/opt/gurobi1001/linux64/lib ) #todo : must be changed
+include_directories(/home/alireza/opt/gurobi1001/linux64/include) #todo : must be changed
+link_directories(/home/alireza/opt/gurobi1001/linux64/lib) #todo : must be changed
+
+
+
 add_executable(${PROJECT_NAME}
         src/scot.cpp
-        DOSE/include/DOSE.h
         src/Model/IObjective.h
         src/Solver/Structs.h
         src/Model/LogRegObjectiveFunction.cpp
@@ -91,9 +94,16 @@ add_executable(${PROJECT_NAME}
         src/Tasks/TaskSolveSingleTreeDualProblem.cpp
         src/Tasks/TaskSolveSingleTreeDualProblem.h
         src/Tasks/TaskCheckHybridEvent.cpp
-        src/Tasks/TaskCheckHybridEvent.h src/Solver/settings.h src/Solver/Timer.cpp src/Solver/Timer.h src/Tasks/TaskCheckDuration.cpp src/Tasks/TaskCheckDuration.h)
+        src/Tasks/TaskCheckHybridEvent.h
+        src/Solver/settings.h
+        src/Solver/Timer.cpp
+        src/Solver/Timer.h
+        src/Tasks/TaskCheckDuration.cpp
+        src/Tasks/TaskCheckDuration.h)
+target_include_directories(${PROJECT_NAME} PUBLIC
+        "${PROJECT_SOURCE_DIR}/DOSE")
 
-target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/DOSE/lib/libDOSE.a)
+target_link_libraries(${PROJECT_NAME} dose)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/fmt/lib/libfmt.a)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/spdlog/lib/libspdlog.a)
 target_link_libraries(${PROJECT_NAME} gurobi_c++)
