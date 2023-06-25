@@ -9,17 +9,20 @@
 #include "../PrimalSolver/InlpSolver.h"
 
 namespace scot {
-
+/**
+ * @brief This class is responsible for solving the distributed NLP problem
+ */
 class TaskDistributedNlpSolution : public TaskBase {
 
  public:
+
   explicit TaskDistributedNlpSolution(EnvironmentPtr env);
   ~TaskDistributedNlpSolution() override = default;
 
-  void createNlpSolver();
-
   void execute() override;
   void initialize() override;
+
+  void createNlpSolver();
 
   IncumbentSolution getNlpSolution();
 

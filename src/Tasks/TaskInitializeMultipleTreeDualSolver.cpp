@@ -8,10 +8,6 @@
 #include "../MIPSolver/MipSolverGurobiMultipleTree.h"
 namespace scot {
 
-void TaskInitializeMultipleTreeDualSolver::initialize() {}
-
-void TaskInitializeMultipleTreeDualSolver::execute() {}
-
 TaskInitializeMultipleTreeDualSolver::TaskInitializeMultipleTreeDualSolver(EnvironmentPtr env) : TaskBase(env) {
   //todo: check mip solver gurobi, clpex or cbc based on settings. for now just gurobi
 
@@ -19,4 +15,8 @@ TaskInitializeMultipleTreeDualSolver::TaskInitializeMultipleTreeDualSolver(Envir
 
   env_->logger_->logDebug("gurobi selected as MIP solver.", env_->model_->getRank());
 }
+
+void TaskInitializeMultipleTreeDualSolver::initialize() {}
+
+void TaskInitializeMultipleTreeDualSolver::execute() {}
 }

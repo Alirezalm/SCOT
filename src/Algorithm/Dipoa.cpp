@@ -27,9 +27,9 @@
 #include "../Tasks/TaskCheckDuration.h"
 
 namespace scot {
+
 //todo: implement different switching between soc and foc based on settings
 
-static const char *const id = "t_solve_nlp";
 Dipoa::Dipoa(EnvironmentPtr env) {
   env_ = env;
 
