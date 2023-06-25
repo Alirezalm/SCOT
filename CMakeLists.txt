@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 project(scot VERSION 1.0.0 DESCRIPTION "Distributed Sparse Convex Optimization Toolkit")
+
 find_package(MPI REQUIRED)
 set(CMAKE_CXX_FLAGS "-march=native -O2")
 
@@ -9,10 +10,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 add_subdirectory(DOSE)
-include_directories(ExternLibs/spdlog)
-include_directories(/home/alireza/opt/gurobi1001/linux64/include) #todo : must be changed
-link_directories(/home/alireza/opt/gurobi1001/linux64/lib) #todo : must be changed
-
 
 
 add_executable(${PROJECT_NAME}
@@ -100,11 +97,20 @@ add_executable(${PROJECT_NAME}
         src/Solver/Timer.h
         src/Tasks/TaskCheckDuration.cpp
         src/Tasks/TaskCheckDuration.h)
+
 target_include_directories(${PROJECT_NAME} PUBLIC
-        "${PROJECT_SOURCE_DIR}/DOSE")
+        "${PROJECT_SOURCE_DIR}/DOSE"
+        "${PROJECT_SOURCE_DIR}/ExternLibs/spdlog"
+        "${PROJECT_SOURCE_DIR}/ExternLibs/fmt"
+        "$ENV{GUROBI_HOME}/include")
+
+target_link_directories(${PROJECT_NAME} PUBLIC
+        "${PROJECT_SOURCE_DIR}/ExternLibs/spdlog/lib"
+        "${PROJECT_SOURCE_DIR}/ExternLibs/fmt/lib"
+        "$ENV{GUROBI_HOME}/lib")
 
 target_link_libraries(${PROJECT_NAME} dose)
-target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/fmt/lib/libfmt.a)
-target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/spdlog/lib/libspdlog.a)
+target_link_libraries(${PROJECT_NAME} spdlog.a)
+target_link_libraries(${PROJECT_NAME}  fmt.a)
 target_link_libraries(${PROJECT_NAME} gurobi_c++)
 target_link_libraries(${PROJECT_NAME} gurobi100)
