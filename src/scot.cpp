@@ -1,7 +1,20 @@
-/**
- * @file scot.cpp
- * @brief main file of the project
- * @date Created on: Jun 1, 2021
+/*! \mainpage SCOT
+ *
+ * \section intro_sec Introduction
+ *
+ * SCOT is an open-source distributed solver for solving Sparse Convex
+                          Optimization (SCO) problems over computational networks.
+                          SCOT adopts a mixed-integer approach to find exact solutions to SCO
+                          problems and  combines various techniques to transform the original SCO problem into an
+                           equivalent convex Mixed-Integer Nonlinear Programming
+                          (MINLP) problem that can benefit from high-performance and parallel computing
+                          platforms. SCOT main algorithm, DiHOA, builds upon the LP/NLPbased branch-and-bound
+                           and is tailored for this specific problem structure. The
+                          DiHOA algorithm combines the so-called single- and multi-tree outer approximation, naturally integrates a decentralized algorithm for distributed convex nonlinear
+                          subproblems, and employs enhancement techniques such as quadratic cuts.
+ *
+ *
+ *
  */
 #include "include/Utilities.h"
 #include "argh/argh.h"
