@@ -44,7 +44,17 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          =
+PROJECT_BRIEF          =  SCOT is an open-source distributed solver for solving Sparse Convex
+                          Optimization (SCO) problems over computational networks.
+                          SCOT adopts a mixed-integer approach to find exact solutions to SCO
+                          problems and  combines various techniques to transform the original SCO problem into an
+                           equivalent convex Mixed-Integer Nonlinear Programming
+                          (MINLP) problem that can benefit from high-performance and parallel computing
+                          platforms. SCOT main algorithm, DiHOA, builds upon the LP/NLPbased branch-and-bound
+                           and is tailored for this specific problem structure. The
+                          DiHOA algorithm combines the so-called single- and multi-tree outer approximation,
+                           naturally integrates a decentralized algorithm for distributed convex nonlinear
+                          subproblems, and employs enhancement techniques such as quadratic cuts.
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
