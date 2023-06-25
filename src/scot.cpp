@@ -10,7 +10,8 @@
                           (MINLP) problem that can benefit from high-performance and parallel computing
                           platforms. SCOT main algorithm, DiHOA, builds upon the LP/NLPbased branch-and-bound
                            and is tailored for this specific problem structure. The
-                          DiHOA algorithm combines the so-called single- and multi-tree outer approximation, naturally integrates a decentralized algorithm for distributed convex nonlinear
+                          DiHOA algorithm combines the so-called single- and multi-tree outer approximation,
+                          naturally integrates a decentralized algorithm for distributed convex nonlinear
                           subproblems, and employs enhancement techniques such as quadratic cuts.
  *
  *
