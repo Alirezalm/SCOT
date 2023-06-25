@@ -1,10 +1,10 @@
 #include "include/Utilities.h"
-#include "../ExternLibs/argh/argh.h"
+#include "argh/argh.h"
 #include "Solver/MainSolver.h"
 #include "spdlog/spdlog.h"
 #include "Solver/Results.h"
-#include "../ExternLibs/fmt/include/os.h"
-#include "../ExternLibs/fmt/include/core.h"
+#include "fmt/include/os.h"
+#include "fmt/include/core.h"
 #include "filesystem"
 
 using namespace std;

@@ -100,8 +100,8 @@ add_executable(${PROJECT_NAME}
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         "${PROJECT_SOURCE_DIR}/DOSE"
+        "${PROJECT_SOURCE_DIR}/ExternLibs"
         "${PROJECT_SOURCE_DIR}/ExternLibs/spdlog"
-        "${PROJECT_SOURCE_DIR}/ExternLibs/fmt"
         "$ENV{GUROBI_HOME}/include")
 
 target_link_directories(${PROJECT_NAME} PUBLIC
