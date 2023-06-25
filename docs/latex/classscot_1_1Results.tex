@@ -1,0 +1,171 @@
+\hypertarget{classscot_1_1Results}{}\doxysection{scot\+::Results Class Reference}
+\label{classscot_1_1Results}\index{scot::Results@{scot::Results}}
+
+
+{\ttfamily \#include $<$Results.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscot_1_1Results_af232fe8c7a38258c97d7facd58dc1b2b}{Results}} (\mbox{\hyperlink{namespacescot_ab70d5e8d83d48e11411a15829bc221f0}{Environment\+Ptr}} env)
+\item 
+\mbox{\hyperlink{classscot_1_1Results_a82c76f9786472d1a457808f0f57d3647}{$\sim$\+Results}} ()
+\item 
+void \mbox{\hyperlink{classscot_1_1Results_ab1434d77d57170a332772073529e0228}{add\+Incumbent}} (\mbox{\hyperlink{structscot_1_1IncumbentSolution}{Incumbent\+Solution}} current\+\_\+incumbent)
+\item 
+void \mbox{\hyperlink{classscot_1_1Results_a61fab769d118e3c7ce5b521d20b18685}{add\+Dual\+Solution}} (\mbox{\hyperlink{structscot_1_1DualSolution}{Dual\+Solution}} dual\+\_\+solution)
+\item 
+\mbox{\hyperlink{structscot_1_1IncumbentSolution}{Incumbent\+Solution}} \mbox{\hyperlink{classscot_1_1Results_ae7f9b42f4518a5776833ae93556db7ae}{get\+Current\+Incumbent}} ()
+\item 
+\mbox{\hyperlink{structscot_1_1DualSolution}{Dual\+Solution}} \mbox{\hyperlink{classscot_1_1Results_a6bdaa7e997b4cd7a43ac6af20c831095}{get\+Current\+Dual\+Solution}} ()
+\item 
+double \mbox{\hyperlink{classscot_1_1Results_a4b136b0fc90adf68ddf3978a36e3c8ac}{get\+Best\+Incumbent\+Bound}} ()
+\item 
+double \mbox{\hyperlink{classscot_1_1Results_a79b20d18676e60f07c23cc8169325405}{get\+Best\+Dual\+Bound}} ()
+\item 
+double \mbox{\hyperlink{classscot_1_1Results_a86b8fb4a756a4035fbd8ee90b6f30a83}{get\+Relative\+Optimality\+Gap}} ()
+\item 
+void \mbox{\hyperlink{classscot_1_1Results_a7a6ce787fe89b09d7f3ecb93e6730b67}{set\+Relative\+Optimality\+Gap}} (double rel\+\_\+gap)
+\item 
+double \mbox{\hyperlink{classscot_1_1Results_acee9a061ca6da22b24662fdc7a7e75c1}{get\+Absolute\+Optimality\+Gap}} ()
+\item 
+void \mbox{\hyperlink{classscot_1_1Results_af264312aa4025866a14775430c3fffa7}{set\+Absolute\+Optimality\+Gap}} (double abs\+\_\+gap)
+\item 
+void \mbox{\hyperlink{classscot_1_1Results_a2ca37a4973f5debfc245139d591cf6ed}{make\+Iteration}} ()
+\item 
+\mbox{\hyperlink{namespacescot_a138a5d94be9f3c61010f3715aa05b42d}{Iteration\+Ptr}} \mbox{\hyperlink{classscot_1_1Results_ae7243343aa990e6bf0f8d2b4bce6dc4d}{get\+Current\+Iteration}} ()
+\item 
+int \mbox{\hyperlink{classscot_1_1Results_aa15c21aeb381d5327747116f9fa51500}{get\+Number\+Of\+Iterations}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacescot_a138a5d94be9f3c61010f3715aa05b42d}{Iteration\+Ptr}} $>$ \mbox{\hyperlink{classscot_1_1Results_a714e5650b0268b9eb8e17c3349a9fc06}{iterations\+\_\+}}
+\item 
+double \mbox{\hyperlink{classscot_1_1Results_ac373ebfab3ae0514cbd0d6a2f3ed8b9c}{best\+\_\+abs\+\_\+gap\+\_\+pre\+\_\+}}
+\item 
+double \mbox{\hyperlink{classscot_1_1Results_af2cac7d9c69282492112416376a24c2e}{best\+\_\+rel\+\_\+gap\+\_\+pre\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscot_1_1Results_af232fe8c7a38258c97d7facd58dc1b2b}\label{classscot_1_1Results_af232fe8c7a38258c97d7facd58dc1b2b}} 
+\index{scot::Results@{scot::Results}!Results@{Results}}
+\index{Results@{Results}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{Results()}{Results()}}
+{\footnotesize\ttfamily scot\+::\+Results\+::\+Results (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacescot_ab70d5e8d83d48e11411a15829bc221f0}{Environment\+Ptr}}}]{env }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classscot_1_1Results_a82c76f9786472d1a457808f0f57d3647}\label{classscot_1_1Results_a82c76f9786472d1a457808f0f57d3647}} 
+\index{scot::Results@{scot::Results}!````~Results@{$\sim$Results}}
+\index{````~Results@{$\sim$Results}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{$\sim$Results()}{~Results()}}
+{\footnotesize\ttfamily scot\+::\+Results\+::$\sim$\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscot_1_1Results_a61fab769d118e3c7ce5b521d20b18685}\label{classscot_1_1Results_a61fab769d118e3c7ce5b521d20b18685}} 
+\index{scot::Results@{scot::Results}!addDualSolution@{addDualSolution}}
+\index{addDualSolution@{addDualSolution}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{addDualSolution()}{addDualSolution()}}
+{\footnotesize\ttfamily void scot\+::\+Results\+::add\+Dual\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structscot_1_1DualSolution}{Dual\+Solution}}}]{dual\+\_\+solution }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_ab1434d77d57170a332772073529e0228}\label{classscot_1_1Results_ab1434d77d57170a332772073529e0228}} 
+\index{scot::Results@{scot::Results}!addIncumbent@{addIncumbent}}
+\index{addIncumbent@{addIncumbent}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{addIncumbent()}{addIncumbent()}}
+{\footnotesize\ttfamily void scot\+::\+Results\+::add\+Incumbent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structscot_1_1IncumbentSolution}{Incumbent\+Solution}}}]{current\+\_\+incumbent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_acee9a061ca6da22b24662fdc7a7e75c1}\label{classscot_1_1Results_acee9a061ca6da22b24662fdc7a7e75c1}} 
+\index{scot::Results@{scot::Results}!getAbsoluteOptimalityGap@{getAbsoluteOptimalityGap}}
+\index{getAbsoluteOptimalityGap@{getAbsoluteOptimalityGap}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getAbsoluteOptimalityGap()}{getAbsoluteOptimalityGap()}}
+{\footnotesize\ttfamily double scot\+::\+Results\+::get\+Absolute\+Optimality\+Gap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_a79b20d18676e60f07c23cc8169325405}\label{classscot_1_1Results_a79b20d18676e60f07c23cc8169325405}} 
+\index{scot::Results@{scot::Results}!getBestDualBound@{getBestDualBound}}
+\index{getBestDualBound@{getBestDualBound}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getBestDualBound()}{getBestDualBound()}}
+{\footnotesize\ttfamily double scot\+::\+Results\+::get\+Best\+Dual\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_a4b136b0fc90adf68ddf3978a36e3c8ac}\label{classscot_1_1Results_a4b136b0fc90adf68ddf3978a36e3c8ac}} 
+\index{scot::Results@{scot::Results}!getBestIncumbentBound@{getBestIncumbentBound}}
+\index{getBestIncumbentBound@{getBestIncumbentBound}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getBestIncumbentBound()}{getBestIncumbentBound()}}
+{\footnotesize\ttfamily double scot\+::\+Results\+::get\+Best\+Incumbent\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_a6bdaa7e997b4cd7a43ac6af20c831095}\label{classscot_1_1Results_a6bdaa7e997b4cd7a43ac6af20c831095}} 
+\index{scot::Results@{scot::Results}!getCurrentDualSolution@{getCurrentDualSolution}}
+\index{getCurrentDualSolution@{getCurrentDualSolution}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getCurrentDualSolution()}{getCurrentDualSolution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structscot_1_1DualSolution}{Dual\+Solution}} scot\+::\+Results\+::get\+Current\+Dual\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_ae7f9b42f4518a5776833ae93556db7ae}\label{classscot_1_1Results_ae7f9b42f4518a5776833ae93556db7ae}} 
+\index{scot::Results@{scot::Results}!getCurrentIncumbent@{getCurrentIncumbent}}
+\index{getCurrentIncumbent@{getCurrentIncumbent}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getCurrentIncumbent()}{getCurrentIncumbent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structscot_1_1IncumbentSolution}{Incumbent\+Solution}} scot\+::\+Results\+::get\+Current\+Incumbent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_ae7243343aa990e6bf0f8d2b4bce6dc4d}\label{classscot_1_1Results_ae7243343aa990e6bf0f8d2b4bce6dc4d}} 
+\index{scot::Results@{scot::Results}!getCurrentIteration@{getCurrentIteration}}
+\index{getCurrentIteration@{getCurrentIteration}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getCurrentIteration()}{getCurrentIteration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_a138a5d94be9f3c61010f3715aa05b42d}{Iteration\+Ptr}} scot\+::\+Results\+::get\+Current\+Iteration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_aa15c21aeb381d5327747116f9fa51500}\label{classscot_1_1Results_aa15c21aeb381d5327747116f9fa51500}} 
+\index{scot::Results@{scot::Results}!getNumberOfIterations@{getNumberOfIterations}}
+\index{getNumberOfIterations@{getNumberOfIterations}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getNumberOfIterations()}{getNumberOfIterations()}}
+{\footnotesize\ttfamily int scot\+::\+Results\+::get\+Number\+Of\+Iterations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_a86b8fb4a756a4035fbd8ee90b6f30a83}\label{classscot_1_1Results_a86b8fb4a756a4035fbd8ee90b6f30a83}} 
+\index{scot::Results@{scot::Results}!getRelativeOptimalityGap@{getRelativeOptimalityGap}}
+\index{getRelativeOptimalityGap@{getRelativeOptimalityGap}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{getRelativeOptimalityGap()}{getRelativeOptimalityGap()}}
+{\footnotesize\ttfamily double scot\+::\+Results\+::get\+Relative\+Optimality\+Gap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_a2ca37a4973f5debfc245139d591cf6ed}\label{classscot_1_1Results_a2ca37a4973f5debfc245139d591cf6ed}} 
+\index{scot::Results@{scot::Results}!makeIteration@{makeIteration}}
+\index{makeIteration@{makeIteration}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{makeIteration()}{makeIteration()}}
+{\footnotesize\ttfamily void scot\+::\+Results\+::make\+Iteration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_af264312aa4025866a14775430c3fffa7}\label{classscot_1_1Results_af264312aa4025866a14775430c3fffa7}} 
+\index{scot::Results@{scot::Results}!setAbsoluteOptimalityGap@{setAbsoluteOptimalityGap}}
+\index{setAbsoluteOptimalityGap@{setAbsoluteOptimalityGap}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{setAbsoluteOptimalityGap()}{setAbsoluteOptimalityGap()}}
+{\footnotesize\ttfamily void scot\+::\+Results\+::set\+Absolute\+Optimality\+Gap (\begin{DoxyParamCaption}\item[{double}]{abs\+\_\+gap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Results_a7a6ce787fe89b09d7f3ecb93e6730b67}\label{classscot_1_1Results_a7a6ce787fe89b09d7f3ecb93e6730b67}} 
+\index{scot::Results@{scot::Results}!setRelativeOptimalityGap@{setRelativeOptimalityGap}}
+\index{setRelativeOptimalityGap@{setRelativeOptimalityGap}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{setRelativeOptimalityGap()}{setRelativeOptimalityGap()}}
+{\footnotesize\ttfamily void scot\+::\+Results\+::set\+Relative\+Optimality\+Gap (\begin{DoxyParamCaption}\item[{double}]{rel\+\_\+gap }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classscot_1_1Results_ac373ebfab3ae0514cbd0d6a2f3ed8b9c}\label{classscot_1_1Results_ac373ebfab3ae0514cbd0d6a2f3ed8b9c}} 
+\index{scot::Results@{scot::Results}!best\_abs\_gap\_pre\_@{best\_abs\_gap\_pre\_}}
+\index{best\_abs\_gap\_pre\_@{best\_abs\_gap\_pre\_}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{best\_abs\_gap\_pre\_}{best\_abs\_gap\_pre\_}}
+{\footnotesize\ttfamily double scot\+::\+Results\+::best\+\_\+abs\+\_\+gap\+\_\+pre\+\_\+}
+
+\mbox{\Hypertarget{classscot_1_1Results_af2cac7d9c69282492112416376a24c2e}\label{classscot_1_1Results_af2cac7d9c69282492112416376a24c2e}} 
+\index{scot::Results@{scot::Results}!best\_rel\_gap\_pre\_@{best\_rel\_gap\_pre\_}}
+\index{best\_rel\_gap\_pre\_@{best\_rel\_gap\_pre\_}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{best\_rel\_gap\_pre\_}{best\_rel\_gap\_pre\_}}
+{\footnotesize\ttfamily double scot\+::\+Results\+::best\+\_\+rel\+\_\+gap\+\_\+pre\+\_\+}
+
+\mbox{\Hypertarget{classscot_1_1Results_a714e5650b0268b9eb8e17c3349a9fc06}\label{classscot_1_1Results_a714e5650b0268b9eb8e17c3349a9fc06}} 
+\index{scot::Results@{scot::Results}!iterations\_@{iterations\_}}
+\index{iterations\_@{iterations\_}!scot::Results@{scot::Results}}
+\doxysubsubsection{\texorpdfstring{iterations\_}{iterations\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{namespacescot_a138a5d94be9f3c61010f3715aa05b42d}{Iteration\+Ptr}}$>$ scot\+::\+Results\+::iterations\+\_\+}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alireza/projects/scot/src/\+Solver/\mbox{\hyperlink{Results_8h}{Results.\+h}}\item 
+/home/alireza/projects/scot/src/\+Solver/\mbox{\hyperlink{Results_8cpp}{Results.\+cpp}}\end{DoxyCompactItemize}

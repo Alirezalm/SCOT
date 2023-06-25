@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['saveallsolutions_612',['saveAllSolutions',['../classscot_1_1IMipSolver.html#a72c6a1947f84ae8c6e254ca2c8ccafd5',1,'scot::IMipSolver']]],
+  ['scotsolver_613',['ScotSolver',['../classscot_1_1ScotSolver.html#a55a44b3f3d7bd795289182e8e011917b',1,'scot::ScotSolver']]],
+  ['setabsoluteoptimalitygap_614',['setAbsoluteOptimalityGap',['../classscot_1_1Results.html#af264312aa4025866a14775430c3fffa7',1,'scot::Results']]],
+  ['setbigmparameter_615',['setBigMParameter',['../classscot_1_1SparsityConstraint.html#ad0bede6ee788352522fa27d99a6db3f8',1,'scot::SparsityConstraint']]],
+  ['setdblsetting_616',['setDblSetting',['../classscot_1_1Settings.html#a3c7fd32574fd228028f9d614257779d7',1,'scot::Settings']]],
+  ['setfixedbinaryvariables_617',['setFixedBinaryVariables',['../classscot_1_1DistributedOperatorSplittingEngine.html#ad596b96960a5ddb67a7ee63d5a14bfe3',1,'scot::DistributedOperatorSplittingEngine::setFixedBinaryVariables()'],['../classscot_1_1InlpSolver.html#a77cb4bf0149feb9f951cf36ae633f4fe',1,'scot::InlpSolver::setFixedBinaryVariables()']]],
+  ['setmodelingmethod_618',['setModelingMethod',['../classscot_1_1SparsityConstraint.html#a9674522f6f2fb4de92b41b26d52174a3',1,'scot::SparsityConstraint']]],
+  ['setmpi_619',['setMpi',['../classscot_1_1ScotSolver.html#a36810bed49c83cd333764229357a5acc',1,'scot::ScotSolver']]],
+  ['setnumberofnonzeros_620',['setNumberOfNonzeros',['../classscot_1_1ScotSolver.html#ab63855b3cc9eda796abfecd8b0f37bfc',1,'scot::ScotSolver']]],
+  ['setnumberofnonzeros_621',['setNumberOfNonZeros',['../classscot_1_1SparsityConstraint.html#a76a9c749a3cd485566e3b90f0e557587',1,'scot::SparsityConstraint']]],
+  ['setobjective_622',['setObjective',['../classscot_1_1ScotSolver.html#ab89b882a22e17d625f8b1c4e97e7c017',1,'scot::ScotSolver']]],
+  ['setobjectivedata_623',['setObjectiveData',['../classscot_1_1IObjective.html#adeb34035835d13203aedc79df3473e7b',1,'scot::IObjective::setObjectiveData()'],['../classscot_1_1LinRegObjectiveFunction.html#a9347c6277f2f6def1209690a06dff282',1,'scot::LinRegObjectiveFunction::setObjectiveData()'],['../classscot_1_1LogRegObjectiveFunction.html#ad0dad7958205c729a15121f86c1c1417',1,'scot::LogRegObjectiveFunction::setObjectiveData()']]],
+  ['setobjectivefunction_624',['setObjectiveFunction',['../classscot_1_1Model.html#afdf11d46c88b9abc7aa7ed796572bcc1',1,'scot::Model']]],
+  ['setproblemdata_625',['setProblemData',['../classscot_1_1ScotSolver.html#ab8db21284ed6b36abc88b4cdbd1d4096',1,'scot::ScotSolver']]],
+  ['setrank_626',['setRank',['../classscot_1_1ScotSolver.html#abf23cd71c8afaf02addce7536bf8a652',1,'scot::ScotSolver']]],
+  ['setrelativeoptimalitygap_627',['setRelativeOptimalityGap',['../classscot_1_1Results.html#a7a6ce787fe89b09d7f3ecb93e6730b67',1,'scot::Results']]],
+  ['setsparseconstraints_628',['setSparseConstraints',['../classscot_1_1ScotSolver.html#aa2fbc63ddd36cb8b824e371b14bad916',1,'scot::ScotSolver']]],
+  ['setsparsityconstraint_629',['setSparsityConstraint',['../classscot_1_1Model.html#a0efd1af009f553f145063602a1a47756',1,'scot::Model']]],
+  ['setstrsetting_630',['setStrSetting',['../classscot_1_1Settings.html#aa1014e38e8491c21ff1c11a87f2d8353',1,'scot::Settings']]],
+  ['settotalnodes_631',['setTotalNodes',['../classscot_1_1ScotSolver.html#a219d3b753d0d9cdbfaa96a479f809754',1,'scot::ScotSolver']]],
+  ['solve_632',['solve',['../classscot_1_1IMipSolver.html#a5ca637c36df7572965b37f055a5aef11',1,'scot::IMipSolver::solve()'],['../classscot_1_1MipSolverGurobiMultipleTree.html#a9bb2b66716f9aa7ea963e7fbbe7dfa24',1,'scot::MipSolverGurobiMultipleTree::solve()'],['../classscot_1_1ScotSolver.html#a824f20e1c3e1b92eb356fcd803e02360',1,'scot::ScotSolver::solve()']]],
+  ['solveproblem_633',['solveProblem',['../classscot_1_1DistributedOperatorSplittingEngine.html#a477252e7b2f7f7327e730955ca21c46e',1,'scot::DistributedOperatorSplittingEngine::solveProblem()'],['../classscot_1_1InlpSolver.html#a6d1b8b25c6ea969fb7554f3aa01855fd',1,'scot::InlpSolver::solveProblem()']]],
+  ['solvesingletree_634',['solveSingleTree',['../classscot_1_1IMipSolver.html#a27e2a7aeab545b46f0d58ef40c6632f0',1,'scot::IMipSolver::solveSingleTree()'],['../classscot_1_1MipSolverGurobiMultipleTree.html#a249c5d2c961ca1b23f8cec68475e6dc6',1,'scot::MipSolverGurobiMultipleTree::solveSingleTree()'],['../classscot_1_1MipSolverGurobiSingleTree.html#a8a046649554c64b93011c144da7c8857',1,'scot::MipSolverGurobiSingleTree::solveSingleTree()']]],
+  ['sparsityconstraint_635',['SparsityConstraint',['../classscot_1_1SparsityConstraint.html#afa8f9981d493a5d96752e16dfc752da0',1,'scot::SparsityConstraint']]],
+  ['start_636',['start',['../classscot_1_1Timer.html#adbde854b72555dc5571b4c8deffe9bd6',1,'scot::Timer']]]
+];

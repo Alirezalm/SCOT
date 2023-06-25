@@ -1,0 +1,109 @@
+\hypertarget{classscot_1_1Model}{}\doxysection{scot\+::Model Class Reference}
+\label{classscot_1_1Model}\index{scot::Model@{scot::Model}}
+
+
+{\ttfamily \#include $<$Model.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscot_1_1Model_af14e43517c7018af5babb7ca33304d8b}{Model}} (int number\+\_\+of\+\_\+nodes, int rank, double big\+\_\+m\+\_\+param)
+\item 
+void \mbox{\hyperlink{classscot_1_1Model_afdf11d46c88b9abc7aa7ed796572bcc1}{set\+Objective\+Function}} (\mbox{\hyperlink{namespacescot_adba320935339d9515a48a03bcad2958f}{IObjective\+Ptr}} new\+\_\+objective\+\_\+function)
+\item 
+\mbox{\hyperlink{namespacescot_adba320935339d9515a48a03bcad2958f}{IObjective\+Ptr}} \mbox{\hyperlink{classscot_1_1Model_a909e99be8fc6d2d68536044201fe571b}{get\+Objective\+Function}} ()
+\item 
+void \mbox{\hyperlink{classscot_1_1Model_a0efd1af009f553f145063602a1a47756}{set\+Sparsity\+Constraint}} (\mbox{\hyperlink{namespacescot_a93f8ce49f7c62ca07425342da57b07d6}{Sparsity\+Constraint\+Ptr}} new\+\_\+sparsity\+\_\+constraint)
+\item 
+\mbox{\hyperlink{namespacescot_a93f8ce49f7c62ca07425342da57b07d6}{Sparsity\+Constraint\+Ptr}} \mbox{\hyperlink{classscot_1_1Model_a0142357b3847458302080d02269b0f07}{get\+Sparsity\+Constraint}} ()
+\item 
+int \mbox{\hyperlink{classscot_1_1Model_aa27e5bab0ca0405c59587122f765c93c}{get\+Number\+Of\+Variables}} ()
+\item 
+int \mbox{\hyperlink{classscot_1_1Model_a6448b12adadbb29812cbdff1fceb6095}{get\+Number\+Of\+Nonzeros}} ()
+\item 
+int \mbox{\hyperlink{classscot_1_1Model_a25424c02499d6bb192a758dcbca6cc90}{get\+Number\+Of\+Nodes}} ()
+\item 
+double \mbox{\hyperlink{classscot_1_1Model_ad6d9eac1c7ac2f2aa20e1ac085fab2f1}{get\+Big\+MParam}} ()
+\item 
+int \mbox{\hyperlink{classscot_1_1Model_a89ee7e122dc160debf015a5b015950eb}{get\+Rank}} ()
+\item 
+dose\+::\+Problem\+Type \mbox{\hyperlink{classscot_1_1Model_a47081d16efc6f91d58f6f53334d0ac23}{get\+Problem\+Type}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscot_1_1Model_af14e43517c7018af5babb7ca33304d8b}\label{classscot_1_1Model_af14e43517c7018af5babb7ca33304d8b}} 
+\index{scot::Model@{scot::Model}!Model@{Model}}
+\index{Model@{Model}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily scot\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+nodes,  }\item[{int}]{rank,  }\item[{double}]{big\+\_\+m\+\_\+param }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscot_1_1Model_ad6d9eac1c7ac2f2aa20e1ac085fab2f1}\label{classscot_1_1Model_ad6d9eac1c7ac2f2aa20e1ac085fab2f1}} 
+\index{scot::Model@{scot::Model}!getBigMParam@{getBigMParam}}
+\index{getBigMParam@{getBigMParam}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getBigMParam()}{getBigMParam()}}
+{\footnotesize\ttfamily double scot\+::\+Model\+::get\+Big\+MParam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a25424c02499d6bb192a758dcbca6cc90}\label{classscot_1_1Model_a25424c02499d6bb192a758dcbca6cc90}} 
+\index{scot::Model@{scot::Model}!getNumberOfNodes@{getNumberOfNodes}}
+\index{getNumberOfNodes@{getNumberOfNodes}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getNumberOfNodes()}{getNumberOfNodes()}}
+{\footnotesize\ttfamily int scot\+::\+Model\+::get\+Number\+Of\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a6448b12adadbb29812cbdff1fceb6095}\label{classscot_1_1Model_a6448b12adadbb29812cbdff1fceb6095}} 
+\index{scot::Model@{scot::Model}!getNumberOfNonzeros@{getNumberOfNonzeros}}
+\index{getNumberOfNonzeros@{getNumberOfNonzeros}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getNumberOfNonzeros()}{getNumberOfNonzeros()}}
+{\footnotesize\ttfamily int scot\+::\+Model\+::get\+Number\+Of\+Nonzeros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_aa27e5bab0ca0405c59587122f765c93c}\label{classscot_1_1Model_aa27e5bab0ca0405c59587122f765c93c}} 
+\index{scot::Model@{scot::Model}!getNumberOfVariables@{getNumberOfVariables}}
+\index{getNumberOfVariables@{getNumberOfVariables}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getNumberOfVariables()}{getNumberOfVariables()}}
+{\footnotesize\ttfamily int scot\+::\+Model\+::get\+Number\+Of\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a909e99be8fc6d2d68536044201fe571b}\label{classscot_1_1Model_a909e99be8fc6d2d68536044201fe571b}} 
+\index{scot::Model@{scot::Model}!getObjectiveFunction@{getObjectiveFunction}}
+\index{getObjectiveFunction@{getObjectiveFunction}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getObjectiveFunction()}{getObjectiveFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_adba320935339d9515a48a03bcad2958f}{IObjective\+Ptr}} scot\+::\+Model\+::get\+Objective\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a47081d16efc6f91d58f6f53334d0ac23}\label{classscot_1_1Model_a47081d16efc6f91d58f6f53334d0ac23}} 
+\index{scot::Model@{scot::Model}!getProblemType@{getProblemType}}
+\index{getProblemType@{getProblemType}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getProblemType()}{getProblemType()}}
+{\footnotesize\ttfamily dose\+::\+Problem\+Type scot\+::\+Model\+::get\+Problem\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a89ee7e122dc160debf015a5b015950eb}\label{classscot_1_1Model_a89ee7e122dc160debf015a5b015950eb}} 
+\index{scot::Model@{scot::Model}!getRank@{getRank}}
+\index{getRank@{getRank}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getRank()}{getRank()}}
+{\footnotesize\ttfamily int scot\+::\+Model\+::get\+Rank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a0142357b3847458302080d02269b0f07}\label{classscot_1_1Model_a0142357b3847458302080d02269b0f07}} 
+\index{scot::Model@{scot::Model}!getSparsityConstraint@{getSparsityConstraint}}
+\index{getSparsityConstraint@{getSparsityConstraint}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{getSparsityConstraint()}{getSparsityConstraint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_a93f8ce49f7c62ca07425342da57b07d6}{Sparsity\+Constraint\+Ptr}} scot\+::\+Model\+::get\+Sparsity\+Constraint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_afdf11d46c88b9abc7aa7ed796572bcc1}\label{classscot_1_1Model_afdf11d46c88b9abc7aa7ed796572bcc1}} 
+\index{scot::Model@{scot::Model}!setObjectiveFunction@{setObjectiveFunction}}
+\index{setObjectiveFunction@{setObjectiveFunction}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{setObjectiveFunction()}{setObjectiveFunction()}}
+{\footnotesize\ttfamily void scot\+::\+Model\+::set\+Objective\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacescot_adba320935339d9515a48a03bcad2958f}{IObjective\+Ptr}}}]{new\+\_\+objective\+\_\+function }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1Model_a0efd1af009f553f145063602a1a47756}\label{classscot_1_1Model_a0efd1af009f553f145063602a1a47756}} 
+\index{scot::Model@{scot::Model}!setSparsityConstraint@{setSparsityConstraint}}
+\index{setSparsityConstraint@{setSparsityConstraint}!scot::Model@{scot::Model}}
+\doxysubsubsection{\texorpdfstring{setSparsityConstraint()}{setSparsityConstraint()}}
+{\footnotesize\ttfamily void scot\+::\+Model\+::set\+Sparsity\+Constraint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacescot_a93f8ce49f7c62ca07425342da57b07d6}{Sparsity\+Constraint\+Ptr}}}]{new\+\_\+sparsity\+\_\+constraint }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alireza/projects/scot/src/\+Model/\mbox{\hyperlink{Model_8h}{Model.\+h}}\item 
+/home/alireza/projects/scot/src/\+Model/\mbox{\hyperlink{Model_8cpp}{Model.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,129 @@
+\hypertarget{classscot_1_1ScotSolver}{}\doxysection{scot\+::Scot\+Solver Class Reference}
+\label{classscot_1_1ScotSolver}\index{scot::ScotSolver@{scot::ScotSolver}}
+
+
+\mbox{\hyperlink{classscot_1_1ScotSolver}{Scot\+Solver}} calls appropriate algorithm based on the input parameters.  
+
+
+
+
+{\ttfamily \#include $<$Scot\+Solver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscot_1_1ScotSolver_a55a44b3f3d7bd795289182e8e011917b}{Scot\+Solver}} ()
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classscot_1_1ScotSolver_a3d9d3cf40f4a7417628707ed2db31e1f}{$\sim$\+Scot\+Solver}} ()=default
+\item 
+void \mbox{\hyperlink{classscot_1_1ScotSolver_a7f475f976ec028404e3b7e297745635a}{output\+Header}} ()
+\item 
+bool \mbox{\hyperlink{classscot_1_1ScotSolver_ab8db21284ed6b36abc88b4cdbd1d4096}{set\+Problem\+Data}} (std\+::filesystem\+::path input\+\_\+path)
+\item 
+bool \mbox{\hyperlink{classscot_1_1ScotSolver_ab63855b3cc9eda796abfecd8b0f37bfc}{set\+Number\+Of\+Nonzeros}} (int nzeros)
+\item 
+bool \mbox{\hyperlink{classscot_1_1ScotSolver_ab89b882a22e17d625f8b1c4e97e7c017}{set\+Objective}} ()
+\item 
+bool \mbox{\hyperlink{classscot_1_1ScotSolver_aa2fbc63ddd36cb8b824e371b14bad916}{set\+Sparse\+Constraints}} ()
+\item 
+bool \mbox{\hyperlink{classscot_1_1ScotSolver_a36810bed49c83cd333764229357a5acc}{set\+Mpi}} ()
+\item 
+void \mbox{\hyperlink{classscot_1_1ScotSolver_a219d3b753d0d9cdbfaa96a479f809754}{set\+Total\+Nodes}} (int total\+\_\+nodes)
+\item 
+void \mbox{\hyperlink{classscot_1_1ScotSolver_abf23cd71c8afaf02addce7536bf8a652}{set\+Rank}} (int rank)
+\item 
+bool \mbox{\hyperlink{classscot_1_1ScotSolver_a824f20e1c3e1b92eb356fcd803e02360}{solve}} ()
+\item 
+\mbox{\hyperlink{namespacescot_ab70d5e8d83d48e11411a15829bc221f0}{Environment\+Ptr}} \mbox{\hyperlink{classscot_1_1ScotSolver_a398a2986cd749ec4a8e235afcc4f4344}{get\+Environment}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classscot_1_1ScotSolver}{Scot\+Solver}} calls appropriate algorithm based on the input parameters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a55a44b3f3d7bd795289182e8e011917b}\label{classscot_1_1ScotSolver_a55a44b3f3d7bd795289182e8e011917b}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!ScotSolver@{ScotSolver}}
+\index{ScotSolver@{ScotSolver}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{ScotSolver()}{ScotSolver()}}
+{\footnotesize\ttfamily scot\+::\+Scot\+Solver\+::\+Scot\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+default constructor 
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a3d9d3cf40f4a7417628707ed2db31e1f}\label{classscot_1_1ScotSolver_a3d9d3cf40f4a7417628707ed2db31e1f}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!````~ScotSolver@{$\sim$ScotSolver}}
+\index{````~ScotSolver@{$\sim$ScotSolver}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{$\sim$ScotSolver()}{~ScotSolver()}}
+{\footnotesize\ttfamily scot\+::\+Scot\+Solver\+::$\sim$\+Scot\+Solver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a398a2986cd749ec4a8e235afcc4f4344}\label{classscot_1_1ScotSolver_a398a2986cd749ec4a8e235afcc4f4344}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!getEnvironment@{getEnvironment}}
+\index{getEnvironment@{getEnvironment}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{getEnvironment()}{getEnvironment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_ab70d5e8d83d48e11411a15829bc221f0}{Environment\+Ptr}} scot\+::\+Scot\+Solver\+::get\+Environment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a7f475f976ec028404e3b7e297745635a}\label{classscot_1_1ScotSolver_a7f475f976ec028404e3b7e297745635a}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!outputHeader@{outputHeader}}
+\index{outputHeader@{outputHeader}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{outputHeader()}{outputHeader()}}
+{\footnotesize\ttfamily void scot\+::\+Scot\+Solver\+::output\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a36810bed49c83cd333764229357a5acc}\label{classscot_1_1ScotSolver_a36810bed49c83cd333764229357a5acc}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setMpi@{setMpi}}
+\index{setMpi@{setMpi}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setMpi()}{setMpi()}}
+{\footnotesize\ttfamily bool scot\+::\+Scot\+Solver\+::set\+Mpi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_ab63855b3cc9eda796abfecd8b0f37bfc}\label{classscot_1_1ScotSolver_ab63855b3cc9eda796abfecd8b0f37bfc}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setNumberOfNonzeros@{setNumberOfNonzeros}}
+\index{setNumberOfNonzeros@{setNumberOfNonzeros}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setNumberOfNonzeros()}{setNumberOfNonzeros()}}
+{\footnotesize\ttfamily bool scot\+::\+Scot\+Solver\+::set\+Number\+Of\+Nonzeros (\begin{DoxyParamCaption}\item[{int}]{nzeros }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_ab89b882a22e17d625f8b1c4e97e7c017}\label{classscot_1_1ScotSolver_ab89b882a22e17d625f8b1c4e97e7c017}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setObjective@{setObjective}}
+\index{setObjective@{setObjective}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setObjective()}{setObjective()}}
+{\footnotesize\ttfamily bool scot\+::\+Scot\+Solver\+::set\+Objective (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_ab8db21284ed6b36abc88b4cdbd1d4096}\label{classscot_1_1ScotSolver_ab8db21284ed6b36abc88b4cdbd1d4096}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setProblemData@{setProblemData}}
+\index{setProblemData@{setProblemData}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setProblemData()}{setProblemData()}}
+{\footnotesize\ttfamily bool scot\+::\+Scot\+Solver\+::set\+Problem\+Data (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{input\+\_\+path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_abf23cd71c8afaf02addce7536bf8a652}\label{classscot_1_1ScotSolver_abf23cd71c8afaf02addce7536bf8a652}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setRank@{setRank}}
+\index{setRank@{setRank}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setRank()}{setRank()}}
+{\footnotesize\ttfamily void scot\+::\+Scot\+Solver\+::set\+Rank (\begin{DoxyParamCaption}\item[{int}]{rank }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_aa2fbc63ddd36cb8b824e371b14bad916}\label{classscot_1_1ScotSolver_aa2fbc63ddd36cb8b824e371b14bad916}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setSparseConstraints@{setSparseConstraints}}
+\index{setSparseConstraints@{setSparseConstraints}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setSparseConstraints()}{setSparseConstraints()}}
+{\footnotesize\ttfamily bool scot\+::\+Scot\+Solver\+::set\+Sparse\+Constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a219d3b753d0d9cdbfaa96a479f809754}\label{classscot_1_1ScotSolver_a219d3b753d0d9cdbfaa96a479f809754}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!setTotalNodes@{setTotalNodes}}
+\index{setTotalNodes@{setTotalNodes}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{setTotalNodes()}{setTotalNodes()}}
+{\footnotesize\ttfamily void scot\+::\+Scot\+Solver\+::set\+Total\+Nodes (\begin{DoxyParamCaption}\item[{int}]{total\+\_\+nodes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1ScotSolver_a824f20e1c3e1b92eb356fcd803e02360}\label{classscot_1_1ScotSolver_a824f20e1c3e1b92eb356fcd803e02360}} 
+\index{scot::ScotSolver@{scot::ScotSolver}!solve@{solve}}
+\index{solve@{solve}!scot::ScotSolver@{scot::ScotSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily bool scot\+::\+Scot\+Solver\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alireza/projects/scot/src/\+Solver/\mbox{\hyperlink{ScotSolver_8h}{Scot\+Solver.\+h}}\item 
+/home/alireza/projects/scot/src/\+Solver/\mbox{\hyperlink{ScotSolver_8cpp}{Scot\+Solver.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+digraph "/home/alireza/projects/scot/src/MIPSolver/MipSolverGurobiMultipleTree.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/alireza/projects\l/scot/src/MIPSolver/MipSolver\lGurobiMultipleTree.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="../Solver/Environment.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Environment_8h.html",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="../Model/Model.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Model_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="IObjective.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$IObjective_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="../Solver/Structs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Structs_8h.html",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="memory",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Enums.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Enums_8h.html",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="include/types.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="include/DOSE.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="../../DOSE/include\l/DOSE.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="SparsityConstraint.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SparsityConstraint_8h.html",tooltip=" "];
+  Node12 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="../../DOSE/include\l/types.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="settings.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$settings_8h.html",tooltip=" "];
+  Node14 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="IMIPSolver.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$IMIPSolver_8h.html",tooltip=" "];
+  Node15 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="gurobi_c++.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

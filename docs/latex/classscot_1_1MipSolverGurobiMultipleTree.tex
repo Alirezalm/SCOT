@@ -1,0 +1,316 @@
+\hypertarget{classscot_1_1MipSolverGurobiMultipleTree}{}\doxysection{scot\+::Mip\+Solver\+Gurobi\+Multiple\+Tree Class Reference}
+\label{classscot_1_1MipSolverGurobiMultipleTree}\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+
+
+{\ttfamily \#include $<$Mip\+Solver\+Gurobi\+Multiple\+Tree.\+h$>$}
+
+
+
+Inheritance diagram for scot\+::Mip\+Solver\+Gurobi\+Multiple\+Tree\+:
+% FIG 0
+
+
+Collaboration diagram for scot\+::Mip\+Solver\+Gurobi\+Multiple\+Tree\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_af9d461178725c327e8a4132cf7139171}{Mip\+Solver\+Gurobi\+Multiple\+Tree}} (\mbox{\hyperlink{namespacescot_ab70d5e8d83d48e11411a15829bc221f0}{Environment\+Ptr}} env)
+\item 
+\mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_aba0ea6b49cfdf370872a996e2f18b363}{$\sim$\+Mip\+Solver\+Gurobi\+Multiple\+Tree}} () override=default
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_aa3faa370e5f51f7a1f8aed8c8f215f47}{initialize\+Model}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_abfa6d56beb8645ae4b4c623a2c4af21c}{add\+Variable}} (std\+::string name, \mbox{\hyperlink{namespacescot_a3513eb9fa6c9dc9a86fc2f08593d5334}{Variable\+Type}} vtype, double lb, double ub) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a77ca9a2dfe7409a9eacb9d07c5abe34d}{initialize\+Objective\+Function}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_ad954a2610b830202d5e8d6b835ad1c44}{add\+Objective\+Linear\+Term}} (double coefficient, int variable\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a2e2dd38ebcdd85d0525f43d39fd11553}{add\+Objective\+Constant\+Term}} (double constant) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_ab94f401cec1d5240a94845accb1206f1}{add\+Objective\+To\+Model}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_ae02852a1099caf98dd59a0e76e8cb50b}{initialize\+Constraint}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a1c625b7fc8fbb87230b425f6f9e9b95f}{add\+Constraint\+Linear\+Term}} (double coefficient, int variable\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a7c6582495cc3e905c5f68076fa8bbfec}{add\+Constraint\+Quadratic\+Term}} (double coefficient, int variable\+\_\+index\+\_\+1, int variable\+\_\+index\+\_\+2) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a665033631e9f795badd6a7625767d104}{add\+Constraint\+To\+Model}} (double rhs) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_aca29727277d0a47c0932e1b70cf5e105}{add\+Linear\+Outer\+Approximation}} (\mbox{\hyperlink{structscot_1_1LinearOuterApproximation}{Linear\+Outer\+Approximation}} linear\+\_\+outer\+\_\+approximation, int node\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a6d70eb6c4e773d22a53d5a397fb771f0}{add\+Quadratic\+Outer\+Approximation}} (\mbox{\hyperlink{structscot_1_1QuadraticOuterApproximation}{Quadratic\+Outer\+Approximation}} quadratic\+\_\+outer\+\_\+approximation, int node\+\_\+index) override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a9bb2b66716f9aa7ea963e7fbbe7dfa24}{solve}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a249c5d2c961ca1b23f8cec68475e6dc6}{solve\+Single\+Tree}} () override
+\item 
+\mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a34e3217907caa859254e890943523ef2}{get\+Binary\+Solution}} () override
+\item 
+\mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a5fefdb0322d175bdfa93188973f7ae72}{get\+Continues\+Solution}} () override
+\item 
+double \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a1b4ff925f64542beb7d436eb0081ccdd}{get\+Objective\+Value}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_abd78b74cf59b2cd00b9fee9ddfeb395e}{gather\+Linear\+Outer\+Approximation}} (\mbox{\hyperlink{structscot_1_1LinearOuterApproximation}{Linear\+Outer\+Approximation}} linear\+\_\+outer\+\_\+approximation, int node\+\_\+id) override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structscot_1_1LinearOuterApproximation}{Linear\+Outer\+Approximation}} $>$ \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_af199077eb24fc5f8d4cfcaec11f12d45}{get\+Total\+Linear\+Outer\+Approximations}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a265cba15fe22b2a56f3c6bcbfdcb856d}{gather\+Quadratic\+Outer\+Approximation}} (\mbox{\hyperlink{structscot_1_1QuadraticOuterApproximation}{Quadratic\+Outer\+Approximation}} quadratic\+\_\+outer\+\_\+approximation, int node\+\_\+id) override
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structscot_1_1QuadraticOuterApproximation}{Quadratic\+Outer\+Approximation}} $>$ \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_ab4587aaa323ad4e48b65bfd31d54bac4}{get\+Total\+Quadratic\+Outer\+Approximations}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ GRBModel $>$ \mbox{\hyperlink{classscot_1_1MipSolverGurobiMultipleTree_a528612bc0c7774c1123e88f79b0e6e3d}{gurobi\+\_\+model\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_af9d461178725c327e8a4132cf7139171}\label{classscot_1_1MipSolverGurobiMultipleTree_af9d461178725c327e8a4132cf7139171}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!MipSolverGurobiMultipleTree@{MipSolverGurobiMultipleTree}}
+\index{MipSolverGurobiMultipleTree@{MipSolverGurobiMultipleTree}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{MipSolverGurobiMultipleTree()}{MipSolverGurobiMultipleTree()}}
+{\footnotesize\ttfamily scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacescot_ab70d5e8d83d48e11411a15829bc221f0}{Environment\+Ptr}}}]{env }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_aba0ea6b49cfdf370872a996e2f18b363}\label{classscot_1_1MipSolverGurobiMultipleTree_aba0ea6b49cfdf370872a996e2f18b363}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!````~MipSolverGurobiMultipleTree@{$\sim$MipSolverGurobiMultipleTree}}
+\index{````~MipSolverGurobiMultipleTree@{$\sim$MipSolverGurobiMultipleTree}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{$\sim$MipSolverGurobiMultipleTree()}{~MipSolverGurobiMultipleTree()}}
+{\footnotesize\ttfamily scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::$\sim$\+Mip\+Solver\+Gurobi\+Multiple\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a1c625b7fc8fbb87230b425f6f9e9b95f}\label{classscot_1_1MipSolverGurobiMultipleTree_a1c625b7fc8fbb87230b425f6f9e9b95f}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addConstraintLinearTerm@{addConstraintLinearTerm}}
+\index{addConstraintLinearTerm@{addConstraintLinearTerm}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addConstraintLinearTerm()}{addConstraintLinearTerm()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Constraint\+Linear\+Term (\begin{DoxyParamCaption}\item[{double}]{coefficient,  }\item[{int}]{variable\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_ab0ea28b0465fe540bbb8a7612bd6484a}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a7c6582495cc3e905c5f68076fa8bbfec}\label{classscot_1_1MipSolverGurobiMultipleTree_a7c6582495cc3e905c5f68076fa8bbfec}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addConstraintQuadraticTerm@{addConstraintQuadraticTerm}}
+\index{addConstraintQuadraticTerm@{addConstraintQuadraticTerm}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addConstraintQuadraticTerm()}{addConstraintQuadraticTerm()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Constraint\+Quadratic\+Term (\begin{DoxyParamCaption}\item[{double}]{coefficient,  }\item[{int}]{variable\+\_\+index\+\_\+1,  }\item[{int}]{variable\+\_\+index\+\_\+2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_aabd2f372f02b8a7698526b1e76172837}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a665033631e9f795badd6a7625767d104}\label{classscot_1_1MipSolverGurobiMultipleTree_a665033631e9f795badd6a7625767d104}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addConstraintToModel@{addConstraintToModel}}
+\index{addConstraintToModel@{addConstraintToModel}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addConstraintToModel()}{addConstraintToModel()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Constraint\+To\+Model (\begin{DoxyParamCaption}\item[{double}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a64d7dea58b56c3aff625b423c80c8341}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_aca29727277d0a47c0932e1b70cf5e105}\label{classscot_1_1MipSolverGurobiMultipleTree_aca29727277d0a47c0932e1b70cf5e105}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addLinearOuterApproximation@{addLinearOuterApproximation}}
+\index{addLinearOuterApproximation@{addLinearOuterApproximation}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addLinearOuterApproximation()}{addLinearOuterApproximation()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Linear\+Outer\+Approximation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structscot_1_1LinearOuterApproximation}{Linear\+Outer\+Approximation}}}]{linear\+\_\+outer\+\_\+approximation,  }\item[{int}]{node\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a32594f1f5ccc6c46051343d05c6a9e34}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a2e2dd38ebcdd85d0525f43d39fd11553}\label{classscot_1_1MipSolverGurobiMultipleTree_a2e2dd38ebcdd85d0525f43d39fd11553}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addObjectiveConstantTerm@{addObjectiveConstantTerm}}
+\index{addObjectiveConstantTerm@{addObjectiveConstantTerm}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addObjectiveConstantTerm()}{addObjectiveConstantTerm()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Objective\+Constant\+Term (\begin{DoxyParamCaption}\item[{double}]{constant }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_ac3cb15253beaf03a6027678918eba5c0}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_ad954a2610b830202d5e8d6b835ad1c44}\label{classscot_1_1MipSolverGurobiMultipleTree_ad954a2610b830202d5e8d6b835ad1c44}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addObjectiveLinearTerm@{addObjectiveLinearTerm}}
+\index{addObjectiveLinearTerm@{addObjectiveLinearTerm}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addObjectiveLinearTerm()}{addObjectiveLinearTerm()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Objective\+Linear\+Term (\begin{DoxyParamCaption}\item[{double}]{coefficient,  }\item[{int}]{variable\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a7ecc4646735d8092f9ea0d45849f0b9a}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_ab94f401cec1d5240a94845accb1206f1}\label{classscot_1_1MipSolverGurobiMultipleTree_ab94f401cec1d5240a94845accb1206f1}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addObjectiveToModel@{addObjectiveToModel}}
+\index{addObjectiveToModel@{addObjectiveToModel}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addObjectiveToModel()}{addObjectiveToModel()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Objective\+To\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a95d36617ed01f2d0e6b8025f5c90b7e0}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a6d70eb6c4e773d22a53d5a397fb771f0}\label{classscot_1_1MipSolverGurobiMultipleTree_a6d70eb6c4e773d22a53d5a397fb771f0}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addQuadraticOuterApproximation@{addQuadraticOuterApproximation}}
+\index{addQuadraticOuterApproximation@{addQuadraticOuterApproximation}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addQuadraticOuterApproximation()}{addQuadraticOuterApproximation()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Quadratic\+Outer\+Approximation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structscot_1_1QuadraticOuterApproximation}{Quadratic\+Outer\+Approximation}}}]{quadratic\+\_\+outer\+\_\+approximation,  }\item[{int}]{node\+\_\+index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_ab013e875a861f2904763b04c9cf46262}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_abfa6d56beb8645ae4b4c623a2c4af21c}\label{classscot_1_1MipSolverGurobiMultipleTree_abfa6d56beb8645ae4b4c623a2c4af21c}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!addVariable@{addVariable}}
+\index{addVariable@{addVariable}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{addVariable()}{addVariable()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::add\+Variable (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{namespacescot_a3513eb9fa6c9dc9a86fc2f08593d5334}{Variable\+Type}}}]{vtype,  }\item[{double}]{lb,  }\item[{double}]{ub }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a3ab37041951a91c43a1c27cd57f06593}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_abd78b74cf59b2cd00b9fee9ddfeb395e}\label{classscot_1_1MipSolverGurobiMultipleTree_abd78b74cf59b2cd00b9fee9ddfeb395e}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!gatherLinearOuterApproximation@{gatherLinearOuterApproximation}}
+\index{gatherLinearOuterApproximation@{gatherLinearOuterApproximation}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{gatherLinearOuterApproximation()}{gatherLinearOuterApproximation()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::gather\+Linear\+Outer\+Approximation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structscot_1_1LinearOuterApproximation}{Linear\+Outer\+Approximation}}}]{linear\+\_\+outer\+\_\+approximation,  }\item[{int}]{node\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a9baf5330bb1d24e0b7f4eed9db9eee3f}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a265cba15fe22b2a56f3c6bcbfdcb856d}\label{classscot_1_1MipSolverGurobiMultipleTree_a265cba15fe22b2a56f3c6bcbfdcb856d}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!gatherQuadraticOuterApproximation@{gatherQuadraticOuterApproximation}}
+\index{gatherQuadraticOuterApproximation@{gatherQuadraticOuterApproximation}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{gatherQuadraticOuterApproximation()}{gatherQuadraticOuterApproximation()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::gather\+Quadratic\+Outer\+Approximation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structscot_1_1QuadraticOuterApproximation}{Quadratic\+Outer\+Approximation}}}]{quadratic\+\_\+outer\+\_\+approximation,  }\item[{int}]{node\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_abda31d17e3685c67dee40fbebdcd2420}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a34e3217907caa859254e890943523ef2}\label{classscot_1_1MipSolverGurobiMultipleTree_a34e3217907caa859254e890943523ef2}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!getBinarySolution@{getBinarySolution}}
+\index{getBinarySolution@{getBinarySolution}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{getBinarySolution()}{getBinarySolution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::get\+Binary\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a7989bf34976f6c2fea846007c7c31e3b}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a5fefdb0322d175bdfa93188973f7ae72}\label{classscot_1_1MipSolverGurobiMultipleTree_a5fefdb0322d175bdfa93188973f7ae72}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!getContinuesSolution@{getContinuesSolution}}
+\index{getContinuesSolution@{getContinuesSolution}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{getContinuesSolution()}{getContinuesSolution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::get\+Continues\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a9c8835865e9702dcb2cec66d10ddcd57}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a1b4ff925f64542beb7d436eb0081ccdd}\label{classscot_1_1MipSolverGurobiMultipleTree_a1b4ff925f64542beb7d436eb0081ccdd}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!getObjectiveValue@{getObjectiveValue}}
+\index{getObjectiveValue@{getObjectiveValue}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{getObjectiveValue()}{getObjectiveValue()}}
+{\footnotesize\ttfamily double scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::get\+Objective\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_aafda4b0719cd6ee1ab8b710e9cb04f8a}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_af199077eb24fc5f8d4cfcaec11f12d45}\label{classscot_1_1MipSolverGurobiMultipleTree_af199077eb24fc5f8d4cfcaec11f12d45}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!getTotalLinearOuterApproximations@{getTotalLinearOuterApproximations}}
+\index{getTotalLinearOuterApproximations@{getTotalLinearOuterApproximations}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{getTotalLinearOuterApproximations()}{getTotalLinearOuterApproximations()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structscot_1_1LinearOuterApproximation}{Linear\+Outer\+Approximation}} $>$ scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::get\+Total\+Linear\+Outer\+Approximations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a0a83bbcfd2d7e2b93a0ec944c5b5a31c}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_ab4587aaa323ad4e48b65bfd31d54bac4}\label{classscot_1_1MipSolverGurobiMultipleTree_ab4587aaa323ad4e48b65bfd31d54bac4}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!getTotalQuadraticOuterApproximations@{getTotalQuadraticOuterApproximations}}
+\index{getTotalQuadraticOuterApproximations@{getTotalQuadraticOuterApproximations}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{getTotalQuadraticOuterApproximations()}{getTotalQuadraticOuterApproximations()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structscot_1_1QuadraticOuterApproximation}{Quadratic\+Outer\+Approximation}} $>$ scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::get\+Total\+Quadratic\+Outer\+Approximations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a026dfd1c59c2af495fd9677bed7e2f6b}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_ae02852a1099caf98dd59a0e76e8cb50b}\label{classscot_1_1MipSolverGurobiMultipleTree_ae02852a1099caf98dd59a0e76e8cb50b}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!initializeConstraint@{initializeConstraint}}
+\index{initializeConstraint@{initializeConstraint}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{initializeConstraint()}{initializeConstraint()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::initialize\+Constraint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_afb615319543aa357f90a1f98e8cb2c29}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_aa3faa370e5f51f7a1f8aed8c8f215f47}\label{classscot_1_1MipSolverGurobiMultipleTree_aa3faa370e5f51f7a1f8aed8c8f215f47}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!initializeModel@{initializeModel}}
+\index{initializeModel@{initializeModel}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{initializeModel()}{initializeModel()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::initialize\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a075b8bc94c0ced34ff1cda3e5982f506}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a77ca9a2dfe7409a9eacb9d07c5abe34d}\label{classscot_1_1MipSolverGurobiMultipleTree_a77ca9a2dfe7409a9eacb9d07c5abe34d}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!initializeObjectiveFunction@{initializeObjectiveFunction}}
+\index{initializeObjectiveFunction@{initializeObjectiveFunction}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{initializeObjectiveFunction()}{initializeObjectiveFunction()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::initialize\+Objective\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a38f5ab592bbc819f61a1bae63bfe3eb1}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a9bb2b66716f9aa7ea963e7fbbe7dfa24}\label{classscot_1_1MipSolverGurobiMultipleTree_a9bb2b66716f9aa7ea963e7fbbe7dfa24}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!solve@{solve}}
+\index{solve@{solve}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a5ca637c36df7572965b37f055a5aef11}{scot\+::\+IMip\+Solver}}.
+
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a249c5d2c961ca1b23f8cec68475e6dc6}\label{classscot_1_1MipSolverGurobiMultipleTree_a249c5d2c961ca1b23f8cec68475e6dc6}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!solveSingleTree@{solveSingleTree}}
+\index{solveSingleTree@{solveSingleTree}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{solveSingleTree()}{solveSingleTree()}}
+{\footnotesize\ttfamily void scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::solve\+Single\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IMipSolver_a27e2a7aeab545b46f0d58ef40c6632f0}{scot\+::\+IMip\+Solver}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classscot_1_1MipSolverGurobiSingleTree_a8a046649554c64b93011c144da7c8857}{scot\+::\+Mip\+Solver\+Gurobi\+Single\+Tree}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classscot_1_1MipSolverGurobiMultipleTree_a528612bc0c7774c1123e88f79b0e6e3d}\label{classscot_1_1MipSolverGurobiMultipleTree_a528612bc0c7774c1123e88f79b0e6e3d}} 
+\index{scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}!gurobi\_model\_@{gurobi\_model\_}}
+\index{gurobi\_model\_@{gurobi\_model\_}!scot::MipSolverGurobiMultipleTree@{scot::MipSolverGurobiMultipleTree}}
+\doxysubsubsection{\texorpdfstring{gurobi\_model\_}{gurobi\_model\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$GRBModel$>$ scot\+::\+Mip\+Solver\+Gurobi\+Multiple\+Tree\+::gurobi\+\_\+model\+\_\+}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alireza/projects/scot/src/\+MIPSolver/\mbox{\hyperlink{MipSolverGurobiMultipleTree_8h}{Mip\+Solver\+Gurobi\+Multiple\+Tree.\+h}}\item 
+/home/alireza/projects/scot/src/\+MIPSolver/\mbox{\hyperlink{MipSolverGurobiMultipleTree_8cpp}{Mip\+Solver\+Gurobi\+Multiple\+Tree.\+cpp}}\end{DoxyCompactItemize}

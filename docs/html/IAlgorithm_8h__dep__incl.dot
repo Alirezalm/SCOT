@@ -1,0 +1,23 @@
+digraph "/home/alireza/projects/scot/src/Algorithm/IAlgorithm.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/alireza/projects\l/scot/src/Algorithm/IAlgorithm.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="/home/alireza/projects\l/scot/src/Algorithm/Dihoa.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Dihoa_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="/home/alireza/projects\l/scot/src/Algorithm/Dihoa.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Dihoa_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="/home/alireza/projects\l/scot/src/Solver/ScotSolver.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ScotSolver_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="/home/alireza/projects\l/scot/src/Algorithm/Dipoa.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Dipoa_8h.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/alireza/projects\l/scot/src/Algorithm/Dipoa.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Dipoa_8cpp.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/alireza/projects\l/scot/src/Solver/ScotSolver.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ScotSolver_8h.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="/home/alireza/projects\l/scot/src/scot.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$scot_8cpp.html",tooltip="main file of the project"];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

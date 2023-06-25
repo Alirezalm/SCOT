@@ -1,0 +1,118 @@
+\hypertarget{classscot_1_1LogRegObjectiveFunction}{}\doxysection{scot\+::Log\+Reg\+Objective\+Function Class Reference}
+\label{classscot_1_1LogRegObjectiveFunction}\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+
+
+{\ttfamily \#include $<$Log\+Reg\+Objective\+Function.\+h$>$}
+
+
+
+Inheritance diagram for scot\+::Log\+Reg\+Objective\+Function\+:
+% FIG 0
+
+
+Collaboration diagram for scot\+::Log\+Reg\+Objective\+Function\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_a288147187badd6f291f3357e962167df}{Log\+Reg\+Objective\+Function}} ()
+\item 
+\mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_af9369fb2fac785be2c20943933ec98ab}{$\sim$\+Log\+Reg\+Objective\+Function}} () override
+\item 
+int \mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_a7a7bface93acddcd013479e644276cf3}{get\+Number\+Of\+Columns}} () override
+\item 
+int \mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_a326dca1cacd161ecece72bc1ccc72da0}{get\+Number\+Of\+Rows}} () override
+\item 
+void \mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_ad0dad7958205c729a15121f86c1c1417}{set\+Objective\+Data}} (const \mbox{\hyperlink{namespacescot_a07ebf891a855b37e9ff579adfee596e7}{Vector\+Double2D}} \&samples\+\_\+data, const \mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} \&response\+\_\+data) override
+\item 
+dose\+::\+Problem\+Type \mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_ad61dd815d8e03db369c764ac19093798}{get\+Objective\+Type}} () override
+\item 
+\mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} \mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_aaeff9e01bde72035f53b076d87552a50}{get\+Response\+Data}} () override
+\item 
+\mbox{\hyperlink{namespacescot_a07ebf891a855b37e9ff579adfee596e7}{Vector\+Double2D}} \mbox{\hyperlink{classscot_1_1LogRegObjectiveFunction_a7cd6cbeaaf14270efc8e3ec0bfee8ed1}{get\+Sampling\+Data}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_a288147187badd6f291f3357e962167df}\label{classscot_1_1LogRegObjectiveFunction_a288147187badd6f291f3357e962167df}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!LogRegObjectiveFunction@{LogRegObjectiveFunction}}
+\index{LogRegObjectiveFunction@{LogRegObjectiveFunction}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{LogRegObjectiveFunction()}{LogRegObjectiveFunction()}}
+{\footnotesize\ttfamily scot\+::\+Log\+Reg\+Objective\+Function\+::\+Log\+Reg\+Objective\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_af9369fb2fac785be2c20943933ec98ab}\label{classscot_1_1LogRegObjectiveFunction_af9369fb2fac785be2c20943933ec98ab}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!````~LogRegObjectiveFunction@{$\sim$LogRegObjectiveFunction}}
+\index{````~LogRegObjectiveFunction@{$\sim$LogRegObjectiveFunction}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{$\sim$LogRegObjectiveFunction()}{~LogRegObjectiveFunction()}}
+{\footnotesize\ttfamily scot\+::\+Log\+Reg\+Objective\+Function\+::$\sim$\+Log\+Reg\+Objective\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_a7a7bface93acddcd013479e644276cf3}\label{classscot_1_1LogRegObjectiveFunction_a7a7bface93acddcd013479e644276cf3}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!getNumberOfColumns@{getNumberOfColumns}}
+\index{getNumberOfColumns@{getNumberOfColumns}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{getNumberOfColumns()}{getNumberOfColumns()}}
+{\footnotesize\ttfamily int scot\+::\+Log\+Reg\+Objective\+Function\+::get\+Number\+Of\+Columns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IObjective_aab5c02a8eedd32d3540aaec44367606d}{scot\+::\+IObjective}}.
+
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_a326dca1cacd161ecece72bc1ccc72da0}\label{classscot_1_1LogRegObjectiveFunction_a326dca1cacd161ecece72bc1ccc72da0}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!getNumberOfRows@{getNumberOfRows}}
+\index{getNumberOfRows@{getNumberOfRows}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{getNumberOfRows()}{getNumberOfRows()}}
+{\footnotesize\ttfamily int scot\+::\+Log\+Reg\+Objective\+Function\+::get\+Number\+Of\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IObjective_a05da8dca4368d3b82941b7f621a0c194}{scot\+::\+IObjective}}.
+
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_ad61dd815d8e03db369c764ac19093798}\label{classscot_1_1LogRegObjectiveFunction_ad61dd815d8e03db369c764ac19093798}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!getObjectiveType@{getObjectiveType}}
+\index{getObjectiveType@{getObjectiveType}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{getObjectiveType()}{getObjectiveType()}}
+{\footnotesize\ttfamily dose\+::\+Problem\+Type scot\+::\+Log\+Reg\+Objective\+Function\+::get\+Objective\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IObjective_a98fa45e52a78c1f3183c7fe4b6304303}{scot\+::\+IObjective}}.
+
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_aaeff9e01bde72035f53b076d87552a50}\label{classscot_1_1LogRegObjectiveFunction_aaeff9e01bde72035f53b076d87552a50}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!getResponseData@{getResponseData}}
+\index{getResponseData@{getResponseData}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{getResponseData()}{getResponseData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} scot\+::\+Log\+Reg\+Objective\+Function\+::get\+Response\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IObjective_a72f0dc3bed4ed93501a92aed327c3604}{scot\+::\+IObjective}}.
+
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_a7cd6cbeaaf14270efc8e3ec0bfee8ed1}\label{classscot_1_1LogRegObjectiveFunction_a7cd6cbeaaf14270efc8e3ec0bfee8ed1}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!getSamplingData@{getSamplingData}}
+\index{getSamplingData@{getSamplingData}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{getSamplingData()}{getSamplingData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacescot_a07ebf891a855b37e9ff579adfee596e7}{Vector\+Double2D}} scot\+::\+Log\+Reg\+Objective\+Function\+::get\+Sampling\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IObjective_a895c3b8a6560970ba4a4937333198b9a}{scot\+::\+IObjective}}.
+
+\mbox{\Hypertarget{classscot_1_1LogRegObjectiveFunction_ad0dad7958205c729a15121f86c1c1417}\label{classscot_1_1LogRegObjectiveFunction_ad0dad7958205c729a15121f86c1c1417}} 
+\index{scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}!setObjectiveData@{setObjectiveData}}
+\index{setObjectiveData@{setObjectiveData}!scot::LogRegObjectiveFunction@{scot::LogRegObjectiveFunction}}
+\doxysubsubsection{\texorpdfstring{setObjectiveData()}{setObjectiveData()}}
+{\footnotesize\ttfamily void scot\+::\+Log\+Reg\+Objective\+Function\+::set\+Objective\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespacescot_a07ebf891a855b37e9ff579adfee596e7}{Vector\+Double2D}} \&}]{samples\+\_\+data,  }\item[{const \mbox{\hyperlink{namespacescot_a4661c1ad852a2083332f94c412a35a6a}{Vector\+Double}} \&}]{response\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classscot_1_1IObjective_adeb34035835d13203aedc79df3473e7b}{scot\+::\+IObjective}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/alireza/projects/scot/src/\+Model/\mbox{\hyperlink{LogRegObjectiveFunction_8h}{Log\+Reg\+Objective\+Function.\+h}}\item 
+/home/alireza/projects/scot/src/\+Model/\mbox{\hyperlink{LogRegObjectiveFunction_8cpp}{Log\+Reg\+Objective\+Function.\+cpp}}\end{DoxyCompactItemize}
