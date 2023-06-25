@@ -1,9 +1,9 @@
 var searchData=
 [
   ['deactivate_30',['deactivate',['../classscot_1_1TaskBase.html#a5963d8b6e6fe89b74a6c4d51aadb4e51',1,'scot::TaskBase']]],
-  ['defcliparams_31',['defCliParams',['../scot_8cpp.html#a801a1e995a7c0218fb30ac83a089363d',1,'scot.cpp']]],
+  ['dihoa_31',['Dihoa',['../classscot_1_1Dihoa.html#a682e324a7bfd926fd983ea5e42ec85f9',1,'scot::Dihoa']]],
   ['dihoa_32',['DIHOA',['../namespacescot.html#afdcacd1dd502d6fce13dd030a9a44fc5a858f0a83b8b34fe08285525bc0b51b85',1,'scot']]],
-  ['dihoa_33',['Dihoa',['../classscot_1_1Dihoa.html#a682e324a7bfd926fd983ea5e42ec85f9',1,'scot::Dihoa::Dihoa()'],['../classscot_1_1Dihoa.html',1,'scot::Dihoa']]],
+  ['dihoa_33',['Dihoa',['../classscot_1_1Dihoa.html',1,'scot']]],
   ['dihoa_2ecpp_34',['Dihoa.cpp',['../Dihoa_8cpp.html',1,'']]],
   ['dihoa_2eh_35',['Dihoa.h',['../Dihoa_8h.html',1,'']]],
   ['dipoa_36',['DIPOA',['../namespacescot.html#afdcacd1dd502d6fce13dd030a9a44fc5af584a6e689cc3953d9cae4a71167070e',1,'scot']]],

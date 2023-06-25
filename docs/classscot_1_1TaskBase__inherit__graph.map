@@ -1,5 +1,5 @@
 <map id="scot::TaskBase" name="scot::TaskBase">
-<area shape="rect" id="node1" title=" " alt="" coords="5,500,124,527"/>
+<area shape="rect" id="node1" title="abstract class for all tasks." alt="" coords="5,500,124,527"/>
 <area shape="rect" id="node2" href="$classscot_1_1TaskAddDualSolution.html" title=" " alt="" coords="191,5,386,32"/>
 <area shape="rect" id="node3" href="$classscot_1_1TaskAddLinearOuterApproximation.html" title=" " alt="" coords="195,57,382,98"/>
 <area shape="rect" id="node4" href="$classscot_1_1TaskAddQuadraticOuterApproximation.html" title=" " alt="" coords="183,122,394,163"/>
@@ -10,13 +10,13 @@
 <area shape="rect" id="node9" href="$classscot_1_1TaskCheckTerminationGap.html" title=" " alt="" coords="174,391,403,417"/>
 <area shape="rect" id="node10" href="$classscot_1_1TaskComputeObjectiveGap.html" title=" " alt="" coords="172,441,405,468"/>
 <area shape="rect" id="node11" href="$classscot_1_1TaskCreateMultipleTreeDualProblem.html" title=" " alt="" coords="197,493,380,534"/>
-<area shape="rect" id="node12" href="$classscot_1_1TaskDistributedNlpSolution.html" title=" " alt="" coords="199,558,379,599"/>
+<area shape="rect" id="node12" href="$classscot_1_1TaskDistributedNlpSolution.html" title="This class is responsible for solving the distributed NLP problem." alt="" coords="199,558,379,599"/>
 <area shape="rect" id="node13" href="$classscot_1_1TaskGatherLocalLinearOuterApproximations.html" title=" " alt="" coords="187,623,391,665"/>
 <area shape="rect" id="node14" href="$classscot_1_1TaskGatherLocalQuadraticOuterApproximations.html" title=" " alt="" coords="175,689,402,730"/>
-<area shape="rect" id="node15" href="$classscot_1_1TaskInitializeMultipleTreeDualSolver.html" title=" " alt="" coords="191,754,386,795"/>
-<area shape="rect" id="node16" href="$classscot_1_1TaskInitializeNewIteration.html" title=" " alt="" coords="175,820,402,847"/>
+<area shape="rect" id="node15" href="$classscot_1_1TaskInitializeMultipleTreeDualSolver.html" title="This class is responsible for initializing the dual solver." alt="" coords="191,754,386,795"/>
+<area shape="rect" id="node16" href="$classscot_1_1TaskInitializeNewIteration.html" title="This class is responsible for initializing the new iteration." alt="" coords="175,820,402,847"/>
 <area shape="rect" id="node17" href="$classscot_1_1TaskInitializeSingleTreeDualSolver.html" title=" " alt="" coords="197,871,380,913"/>
-<area shape="rect" id="node18" href="$classscot_1_1TaskPrintIterationInfo.html" title=" " alt="" coords="191,937,387,964"/>
+<area shape="rect" id="node18" href="$classscot_1_1TaskPrintIterationInfo.html" title="This class is used to print iteration information." alt="" coords="191,937,387,964"/>
 <area shape="rect" id="node19" href="$classscot_1_1TaskSolveDualProblem.html" title=" " alt="" coords="185,988,392,1015"/>
 <area shape="rect" id="node20" href="$classscot_1_1TaskSolveSingleTreeDualProblem.html" title=" " alt="" coords="194,1039,383,1081"/>
 </map>

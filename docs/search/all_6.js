@@ -22,7 +22,7 @@ var searchData=
   ['is_5fsolved_5f_116',['is_solved_',['../classscot_1_1Iteration.html#ad52336ef5016c9541a62f660b0da8909',1,'scot::Iteration']]],
   ['isactive_117',['isActive',['../classscot_1_1TaskBase.html#aa72e43b22eb9715a08608f5f61f0970d',1,'scot::TaskBase']]],
   ['isfeasible_118',['isFeasible',['../classscot_1_1SparsityConstraint.html#a6ba361cd2fc898b06c8757a055f6fd5e',1,'scot::SparsityConstraint']]],
-  ['istaskqueueempty_119',['isTaskQueueEmpty',['../classscot_1_1TaskManager.html#a64b895784c3a8c58579331e3d08b47c0',1,'scot::TaskManager']]],
+  ['istaskqueueempty_119',['isTaskQueueEmpty',['../classscot_1_1TaskQueue.html#abc97458b57594936d3f9da95a47d1ad1',1,'scot::TaskQueue']]],
   ['iteration_120',['Iteration',['../classscot_1_1Iteration.html#ac177d663b1b92a67b65b3cf18f5e506e',1,'scot::Iteration::Iteration()'],['../classscot_1_1Iteration.html',1,'scot::Iteration']]],
   ['iteration_2ecpp_121',['Iteration.cpp',['../Iteration_8cpp.html',1,'']]],
   ['iteration_2eh_122',['Iteration.h',['../Iteration_8h.html',1,'']]],

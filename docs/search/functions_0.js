@@ -11,6 +11,6 @@ var searchData=
   ['addobjectivelinearterm_520',['addObjectiveLinearTerm',['../classscot_1_1IMipSolver.html#a7ecc4646735d8092f9ea0d45849f0b9a',1,'scot::IMipSolver::addObjectiveLinearTerm()'],['../classscot_1_1MipSolverGurobiMultipleTree.html#ad954a2610b830202d5e8d6b835ad1c44',1,'scot::MipSolverGurobiMultipleTree::addObjectiveLinearTerm()']]],
   ['addobjectivetomodel_521',['addObjectiveToModel',['../classscot_1_1IMipSolver.html#a95d36617ed01f2d0e6b8025f5c90b7e0',1,'scot::IMipSolver::addObjectiveToModel()'],['../classscot_1_1MipSolverGurobiMultipleTree.html#ab94f401cec1d5240a94845accb1206f1',1,'scot::MipSolverGurobiMultipleTree::addObjectiveToModel()']]],
   ['addquadraticouterapproximation_522',['addQuadraticOuterApproximation',['../classscot_1_1IMipSolver.html#ab013e875a861f2904763b04c9cf46262',1,'scot::IMipSolver::addQuadraticOuterApproximation()'],['../classscot_1_1MipSolverGurobiMultipleTree.html#a6d70eb6c4e773d22a53d5a397fb771f0',1,'scot::MipSolverGurobiMultipleTree::addQuadraticOuterApproximation()']]],
-  ['addtask_523',['addTask',['../classscot_1_1TaskManager.html#aac08a695cc82f03aadb3a7a227c574f4',1,'scot::TaskManager']]],
+  ['addtask_523',['addTask',['../classscot_1_1TaskQueue.html#a123929e41f29277208722d2dffa293e5',1,'scot::TaskQueue']]],
   ['addvariable_524',['addVariable',['../classscot_1_1IMipSolver.html#a3ab37041951a91c43a1c27cd57f06593',1,'scot::IMipSolver::addVariable()'],['../classscot_1_1MipSolverGurobiMultipleTree.html#abfa6d56beb8645ae4b4c623a2c4af21c',1,'scot::MipSolverGurobiMultipleTree::addVariable()']]]
 ];

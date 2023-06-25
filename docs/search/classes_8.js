@@ -17,8 +17,8 @@ var searchData=
   ['taskinitializemultipletreedualsolver_416',['TaskInitializeMultipleTreeDualSolver',['../classscot_1_1TaskInitializeMultipleTreeDualSolver.html',1,'scot']]],
   ['taskinitializenewiteration_417',['TaskInitializeNewIteration',['../classscot_1_1TaskInitializeNewIteration.html',1,'scot']]],
   ['taskinitializesingletreedualsolver_418',['TaskInitializeSingleTreeDualSolver',['../classscot_1_1TaskInitializeSingleTreeDualSolver.html',1,'scot']]],
-  ['taskmanager_419',['TaskManager',['../classscot_1_1TaskManager.html',1,'scot']]],
-  ['taskprintiterationinfo_420',['TaskPrintIterationInfo',['../classscot_1_1TaskPrintIterationInfo.html',1,'scot']]],
+  ['taskprintiterationinfo_419',['TaskPrintIterationInfo',['../classscot_1_1TaskPrintIterationInfo.html',1,'scot']]],
+  ['taskqueue_420',['TaskQueue',['../classscot_1_1TaskQueue.html',1,'scot']]],
   ['tasksolvedualproblem_421',['TaskSolveDualProblem',['../classscot_1_1TaskSolveDualProblem.html',1,'scot']]],
   ['tasksolvesingletreedualproblem_422',['TaskSolveSingleTreeDualProblem',['../classscot_1_1TaskSolveSingleTreeDualProblem.html',1,'scot']]],
   ['timer_423',['Timer',['../classscot_1_1Timer.html',1,'scot']]]

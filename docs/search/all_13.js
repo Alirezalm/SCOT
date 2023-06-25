@@ -36,8 +36,8 @@ var searchData=
   ['_7etaskinitializemultipletreedualsolver_368',['~TaskInitializeMultipleTreeDualSolver',['../classscot_1_1TaskInitializeMultipleTreeDualSolver.html#a69d70eb8e116a39ffc861ce83007aeff',1,'scot::TaskInitializeMultipleTreeDualSolver']]],
   ['_7etaskinitializenewiteration_369',['~TaskInitializeNewIteration',['../classscot_1_1TaskInitializeNewIteration.html#a9e18dde9978c46a01b8afd2c3e741ca1',1,'scot::TaskInitializeNewIteration']]],
   ['_7etaskinitializesingletreedualsolver_370',['~TaskInitializeSingleTreeDualSolver',['../classscot_1_1TaskInitializeSingleTreeDualSolver.html#a578f614959a7ea30668c28a5e838bd0a',1,'scot::TaskInitializeSingleTreeDualSolver']]],
-  ['_7etaskmanager_371',['~TaskManager',['../classscot_1_1TaskManager.html#a172a7d3ccd9382bbfc3800c3639cde10',1,'scot::TaskManager']]],
-  ['_7etaskprintiterationinfo_372',['~TaskPrintIterationInfo',['../classscot_1_1TaskPrintIterationInfo.html#a836437cb91a83cebd28cc498cbd55971',1,'scot::TaskPrintIterationInfo']]],
+  ['_7etaskprintiterationinfo_371',['~TaskPrintIterationInfo',['../classscot_1_1TaskPrintIterationInfo.html#a836437cb91a83cebd28cc498cbd55971',1,'scot::TaskPrintIterationInfo']]],
+  ['_7etaskqueue_372',['~TaskQueue',['../classscot_1_1TaskQueue.html#a3344723d39c40bf425b30ab7cbdd1242',1,'scot::TaskQueue']]],
   ['_7etasksolvedualproblem_373',['~TaskSolveDualProblem',['../classscot_1_1TaskSolveDualProblem.html#a9823df0f71fb5891f02b886785d4b43e',1,'scot::TaskSolveDualProblem']]],
   ['_7etasksolvesingletreedualproblem_374',['~TaskSolveSingleTreeDualProblem',['../classscot_1_1TaskSolveSingleTreeDualProblem.html#ac66a27975332ed47547fefe934cb814e',1,'scot::TaskSolveSingleTreeDualProblem']]],
   ['_7etimer_375',['~Timer',['../classscot_1_1Timer.html#a52696d7c6f1cc6a0841bf49dd4735599',1,'scot::Timer']]]
