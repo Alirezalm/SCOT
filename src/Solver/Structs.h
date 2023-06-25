@@ -51,7 +51,7 @@ struct QuadraticOuterApproximation {
 // forward declarations
 class Results;
 class TaskBase;
-class TaskManager;
+class TaskQueue;
 class IMipSolver;
 class MessagePassingInterface;
 class Logger;
@@ -60,7 +60,7 @@ class Settings;
 class Timer;
 using DosePtr = std::shared_ptr<dose::DOSE>;
 using ResultsPtr = std::shared_ptr<Results>;
-using TaskManagerPtr = std::shared_ptr<TaskManager>;
+using TaskQueuePtr = std::shared_ptr<TaskQueue>;
 using TaskBasePtr = std::shared_ptr<TaskBase>;
 using PairTaskDescription = std::pair<TaskBasePtr, std::string>;
 using MipSolverPtr = std::shared_ptr<IMipSolver>;

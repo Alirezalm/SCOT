@@ -4,7 +4,7 @@
 //todo: MUST BE REFACORED ** IMPORTANT **
 #include "MipSolverGurobiSingleTree.h"
 #include "../Solver/Logger.h"
-#include "../Tasks/TaskManager.h"
+#include "../Tasks/TaskQueue.h"
 #include "../Solver/Results.h"
 #include "../Tasks/TaskGatherLocalLinearOuterApproximations.h"
 #include "../Tasks/TaskAddLinearOuterApproximation.h"
@@ -85,7 +85,7 @@ void MipGurobiCallback::updateCurrentObjective() {
   current_objval_ = getDoubleInfo(GRB_CB_MIPSOL_OBJ);
 }
 void MipGurobiCallback::solveLazyDistributedNlp() {
-  auto task_solve_nlp = env_->task_manager_->getTask("t_solve_nlp");
+  auto task_solve_nlp = env_->task_queue_ptr_->getTask("t_solve_nlp");
   task_solve_nlp.first->execute();
 }
 void MipGurobiCallback::addLazyConstraint() {

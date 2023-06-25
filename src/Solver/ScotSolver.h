@@ -51,7 +51,7 @@ class ScotSolver {
   // data members
   EnvironmentPtr env_;
   IAlgorithmPtr solution_algorithm_;
-  int nnzeros_;
+  int number_of_nonzeros_;
   int total_nodes_;
   int rank_;
   double upperbound_;

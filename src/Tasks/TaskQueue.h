@@ -7,11 +7,11 @@
 #include "../Solver/Environment.h"
 #include "../Tasks/TaskBase.h"
 namespace scot {
-class TaskManager {
+class TaskQueue {
 
  public:
-  explicit TaskManager(EnvironmentPtr env);
-  ~TaskManager() = default;
+  explicit TaskQueue(EnvironmentPtr env);
+  ~TaskQueue() = default;
 
   void addTask(TaskBasePtr task, std::string task_id);
   bool isTaskQueueEmpty();

@@ -5,7 +5,7 @@
 #include "ScotSolver.h"
 #include "../Algorithm/Dipoa.h"
 #include "../Algorithm/Dihoa.h"
-#include "../Tasks/TaskManager.h"
+#include "../Tasks/TaskQueue.h"
 #include "Results.h"
 #include "../MIPSolver/MipSolverGurobiMultipleTree.h"
 #include "MessagePassingInterface.h"
@@ -21,7 +21,7 @@ namespace scot {
 
         env_ = std::make_shared<Environment>();
 
-        env_->task_manager_ = std::make_shared<TaskManager>(env_);
+        env_->task_queue_ptr_ = std::make_shared<TaskQueue>(env_);
 
         env_->results_ = std::make_shared<Results>(env_);
 
@@ -116,7 +116,7 @@ namespace scot {
     }
 
     bool ScotSolver::setSparseConstraints() {
-        auto sparsity_constraint = std::make_shared<SparsityConstraint>(nnzeros_, upperbound_);
+        auto sparsity_constraint = std::make_shared<SparsityConstraint>(number_of_nonzeros_, upperbound_);
         env_->model_->setSparsityConstraint(sparsity_constraint);
         return true;
     }
@@ -142,7 +142,7 @@ namespace scot {
         if (nzeros >= env_->model_->getNumberOfVariables()) {
             throw std::invalid_argument("SCOT error: number of nonzeros cannot be larger than variables.\n");
         }
-        nnzeros_ = nzeros;
+		number_of_nonzeros_ = nzeros;
         return true;
     }
 

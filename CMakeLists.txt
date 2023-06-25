@@ -42,8 +42,8 @@ add_executable(${PROJECT_NAME}
         src/Tasks/TaskDistributedNlpSolution.cpp
         src/Tasks/TaskDistributedNlpSolution.h
         src/Tasks/TaskBase.cpp
-        src/Tasks/TaskManager.cpp
-        src/Tasks/TaskManager.h
+        src/Tasks/TaskQueue.cpp
+        src/Tasks/TaskQueue.h
         src/Tasks/TaskInitializeNewIteration.cpp
         src/Tasks/TaskInitializeNewIteration.h
         src/MIPSolver/IMIPSolver.h

@@ -9,15 +9,32 @@
 #include "../PrimalSolver/InlpSolver.h"
 
 namespace scot {
-
+/**
+ * @brief This class implements the DIPOA algorithm
+ */
 class Dipoa : public IAlgorithm {
- public:
 
+ public:
+  /**
+   * @brief default constructor
+   * @param env solver environment
+   */
   explicit Dipoa(EnvironmentPtr env);
+
   ~Dipoa() override = default;
 
+  /**
+   * @brief run the algorithm
+   * @return true if the algorithm is successful
+   */
   bool Run() override;
+
+  /**
+   * @brief output the header of the iteration table
+   */
   void outputIterHeader();
+
+
  private:
   InlpSolverPtr nlp_solver_;
 
