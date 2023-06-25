@@ -9,12 +9,12 @@
 #include "../Algorithm/IAlgorithm.h"
 #include "Enums.h"
 namespace scot {
-class MainSolver {
+class ScotSolver {
 
  public:
   //todo: solver can receive no argument and construct the environment **IMPORTANT**
-  explicit MainSolver();
-  ~MainSolver() = default;
+  explicit ScotSolver();
+  ~ScotSolver() = default;
   void outputHeader();
 
   bool setProblemData(std::filesystem::path input_path);

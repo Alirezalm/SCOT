@@ -29,8 +29,8 @@ add_executable(${PROJECT_NAME}
         src/PrimalSolver/InlpSolver.h
         src/PrimalSolver/DistributedOperatorSplittingEngine.cpp
         src/PrimalSolver/DistributedOperatorSplittingEngine.h
-        src/Solver/MainSolver.cpp
-        src/Solver/MainSolver.h
+        src/Solver/ScotSolver.cpp
+        src/Solver/ScotSolver.h
         src/Algorithm/IAlgorithm.h
         src/Algorithm/Dipoa.cpp
         src/Algorithm/Dipoa.h

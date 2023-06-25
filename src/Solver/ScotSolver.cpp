@@ -2,7 +2,7 @@
 // Created by alireza on 30/05/22.
 //
 #include "fstream"
-#include "MainSolver.h"
+#include "ScotSolver.h"
 #include "../Algorithm/Dipoa.h"
 #include "../Algorithm/Dihoa.h"
 #include "../Tasks/TaskManager.h"
@@ -18,7 +18,7 @@
 
 namespace scot {
 
-MainSolver::MainSolver() {
+ScotSolver::ScotSolver() {
 
   env_ = std::make_shared<Environment>();
 
@@ -36,11 +36,11 @@ MainSolver::MainSolver() {
 
 }
 
-EnvironmentPtr MainSolver::getEnvironment() {
+EnvironmentPtr ScotSolver::getEnvironment() {
   return env_;
 }
 
-bool MainSolver::solve() {
+bool ScotSolver::solve() {
   if (env_->settings_->getDblSetting("verbose") == 1) {
     outputHeader();
   }
@@ -49,7 +49,7 @@ bool MainSolver::solve() {
   return solution_algorithm_->Run();
 }
 
-void MainSolver::selectAlgorithm() {
+void ScotSolver::selectAlgorithm() {
 
   auto alg = env_->settings_->getStrSetting("algorithm");
   if (alg == "dipoa") {
@@ -67,7 +67,7 @@ void MainSolver::selectAlgorithm() {
   }
 
 }
-void MainSolver::outputHeader() {
+void ScotSolver::outputHeader() {
   if (env_->model_->getRank() == 0) {
     env_->report_->printSolverHeader();
     env_->report_->printProblemDetails();
@@ -75,7 +75,7 @@ void MainSolver::outputHeader() {
   }
 
 }
-bool MainSolver::setProblemData(std::filesystem::path input_path) {
+bool ScotSolver::setProblemData(std::filesystem::path input_path) {
 
   std::ifstream input(input_path);
 
@@ -97,7 +97,7 @@ bool MainSolver::setProblemData(std::filesystem::path input_path) {
   env_->model_ = std::make_shared<Model>(total_nodes_, rank_, upperbound_);
   return false;
 }
-bool MainSolver::setObjective() {
+bool ScotSolver::setObjective() {
   std::shared_ptr<IObjective> obj;
   switch (problem_type_) {
     case ProbType::CLASSIFICATION: obj = std::make_shared<LogRegObjectiveFunction>();
@@ -110,22 +110,22 @@ bool MainSolver::setObjective() {
   env_->model_->setObjectiveFunction(obj);
   return true;
 }
-bool MainSolver::setSparseConstraints() {
+bool ScotSolver::setSparseConstraints() {
   auto sparsity_constraint = std::make_shared<SparsityConstraint>(nnzeros_, upperbound_);
   env_->model_->setSparsityConstraint(sparsity_constraint);
   return true;
 }
-bool MainSolver::setMpi() {
+bool ScotSolver::setMpi() {
   env_->mpi_ = std::make_shared<MessagePassingInterface>(env_);
   return true;
 }
-void MainSolver::setTotalNodes(int total_nodes) {
+void ScotSolver::setTotalNodes(int total_nodes) {
   total_nodes_ = total_nodes;
 }
-void MainSolver::setRank(int rank) {
+void ScotSolver::setRank(int rank) {
   rank_ = rank;
 }
-bool MainSolver::setNumberOfNonzeros(int nzeros) {
+bool ScotSolver::setNumberOfNonzeros(int nzeros) {
   //todo: perform checks
   if (nzeros < 1) {
     throw std::invalid_argument("SCOT error: number of nonzeros must be positive.\n");
