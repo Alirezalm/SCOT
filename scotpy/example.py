@@ -17,7 +17,7 @@ def main():
 
     for rank in range(total_nodes):
         dataset, res = make_classification(
-            n_samples = 500, n_features = 20, n_redundant = 0, n_repeated = 0)
+            n_samples = 500, n_features = 100, n_redundant = 0, n_repeated = 0)
         scp = ScotModel(problem_name = "logistic_regression", rank = rank,
                         kappa = 5, ptype = ProblemType.CLASSIFICATION)
         scp.set_data(dataset, res, normalized_data = True)

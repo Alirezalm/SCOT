@@ -25,12 +25,9 @@
 #include "fmt/include/os.h"
 #include "fmt/include/core.h"
 #include "filesystem"
-
 using namespace std;
 
-/// \brief define command line parameters
-/// \param cmd command line parser object
-void defCliParams(argh::parser &cmd);
+
 
 /// \brief get cli help message
 /// \return help message
@@ -53,13 +50,14 @@ int main(int argc, char *argv[]) {
 
 
     scot::ScotSolver solver;
-    argh::parser cmd;
 
-    defCliParams(cmd);
+	// todo: cli only receives the input file name and setting file name
+
+	auto cmd = argh::parser(argc, argv);
+
 
     string help_message = getHelpString();
 
-    cmd.parse(argc, argv);
 
     if (cmd[{"-v", "--version"}]) {
         fmt::print("SCOT\tv0.1.0\n");
@@ -199,15 +197,7 @@ string getHelpString() {
     return help_message;
 }
 
-void defCliParams(argh::parser &cmd) {
-    cmd.add_param("input");
-    cmd.add_param("dir");
-    cmd.add_param("nz");
-    cmd.add_param("help");
-    cmd.add_param("alg");
-    cmd.add_param("tlim");
-    cmd.add_param("rgap");
-}
+
 
 string toLower(string txt) {
 

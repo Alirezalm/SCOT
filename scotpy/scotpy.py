@@ -116,7 +116,7 @@ class ScotPy:
         self.__generate_mpi_cmd()
 
     def run(self):
-        # print(" ".join(self.cmd_args))
+        print(" ".join(self.cmd_args))
         command_return = subprocess.run(self.cmd_args)
         return command_return.returncode
 
