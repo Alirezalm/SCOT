@@ -5,7 +5,7 @@
 #ifndef DOSE_LOGRSOLVER_H
 #define DOSE_LOGRSOLVER_H
 
-#include "types.h"
+#include "Types.h"
 
 namespace dose {
 

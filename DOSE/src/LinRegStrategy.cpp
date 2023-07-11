@@ -21,7 +21,7 @@ namespace dose
 		this->maxNodes = maxNodes;
 		this->M = M;
 		this->settings = settings;
-		this->problemType = ProblemType::LinearRegression;
+		this->problemType = ProblemType::LINEAR_REGRESSION;
 
 	}
 

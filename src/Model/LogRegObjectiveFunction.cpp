@@ -9,7 +9,7 @@ namespace scot {
 LogRegObjectiveFunction::LogRegObjectiveFunction() {
   number_of_columns_ = 0;
   number_of_rows_ = 0;
-  ptype_ = dose::ProblemType::LogisticRegression;
+  ptype_ = dose::ProblemType::LOGISTIC_REGRESSION;
 
 }
 

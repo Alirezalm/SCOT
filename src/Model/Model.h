@@ -7,7 +7,7 @@
 
 #include "IObjective.h"
 #include "SparsityConstraint.h"
-#include "../../DOSE/include/types.h"
+#include "../../DOSE/include/Types.h"
 
 namespace scot {
 class Model {

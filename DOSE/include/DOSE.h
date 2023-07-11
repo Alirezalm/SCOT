@@ -8,62 +8,60 @@
 #include "DistEngine.h"
 #include "Exceptions.h"
 
-namespace dose
-{
+namespace dose {
 
-	class DOSE
-	{
-	public:
-		DOSE(const VectorDouble2D& pdataSet, const VectorDouble& pdataRes, ProblemType ptype, SettingsPtr settings,
-			int rank, int totalNodes, double M);
+class DOSE {
+ public:
 
-		DOSE(const VectorDouble2D& pdataSet, const VectorDouble& pdataRes, ProblemType ptype, int rank,
-			int totalNodes, double M);
+  DOSE(const VectorDouble2D &pdataSet, const VectorDouble &pdataRes, ProblemType ptype, SettingsPtr settings,
+	   int rank, int totalNodes, double M);
 
-		DOSE(const VectorDouble2D& pdataSet, const VectorDouble& pdataRes, int rank, int totalNodes, double M);
+  DOSE(const VectorDouble2D &pdataSet, const VectorDouble &pdataRes, ProblemType ptype, int rank,
+	   int totalNodes, double M);
 
-		~DOSE() = default;
+  DOSE(const VectorDouble2D &pdataSet, const VectorDouble &pdataRes, int rank, int totalNodes, double M);
 
-		void solve(const VectorDouble& binvec);
+  ~DOSE() = default;
 
-		void setPdataSet(const VectorDouble2D& pdataSetNew);
+  void solve(const VectorDouble &binvec);
 
-		void setPdataRes(const VectorDouble& pdataResNew);
+  void setPdataSet(const VectorDouble2D &pdataSetNew);
 
-		void setPtype(ProblemType ptypeNew);
+  void setPdataRes(const VectorDouble &pdataResNew);
 
-		void setSettings(const SettingsPtr settingsNew);
+  void setPtype(ProblemType ptypeNew);
 
-		const DoseSolution & GetSolution() const;
+  void setSettings(const SettingsPtr settingsNew);
 
-	private:
-		// data
-		VectorDouble2D pdataSet;
-		VectorDouble pdataRes;
-		ProblemType ptype;
-		SettingsPtr settings;
-		double M;
+  const DoseSolution &GetSolution() const;
 
-		// solution
-		DoseSolution solution;
+ private:
+  // data
+  VectorDouble2D pdataSet;
+  VectorDouble pdataRes;
+  ProblemType ptype;
+  SettingsPtr settings;
+  double M;
 
-		//eigen
-		Mat pdataSetMat;
-		Vec pdataResVec;
+  // solution
+  DoseSolution solution;
 
-		// index
-		int rows;
-		int cols;
+  //eigen
+  Mat pdataSetMat;
+  Vec pdataResVec;
 
-		// MPI
-		int rank;
-		int totalNodes;
+  // index
+  int rows;
+  int cols;
 
-		void validateData();
+  // MPI
+  int rank;
+  int totalNodes;
 
-		void toEigen();
-	};
+  void validateData();
+
+  void toEigen();
+};
 }
-
 
 #endif //DOSE_DOSE_H

@@ -22,7 +22,7 @@ namespace dose {
         Vec g, step, h;
         Mat H;
 
-        while ((error > settings.eps) && (iter <= settings.maxIter)) {
+        while ((error > settings.eps) && (iter <= settings.max_iter)) {
             ++iter;
             fval = computeObj(A, b, x, y, z, rho);
             g = computeGrad(A, b, x, y, z, rho);
@@ -37,7 +37,7 @@ namespace dose {
                           fval << " " << "error = " << error << " t = " << t << std::endl;
             }
 //            projectLogR(x, binVec, M);
-            if (iter >= settings.maxIter) {
+            if (iter >= settings.max_iter) {
                 return x;
             }
         }

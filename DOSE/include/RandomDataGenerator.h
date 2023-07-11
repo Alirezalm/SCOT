@@ -6,7 +6,7 @@
 #define DOSE_RANDOMDATAGENERATOR_H
 
 #include "random"
-#include "types.h"
+#include "Types.h"
 
 namespace dose {
     class RandomDataGenerator {

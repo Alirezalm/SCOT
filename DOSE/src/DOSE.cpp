@@ -48,7 +48,7 @@ namespace dose {
         toEigen();
 
         settings = std::make_shared<RHADMMSettings>();  //default settings
-        ptype = ProblemType::LogisticRegression;    // default problem type
+        ptype = ProblemType::LOGISTIC_REGRESSION;    // default problem type
     }
 
     void DOSE::toEigen() {
@@ -73,12 +73,12 @@ namespace dose {
         AlgManagerPtr algorithmManager = std::make_shared<AlgorithmManager>();
         AlgorithmPtr algorithm;
         switch (ptype) {
-            case ProblemType::LinearRegression:
+            case ProblemType::LINEAR_REGRESSION:
                 algorithm = std::make_shared<LinRegStrategy>(pdataSetMat, pdataResVec, rank, totalNodes, M, settings);
                 algorithmManager->setAlgorithmStrategy(algorithm);
                 solution =  algorithmManager->runAlgorithm(binvecEigen);
                 break;
-            case ProblemType::LogisticRegression:
+            case ProblemType::LOGISTIC_REGRESSION:
                 algorithm = std::make_shared<LogRegStrategy>(pdataSetMat, pdataResVec, rank, totalNodes, M, settings);
                 algorithmManager->setAlgorithmStrategy(algorithm);
                 solution = algorithmManager->runAlgorithm(binvecEigen);

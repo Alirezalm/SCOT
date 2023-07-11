@@ -4,7 +4,7 @@
 
 #ifndef DISCOT_SRC_ENUMS_H_
 #define DISCOT_SRC_ENUMS_H_
-#include "include/types.h"
+#include "include/Types.h"
 namespace scot {
 enum class SparsityModelingMethods {
   BIG_M,

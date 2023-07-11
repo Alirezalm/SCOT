@@ -22,7 +22,7 @@ namespace dose
 		this->maxNodes = maxNodes;
 		this->M = M;
 		this->settings = settings;
-		this->problemType = ProblemType::LogisticRegression;
+		this->problemType = ProblemType::LOGISTIC_REGRESSION;
 	}
 
 	LogRegStrategy::~LogRegStrategy() = default;

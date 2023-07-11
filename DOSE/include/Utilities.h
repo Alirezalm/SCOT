@@ -5,7 +5,7 @@
 #ifndef DOSE_UTILITIES_H
 #define DOSE_UTILITIES_H
 
-#include "types.h"
+#include "Types.h"
 #include "Exceptions.h"
 
 namespace dose ::utilities

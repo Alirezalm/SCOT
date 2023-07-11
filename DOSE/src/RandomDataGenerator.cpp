@@ -10,7 +10,7 @@ namespace dose {
     RandomDataGenerator::RandomDataGenerator() {
         ncols = 1;
         nrows = 1;
-        ptype = ProblemType::LinearRegression;
+        ptype = ProblemType::LINEAR_REGRESSION;
     }
 
     RandomDataGenerator::RandomDataGenerator(int nrows,
@@ -47,10 +47,10 @@ namespace dose {
 
     void RandomDataGenerator::generate() {
         switch (ptype) {
-            case ProblemType::LogisticRegression:
+            case ProblemType::LOGISTIC_REGRESSION:
                 randomResponseLogRegGenerator();
                 break;
-            case ProblemType::LinearRegression:
+            case ProblemType::LINEAR_REGRESSION:
                 randomResponseLinRegGenerator();
                 break;
         }

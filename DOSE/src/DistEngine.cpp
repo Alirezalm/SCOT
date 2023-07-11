@@ -46,7 +46,7 @@ namespace dose
 		SolutionPtr solution = std::make_shared<RHADMMSolution>();
 
 		if ((settings->verbose) && (rank == 0)) printHeader();
-		for (int i = 0; i < settings->maxIter; ++i)
+		for (int i = 0; i < settings->max_iter; ++i)
 		{
 			z_old = z;
 			updateX(A, b, x, y, z, rho, binVec, M, total_f, problemType);
@@ -75,12 +75,12 @@ namespace dose
 				solution->status = SolverStatus::OPTIMAL;
 				switch (problemType)
 				{
-				case LogisticRegression:
-					solution->minEig = computeLogRMinEig(A, x);
+				case LOGISTIC_REGRESSION:
+					solution->min_eig = computeLogRMinEig(A, x);
 					solution->gx = computeLogRGrad(A, b, x);
 					break;
-				case LinearRegression:
-					solution->minEig = computeLinRMinEig(A, x);
+				case LINEAR_REGRESSION:
+					solution->min_eig = computeLinRMinEig(A, x);
 					solution->gx = computeLinRGrad(A, b, x);
 					break;
 				};
@@ -132,7 +132,7 @@ namespace dose
 	{
 
 
-		if (problemType == ProblemType::LogisticRegression)
+		if (problemType == ProblemType::LOGISTIC_REGRESSION)
 		{
 			x = runTN(A, b, x, y, z, rho, binVec, M);
 		}
@@ -231,11 +231,11 @@ namespace dose
 		double& local_f,
 		const ProblemType& ptype)
 	{
-		if (ptype == LogisticRegression)
+		if (ptype == LOGISTIC_REGRESSION)
 		{
 			computeLogRObjVal(A, b, x, local_f);
 		}
-		else if (ptype == LinearRegression)
+		else if (ptype == LINEAR_REGRESSION)
 		{
 			computeLinRObjVal(A, b, x, local_f);
 		}
@@ -245,10 +245,10 @@ namespace dose
 	{
 		switch (ptype)
 		{
-		case ProblemType::LogisticRegression:
+		case ProblemType::LOGISTIC_REGRESSION:
 			projectLogR(x, binVec, M);
 			break;
-		case ProblemType::LinearRegression:
+		case ProblemType::LINEAR_REGRESSION:
 			projectLinR(x, binVec, M);
 			break;
 		}

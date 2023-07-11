@@ -78,7 +78,7 @@ namespace dose::utilities
 		vec2Vec(rhadmmSolution->gx, doseSolution.gx);
 		doseSolution.local_f = rhadmmSolution->local_f;
 		doseSolution.total_f = rhadmmSolution->total_f;
-		doseSolution.minEig = rhadmmSolution->minEig;
+		doseSolution.minEig = rhadmmSolution->min_eig;
 		doseSolution.status = rhadmmSolution->status;
 
 	}
