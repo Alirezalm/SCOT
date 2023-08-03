@@ -9,8 +9,9 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(DOSE)
 include_directories(DOSE/include)
 include_directories(ExternLibs/spdlog)
-include_directories(/home/alireza/opt/gurobi1001/linux64/include)
-link_directories(/home/alireza/opt/gurobi1001/linux64/lib ) #todo : must be changed
+include_directories($ENV{GUROBI_HOME}/include)
+link_directories($ENV{GUROBI_HOME}/lib ) #todo : must be changed
+
 add_executable(${PROJECT_NAME}
         src/scot.cpp
         DOSE/include/DOSE.h
@@ -92,6 +93,20 @@ add_executable(${PROJECT_NAME}
         src/Tasks/TaskSolveSingleTreeDualProblem.h
         src/Tasks/TaskCheckHybridEvent.cpp
         src/Tasks/TaskCheckHybridEvent.h src/Solver/settings.h src/Solver/Timer.cpp src/Solver/Timer.h src/Tasks/TaskCheckDuration.cpp src/Tasks/TaskCheckDuration.h)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+        "${PROJECT_SOURCE_DIR}/DOSE"
+        "${PROJECT_SOURCE_DIR}/ExternLibs"
+        "${PROJECT_SOURCE_DIR}/ExternLibs/spdlog"
+        "$ENV{GUROBI_HOME}/include")
+
+target_link_directories(${PROJECT_NAME} PUBLIC
+        "${PROJECT_SOURCE_DIR}/ExternLibs/spdlog/lib"
+        "${PROJECT_SOURCE_DIR}/ExternLibs/fmt/lib"
+        "$ENV{GUROBI_HOME}/lib")
+
+
+
 
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/DOSE/lib/libDOSE.a)
 target_link_libraries(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/ExternLibs/fmt/lib/libfmt.a)
