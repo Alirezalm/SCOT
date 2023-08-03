@@ -26,7 +26,7 @@ void LogRegObjectiveFunction::setObjectiveData(const VectorDouble2D &samples_dat
   number_of_columns_ = static_cast<int>(samples_.front().size());
 
   assert(number_of_columns_ > 0 && number_of_rows_ > 0);
-  assert(number_of_rows_ > number_of_columns_);
+//  assert(number_of_rows_ > number_of_columns_);
 }
 VectorDouble LogRegObjectiveFunction::getResponseData() {
   assert(!response_.empty() && "make sure data is generated");

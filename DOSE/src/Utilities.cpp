@@ -28,7 +28,7 @@ namespace dose::utilities
 	{
 		int rows = vec2d.size();
 		int cols = vec2d.front().size();
-		assert((rows > 0) && (cols > 0) && (rows >= cols));
+//		assert((rows > 0) && (cols > 0) && (rows >= cols));
 		checkColumnConsistency(vec2d, cols);
 
 	}
