@@ -9,9 +9,12 @@ target_include_directories(tasks PRIVATE
         "$ENV{GUROBI_HOME}/include"
         "${CMAKE_SOURCE_DIR}/ExternLibs/spdlog")
 
-target_link_directories(tasks PUBLIC "${CMAKE_SOURCE_DIR}/MIPSolver")
+target_link_directories(tasks PUBLIC
+        "${CMAKE_SOURCE_DIR}/MIPSolver"
+        "${CMAKE_SOURCE_DIR}/PrimalSolver")
 
 target_link_libraries(tasks PUBLIC mip)
+target_link_libraries(tasks PUBLIC primal)
 
 file(GLOB INC "*.h")
 

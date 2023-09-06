@@ -10,11 +10,14 @@ target_include_directories(solver PRIVATE
         "${CMAKE_SOURCE_DIR}/ExternLibs/spdlog"
 )
 target_link_directories(solver PUBLIC
-        "${CMAKE_SOURCE_DIR}/Tasks"
-        "${CMAKE_SOURCE_DIR}/Algorithms")
+        "${CMAKE_SOURCE_DIR}/src/Tasks"
+        "${CMAKE_SOURCE_DIR}/src/Algorithms"
+        "${CMAKE_SOURCE_DIR}/src/Model")
 
 target_link_libraries(solver PUBLIC tasks)
 target_link_libraries(solver PUBLIC algorithms)
+target_link_libraries(solver PUBLIC model)
+
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 file(GLOB INC "*.h")
 

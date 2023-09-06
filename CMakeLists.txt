@@ -27,11 +27,7 @@ add_subdirectory(src/Solver)
 
 add_subdirectory(src/PrimalSolver)
 
-add_executable(${PROJECT_NAME}
-        src/scot.cpp
-        src/PrimalSolver/InlpSolver.h
-        src/PrimalSolver/DistributedOperatorSplittingEngine.cpp
-        src/PrimalSolver/DistributedOperatorSplittingEngine.h)
+add_executable(${PROJECT_NAME} src/scot.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         "${PROJECT_SOURCE_DIR}/DOSE"
@@ -52,6 +48,7 @@ target_link_libraries(${PROJECT_NAME} mip)
 target_link_libraries(${PROJECT_NAME} model)
 target_link_libraries(${PROJECT_NAME} solver)
 target_link_libraries(${PROJECT_NAME} primal)
+
 target_link_libraries(${PROJECT_NAME} spdlog.a)
 target_link_libraries(${PROJECT_NAME}  fmt.a)
 
