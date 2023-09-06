@@ -12,3 +12,11 @@ target_include_directories(tasks PRIVATE
 target_link_directories(tasks PUBLIC "${CMAKE_SOURCE_DIR}/MIPSolver")
 
 target_link_libraries(tasks PUBLIC mip)
+
+file(GLOB INC "*.h")
+
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+install(TARGETS tasks DESTINATION lib )
+
+install(FILES ${INC} DESTINATION include )

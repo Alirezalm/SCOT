@@ -9,3 +9,11 @@ target_include_directories(model PRIVATE
         "$ENV{GUROBI_HOME}/include"
         "${CMAKE_SOURCE_DIR}/ExternLibs/spdlog"
 )
+
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+file(GLOB INC "*.h")
+
+install(TARGETS model DESTINATION lib )
+
+install(FILES ${INC} DESTINATION include )

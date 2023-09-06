@@ -55,6 +55,6 @@ target_link_libraries(${PROJECT_NAME} primal)
 target_link_libraries(${PROJECT_NAME} spdlog.a)
 target_link_libraries(${PROJECT_NAME}  fmt.a)
 
-set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/scot)
-
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/scot_framework)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 install(TARGETS scot DESTINATION bin)

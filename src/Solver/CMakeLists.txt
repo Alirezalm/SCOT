@@ -15,3 +15,9 @@ target_link_directories(solver PUBLIC
 
 target_link_libraries(solver PUBLIC tasks)
 target_link_libraries(solver PUBLIC algorithms)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+file(GLOB INC "*.h")
+
+install(TARGETS solver DESTINATION lib )
+
+install(FILES ${INC} DESTINATION include )
