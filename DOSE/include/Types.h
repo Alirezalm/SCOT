@@ -9,7 +9,7 @@
 #include <iomanip>
 #include "chrono"
 #include "memory"
-#include "mpi/mpi.h"
+#include "mpi.h"
 #include <vector>
 #include "../ThirdParty/Eigen/Dense"
 #include "../ThirdParty/Eigen/IterativeLinearSolvers"

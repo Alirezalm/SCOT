@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.22)
+
 project(scot VERSION 1.0.0 DESCRIPTION "Distributed Sparse Convex Optimization Toolkit")
 
 find_package(MPI REQUIRED)
+
 set(CMAKE_CXX_FLAGS "-march=native -O2")
 
 set(CMAKE_CXX_COMPILER mpicxx)
+
 set(CMAKE_CXX_STANDARD 17)
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
@@ -107,9 +111,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_directories(${PROJECT_NAME} PUBLIC
         "${PROJECT_SOURCE_DIR}/ExternLibs/spdlog/lib"
         "${PROJECT_SOURCE_DIR}/ExternLibs/fmt/lib"
-        "$ENV{GUROBI_HOME}/lib")
+        "$ENV{GUROBI_HOME}/lib"
+        "${MPI_INCLUDE_PATH}")
 
 target_link_libraries(${PROJECT_NAME} dose)
+target_link_libraries(${PROJECT_NAME}  ${MPI_CXX_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} spdlog.a)
 target_link_libraries(${PROJECT_NAME}  fmt.a)
 target_link_libraries(${PROJECT_NAME} gurobi_c++)
