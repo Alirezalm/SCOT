@@ -15,6 +15,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(DOSE)
 
+add_subdirectory(src/Algorithm)
 
 add_executable(${PROJECT_NAME}
         src/scot.cpp
@@ -115,6 +116,7 @@ target_link_directories(${PROJECT_NAME} PUBLIC
         "${MPI_INCLUDE_PATH}")
 
 target_link_libraries(${PROJECT_NAME} dose)
+target_link_libraries(${PROJECT_NAME} algorithms)
 target_link_libraries(${PROJECT_NAME}  ${MPI_CXX_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} spdlog.a)
 target_link_libraries(${PROJECT_NAME}  fmt.a)
