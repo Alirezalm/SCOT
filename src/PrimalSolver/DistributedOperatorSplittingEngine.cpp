@@ -3,7 +3,7 @@
 //
 
 #include "DistributedOperatorSplittingEngine.h"
-#include "types.h"
+#include "include/Types.h"
 // TODO: PRIMAL SETTINGS MISSED
 
 namespace scot {

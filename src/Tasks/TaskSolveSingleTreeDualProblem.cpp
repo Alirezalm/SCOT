@@ -4,7 +4,7 @@
 
 #include "TaskSolveSingleTreeDualProblem.h"
 #include "../MIPSolver/IMIPSolver.h"
-#include "../Tasks/TaskManager.h"
+#include "../Tasks/TaskQueue.h"
 namespace scot {
 
 TaskSolveSingleTreeDualProblem::TaskSolveSingleTreeDualProblem(EnvironmentPtr env) : TaskBase(env) {

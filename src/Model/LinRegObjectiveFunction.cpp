@@ -27,7 +27,7 @@ VectorDouble2D LinRegObjectiveFunction::getSamplingData() {
 LinRegObjectiveFunction::LinRegObjectiveFunction() {
   number_of_columns_ = 0;
   number_of_rows_ = 0;
-  ptype_ = dose::ProblemType::LinearRegression;
+  ptype_ = dose::ProblemType::LINEAR_REGRESSION;
 }
 int LinRegObjectiveFunction::getNumberOfColumns() {
   return number_of_columns_;

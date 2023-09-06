@@ -27,7 +27,7 @@ class IObjective {
  protected:
   int number_of_columns_ = 0;
   int number_of_rows_ = 0;
-  dose::ProblemType ptype_ = dose::LogisticRegression;
+  dose::ProblemType ptype_ = dose::LOGISTIC_REGRESSION;
 
 };
 using IObjectivePtr = std::shared_ptr<IObjective>;

@@ -20,7 +20,7 @@ class Environment {
 
   ResultsPtr results_;
 
-  TaskManagerPtr task_manager_;
+  TaskQueuePtr task_queue_ptr_;
 
   MipSolverPtr mip_solver_;
 

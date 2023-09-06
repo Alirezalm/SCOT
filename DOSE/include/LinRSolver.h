@@ -5,7 +5,7 @@
 #ifndef DOSE_LINRSOLVER_H
 #define DOSE_LINRSOLVER_H
 
-#include "types.h"
+#include "Types.h"
 
 namespace dose {
 

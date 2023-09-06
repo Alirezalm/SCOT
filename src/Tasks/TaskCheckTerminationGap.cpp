@@ -5,7 +5,7 @@
 #include "TaskCheckTerminationGap.h"
 #include "../Solver/Results.h"
 #include "../Solver/settings.h"
-#include "TaskManager.h"
+#include "TaskQueue.h"
 
 namespace scot {
 
@@ -24,7 +24,7 @@ void TaskCheckTerminationGap::execute() {
 
   if ((abs_gap_ <= eps_abs_) || (rel_gap_ <= eps_rel_)) {
     MPI_Barrier(MPI_COMM_WORLD);
-    env_->task_manager_->clearTasks();
+    env_->task_queue_ptr_->clearTasks();
   }
 
 }

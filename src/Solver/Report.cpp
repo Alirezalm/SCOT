@@ -41,9 +41,9 @@ void Report::printProblemDetails() {
   fmt::print("\nProblem details:\n―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――\n");
   fmt::print(fmt::format("\tnumber of nodes: {}\n", env_->model_->getNumberOfNodes()));
   switch (env_->model_->getProblemType()) {
-    case dose::LinearRegression: fmt::print(fmt::format("\tproblem type: {}\n", "Sparse Regression"));
+    case dose::LINEAR_REGRESSION: fmt::print(fmt::format("\tproblem type: {}\n", "Sparse Regression"));
       break;
-    case dose::LogisticRegression:fmt::print(fmt::format("\tproblem type: {}\n", "Sparse Classification"));
+    case dose::LOGISTIC_REGRESSION:fmt::print(fmt::format("\tproblem type: {}\n", "Sparse Classification"));
       break;
   }
   fmt::print(fmt::format("\tnumber of variables: {}\n", env_->model_->getNumberOfVariables()));

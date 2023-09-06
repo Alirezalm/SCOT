@@ -15,7 +15,7 @@ void TaskPrintIterationInfo::initialize() {
 
 }
 void TaskPrintIterationInfo::execute() {
-//  if (env_->model_->getRank() == 0) {
+  if (env_->model_->getRank() == 0) {
   auto current_iter = env_->results_->getCurrentIteration();
   env_->report_->printIterationInfo(
       current_iter->number_first_order_oa_cuts_,
@@ -24,8 +24,8 @@ void TaskPrintIterationInfo::execute() {
       env_->results_->getBestDualBound(),
       env_->results_->getAbsoluteOptimalityGap(),
       env_->results_->getRelativeOptimalityGap(),
-      env_->timer_->elapsed()
+	  env_->timer_->elapsed()
   );
-//  }
+  }
 }
 }

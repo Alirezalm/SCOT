@@ -5,7 +5,7 @@
 #ifndef DOSE_IALGORITHMSTRATEGY_H
 #define DOSE_IALGORITHMSTRATEGY_H
 
-#include "types.h"
+#include "Types.h"
 
 namespace dose {
     class IAlgorithmStrategy {

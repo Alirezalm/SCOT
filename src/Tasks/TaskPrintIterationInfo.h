@@ -6,8 +6,11 @@
 #define DISCOT_SRC_TASKS_TASKPRINTITERATIONINFO_H_
 #include "TaskBase.h"
 namespace scot {
-
+/**
+ * @brief This class is used to print iteration information
+ */
 class TaskPrintIterationInfo : public TaskBase {
+
  public:
   explicit TaskPrintIterationInfo(EnvironmentPtr env);
   ~TaskPrintIterationInfo() override = default;

@@ -4,7 +4,7 @@
 
 #include "TaskCheckSocEvent.h"
 #include "../Solver/Results.h"
-#include "TaskManager.h"
+#include "TaskQueue.h"
 
 namespace scot {
 
@@ -21,11 +21,11 @@ void TaskCheckSocEvent::execute() {
 
   auto gap_diff = abs(prev_abs_gap - current_abs_gap) / prev_abs_gap;
 
-  auto target_task_gather_quad_oa = env_->task_manager_->getTask("t_gather_quad_oa");
-  auto target_task_gather_linear_oa = env_->task_manager_->getTask("t_gather_lin_oa");
+  auto target_task_gather_quad_oa = env_->task_queue_ptr_->getTask("t_gather_quad_oa");
+  auto target_task_gather_linear_oa = env_->task_queue_ptr_->getTask("t_gather_lin_oa");
 
-  auto target_task_add_quad_oa = env_->task_manager_->getTask("t_add_quadratic_oa_cut");
-  auto target_task_add_linear_oa = env_->task_manager_->getTask("t_add_linear_oa_cut");
+  auto target_task_add_quad_oa = env_->task_queue_ptr_->getTask("t_add_quadratic_oa_cut");
+  auto target_task_add_linear_oa = env_->task_queue_ptr_->getTask("t_add_linear_oa_cut");
 
   if (gap_diff <= 1e-2) {//todo: read this from settings
 

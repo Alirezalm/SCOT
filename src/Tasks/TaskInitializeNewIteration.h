@@ -8,11 +8,17 @@
 #include "TaskBase.h"
 
 namespace scot {
-
+/**
+ * @brief This class is responsible for initializing the new iteration.
+ * @details This class is responsible for initializing the new iteration.
+ * It is called at the beginning of each iteration.
+ */
 class TaskInitializeNewIteration : public TaskBase {
 
  public:
+
   explicit TaskInitializeNewIteration(EnvironmentPtr env) : TaskBase(env) {}
+
   ~TaskInitializeNewIteration() override = default;
 
   void initialize() override;
