@@ -16,4 +16,4 @@ file(GLOB INC "*.h")
 
 install(TARGETS model DESTINATION lib )
 
-install(FILES ${INC} DESTINATION include )
+install(FILES ${INC} DESTINATION Model )

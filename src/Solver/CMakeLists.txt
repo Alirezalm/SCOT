@@ -23,4 +23,4 @@ file(GLOB INC "*.h")
 
 install(TARGETS solver DESTINATION lib )
 
-install(FILES ${INC} DESTINATION include )
+install(FILES ${INC} DESTINATION Solver )
