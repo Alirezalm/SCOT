@@ -19,44 +19,19 @@ add_subdirectory(src/Algorithm)
 
 add_subdirectory(src/Tasks)
 
+add_subdirectory(src/MIPSolver)
+
+add_subdirectory(src/Model)
+
+add_subdirectory(src/Solver)
+
+add_subdirectory(src/PrimalSolver)
+
 add_executable(${PROJECT_NAME}
         src/scot.cpp
-        src/Model/IObjective.h
-        src/Solver/Structs.h
-        src/Model/LogRegObjectiveFunction.cpp
-        src/Model/LogRegObjectiveFunction.h
-        src/Model/LinRegObjectiveFunction.cpp
-        src/Model/LinRegObjectiveFunction.h
-        src/Model/SparsityConstraint.cpp
-        src/Model/SparsityConstraint.h
-        src/Solver/Enums.h
-        src/Model/Model.h
-        src/Model/Model.cpp
-        src/Solver/Environment.h
         src/PrimalSolver/InlpSolver.h
         src/PrimalSolver/DistributedOperatorSplittingEngine.cpp
-        src/PrimalSolver/DistributedOperatorSplittingEngine.h
-        src/Solver/ScotSolver.cpp
-        src/Solver/ScotSolver.h
-        src/Solver/Iteration.cpp
-        src/Solver/Iteration.h
-        src/Solver/Results.cpp
-        src/Solver/Results.h
-        src/MIPSolver/IMIPSolver.h
-        src/MIPSolver/MipSolverGurobiMultipleTree.cpp
-        src/MIPSolver/MipSolverGurobiMultipleTree.h
-        src/Solver/Utils.cpp src/Solver/Utils.h
-        src/Solver/MessagePassingInterface.cpp
-        src/Solver/MessagePassingInterface.h
-        src/Solver/Logger.cpp
-        src/Solver/Logger.h
-        src/Solver/Report.cpp
-        src/Solver/Report.h
-        src/MIPSolver/MipSolverGurobiSingleTree.cpp
-        src/MIPSolver/MipSolverGurobiSingleTree.h
-        src/Solver/settings.h
-        src/Solver/Timer.cpp
-        src/Solver/Timer.h)
+        src/PrimalSolver/DistributedOperatorSplittingEngine.h)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         "${PROJECT_SOURCE_DIR}/DOSE"
@@ -73,8 +48,13 @@ target_link_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} dose)
 target_link_libraries(${PROJECT_NAME} algorithms)
 target_link_libraries(${PROJECT_NAME} tasks)
-target_link_libraries(${PROJECT_NAME}  ${MPI_CXX_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} mip)
+target_link_libraries(${PROJECT_NAME} model)
+target_link_libraries(${PROJECT_NAME} solver)
+target_link_libraries(${PROJECT_NAME} primal)
 target_link_libraries(${PROJECT_NAME} spdlog.a)
 target_link_libraries(${PROJECT_NAME}  fmt.a)
-target_link_libraries(${PROJECT_NAME} gurobi_c++)
-target_link_libraries(${PROJECT_NAME} gurobi100)
+
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/scot)
+
+install(TARGETS scot DESTINATION bin)

@@ -8,3 +8,7 @@ target_include_directories(tasks PRIVATE
         "${CMAKE_SOURCE_DIR}/DOSE"
         "$ENV{GUROBI_HOME}/include"
         "${CMAKE_SOURCE_DIR}/ExternLibs/spdlog")
+
+target_link_directories(tasks PUBLIC "${CMAKE_SOURCE_DIR}/MIPSolver")
+
+target_link_libraries(tasks PUBLIC mip)
