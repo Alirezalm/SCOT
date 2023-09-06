@@ -17,6 +17,8 @@ add_subdirectory(DOSE)
 
 add_subdirectory(src/Algorithm)
 
+add_subdirectory(src/Tasks)
+
 add_executable(${PROJECT_NAME}
         src/scot.cpp
         src/Model/IObjective.h
@@ -36,72 +38,25 @@ add_executable(${PROJECT_NAME}
         src/PrimalSolver/DistributedOperatorSplittingEngine.h
         src/Solver/ScotSolver.cpp
         src/Solver/ScotSolver.h
-        src/Algorithm/IAlgorithm.h
-        src/Algorithm/Dipoa.cpp
-        src/Algorithm/Dipoa.h
-        src/Tasks/TaskBase.h
         src/Solver/Iteration.cpp
         src/Solver/Iteration.h
         src/Solver/Results.cpp
         src/Solver/Results.h
-        src/Tasks/TaskDistributedNlpSolution.cpp
-        src/Tasks/TaskDistributedNlpSolution.h
-        src/Tasks/TaskBase.cpp
-        src/Tasks/TaskQueue.cpp
-        src/Tasks/TaskQueue.h
-        src/Tasks/TaskInitializeNewIteration.cpp
-        src/Tasks/TaskInitializeNewIteration.h
         src/MIPSolver/IMIPSolver.h
         src/MIPSolver/MipSolverGurobiMultipleTree.cpp
         src/MIPSolver/MipSolverGurobiMultipleTree.h
-        src/Tasks/TaskCreateMultipleTreeDualProblem.cpp
-        src/Tasks/TaskCreateMultipleTreeDualProblem.h
-        src/Tasks/TaskInitializeMultipleTreeDualSolver.cpp
-        src/Tasks/TaskInitializeMultipleTreeDualSolver.h
-        src/Tasks/TaskAddLinearOuterApproximation.cpp
-        src/Tasks/TaskAddLinearOuterApproximation.h
         src/Solver/Utils.cpp src/Solver/Utils.h
-        src/Tasks/TaskSolveDualProblem.cpp
-        src/Tasks/TaskSolveDualProblem.h
-        src/Tasks/TaskAddDualSolution.cpp
-        src/Tasks/TaskAddDualSolution.h
         src/Solver/MessagePassingInterface.cpp
         src/Solver/MessagePassingInterface.h
-        src/Tasks/TaskGatherLocalLinearOuterApproximations.cpp
-        src/Tasks/TaskGatherLocalLinearOuterApproximations.h
-        src/Tasks/TaskBcastDualSolution.cpp
-        src/Tasks/TaskBcastDualSolution.h
         src/Solver/Logger.cpp
         src/Solver/Logger.h
         src/Solver/Report.cpp
         src/Solver/Report.h
-        src/Tasks/TaskPrintIterationInfo.cpp
-        src/Tasks/TaskPrintIterationInfo.h
-        src/Tasks/TaskComputeObjectiveGap.cpp
-        src/Tasks/TaskComputeObjectiveGap.h
-        src/Tasks/TaskCheckTerminationGap.cpp
-        src/Tasks/TaskCheckTerminationGap.h
-        src/Tasks/TaskGatherLocalQuadraticOuterApproximations.cpp
-        src/Tasks/TaskGatherLocalQuadraticOuterApproximations.h
-        src/Tasks/TaskAddQuadraticOuterApproximation.cpp
-        src/Tasks/TaskAddQuadraticOuterApproximation.h
-        src/Tasks/TaskCheckSocEvent.cpp
-        src/Tasks/TaskCheckSocEvent.h
         src/MIPSolver/MipSolverGurobiSingleTree.cpp
         src/MIPSolver/MipSolverGurobiSingleTree.h
-        src/Algorithm/Dihoa.cpp
-        src/Algorithm/Dihoa.h
-        src/Tasks/TaskInitializeSingleTreeDualSolver.cpp
-        src/Tasks/TaskInitializeSingleTreeDualSolver.h
-        src/Tasks/TaskSolveSingleTreeDualProblem.cpp
-        src/Tasks/TaskSolveSingleTreeDualProblem.h
-        src/Tasks/TaskCheckHybridEvent.cpp
-        src/Tasks/TaskCheckHybridEvent.h
         src/Solver/settings.h
         src/Solver/Timer.cpp
-        src/Solver/Timer.h
-        src/Tasks/TaskCheckDuration.cpp
-        src/Tasks/TaskCheckDuration.h)
+        src/Solver/Timer.h)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         "${PROJECT_SOURCE_DIR}/DOSE"
@@ -117,6 +72,7 @@ target_link_directories(${PROJECT_NAME} PUBLIC
 
 target_link_libraries(${PROJECT_NAME} dose)
 target_link_libraries(${PROJECT_NAME} algorithms)
+target_link_libraries(${PROJECT_NAME} tasks)
 target_link_libraries(${PROJECT_NAME}  ${MPI_CXX_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} spdlog.a)
 target_link_libraries(${PROJECT_NAME}  fmt.a)
