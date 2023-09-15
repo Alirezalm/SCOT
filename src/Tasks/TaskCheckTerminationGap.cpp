@@ -7,7 +7,7 @@
 #include "../Solver/settings.h"
 #include "TaskQueue.h"
 
-namespace scot {
+namespace Scot {
 
 TaskCheckTerminationGap::TaskCheckTerminationGap(EnvironmentPtr env) : TaskBase(env) {
   eps_abs_ = env_->settings_->getDblSetting("rel_gap");

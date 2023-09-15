@@ -6,7 +6,7 @@
 #include "Results.h"
 #include "Logger.h"
 
-namespace scot {
+namespace Scot {
 Iteration::Iteration(EnvironmentPtr env) {
   env_ = env;
   iteration_number_ = env_->results_->getNumberOfIterations() + 1;

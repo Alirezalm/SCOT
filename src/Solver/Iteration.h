@@ -7,7 +7,7 @@
 //todo: update iteration info after each iteration
 #include "Environment.h"
 
-namespace scot {
+namespace Scot {
 
 class Iteration {
 

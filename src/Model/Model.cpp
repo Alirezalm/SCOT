@@ -3,7 +3,7 @@
 //
 #include "Model.h"
 
-namespace scot {
+namespace Scot {
 
 Model::Model(int number_of_nodes, int rank, double big_m_param) {
   assert(number_of_nodes > 0);

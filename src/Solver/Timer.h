@@ -7,7 +7,7 @@
 #include "string"
 #include "chrono"
 
-namespace scot {
+namespace Scot {
 
 class Timer {
  public:

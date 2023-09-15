@@ -6,7 +6,7 @@
 #include "../Solver/settings.h"
 #include "../Solver/Timer.h"
 #include "TaskQueue.h"
-namespace scot {
+namespace Scot {
 
 TaskCheckDuration::TaskCheckDuration(EnvironmentPtr env) : TaskBase(env) {
 

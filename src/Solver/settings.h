@@ -5,7 +5,7 @@
 #ifndef SCOT_SRC_SOLVER_SETTINGS_H_
 #define SCOT_SRC_SOLVER_SETTINGS_H_
 #include "Environment.h"
-namespace scot {
+namespace Scot {
 
 using MapStringSetting = std::map<std::string, std::string>;
 using MapDoubleSetting = std::map<std::string, double>;

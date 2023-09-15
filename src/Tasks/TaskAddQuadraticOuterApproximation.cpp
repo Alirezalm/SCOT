@@ -5,7 +5,7 @@
 #include "TaskAddQuadraticOuterApproximation.h"
 #include "../MIPSolver/IMIPSolver.h"
 #include "../Solver/Results.h"
-namespace scot{
+namespace Scot {
 
 TaskAddQuadraticOuterApproximation::TaskAddQuadraticOuterApproximation(EnvironmentPtr env) : TaskBase(env) {
 

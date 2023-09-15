@@ -7,7 +7,7 @@
 //todo: voids -> bool and error check
 #include "Environment.h"
 
-namespace scot {
+namespace Scot {
 class MessagePassingInterface {
 
  public:

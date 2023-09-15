@@ -6,7 +6,7 @@
 #define DISCOT_SRC_TASKS_TASKADDDUALSOLUTION_H_
 #include "../Solver/Environment.h"
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskAddDualSolution : public TaskBase{
 

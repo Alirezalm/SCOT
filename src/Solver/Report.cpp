@@ -3,7 +3,7 @@
 //
 
 #include "Report.h"
-namespace scot {
+namespace Scot {
 
 Report::Report(EnvironmentPtr env) : env_(env) {}
 //todo: print model

@@ -6,7 +6,7 @@
 #include "../Solver/Results.h"
 #include "TaskQueue.h"
 
-namespace scot {
+namespace Scot {
 
 TaskCheckSocEvent::TaskCheckSocEvent(EnvironmentPtr env) : TaskBase(env) {
 

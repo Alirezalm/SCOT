@@ -9,7 +9,7 @@
 #include "SparsityConstraint.h"
 #include "../../DOSE/include/Types.h"
 
-namespace scot {
+namespace Scot {
 class Model {
  public:
   Model(int number_of_nodes, int rank, double big_m_param);

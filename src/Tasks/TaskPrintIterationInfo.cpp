@@ -6,7 +6,7 @@
 #include "../Solver/Report.h"
 #include "../Solver/Results.h"
 #include "../Solver/Timer.h"
-namespace scot {
+namespace Scot {
 
 TaskPrintIterationInfo::TaskPrintIterationInfo(EnvironmentPtr env) : TaskBase(env) {
 

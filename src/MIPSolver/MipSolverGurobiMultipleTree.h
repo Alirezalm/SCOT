@@ -9,7 +9,7 @@
 #include "IMIPSolver.h"
 #include "gurobi_c++.h"
 
-namespace scot {
+namespace Scot {
 
 class MipSolverGurobiMultipleTree : public IMipSolver {
  public:

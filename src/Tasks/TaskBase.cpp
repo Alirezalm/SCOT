@@ -4,13 +4,13 @@
 
 #include "TaskBase.h"
 
-namespace scot {
+namespace Scot {
 
 TaskBase::TaskBase(EnvironmentPtr env) {
   env_ = env;
   is_active_ = true;
 }
-bool scot::TaskBase::isActive() {
+bool Scot::TaskBase::isActive() {
   return is_active_;
 }
 void TaskBase::activate() {

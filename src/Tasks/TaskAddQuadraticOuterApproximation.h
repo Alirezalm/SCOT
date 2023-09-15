@@ -6,7 +6,7 @@
 #define SCOT_SRC_TASKS_TASKADDQUADRATICOUTERAPPROXIMATION_H_
 
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskAddQuadraticOuterApproximation : public TaskBase{
  public:

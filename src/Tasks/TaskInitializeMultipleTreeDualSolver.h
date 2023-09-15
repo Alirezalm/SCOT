@@ -5,7 +5,7 @@
 #ifndef DISCOT_SRC_TASKS_TASKINITIALIZEDUALSOLVER_H_
 #define DISCOT_SRC_TASKS_TASKINITIALIZEDUALSOLVER_H_
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 /**
  * @brief This class is responsible for initializing the dual solver

@@ -7,8 +7,7 @@
 #include "../Solver/Enums.h"
 #include "memory"
 
-namespace scot
-{
+namespace Scot {
 	class SparsityConstraint
 	{
 	public:

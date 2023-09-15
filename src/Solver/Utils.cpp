@@ -3,7 +3,7 @@
 //
 
 #include "Utils.h"
-namespace scot::Utils{
+namespace Scot::Utils{
 
 double dot(VectorDouble x, VectorDouble y) {
   assert(x.size() == y.size());

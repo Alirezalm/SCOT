@@ -6,7 +6,7 @@
 #include "include/Exceptions.h"
 #include "../Solver/Logger.h"
 
-namespace scot {
+namespace Scot {
 
 const int kRootNode = 0;
 

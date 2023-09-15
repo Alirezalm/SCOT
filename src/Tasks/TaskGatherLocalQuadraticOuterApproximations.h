@@ -5,7 +5,7 @@
 #ifndef SCOT_SRC_TASKS_TASKGATHERLOCALQUADRATICOUTERAPPROXIMATIONS_H_
 #define SCOT_SRC_TASKS_TASKGATHERLOCALQUADRATICOUTERAPPROXIMATIONS_H_
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskGatherLocalQuadraticOuterApproximations: public TaskBase{
  public:

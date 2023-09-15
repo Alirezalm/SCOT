@@ -5,7 +5,7 @@
 #include "Results.h"
 #include "Logger.h"
 #include "../ExternLibs/fmt/include/core.h"
-namespace scot {
+namespace Scot {
 
 Results::Results(EnvironmentPtr env) {
   env_ = env;

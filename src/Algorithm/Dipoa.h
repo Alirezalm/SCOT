@@ -8,7 +8,7 @@
 #include "IAlgorithm.h"
 #include "../PrimalSolver/InlpSolver.h"
 
-namespace scot {
+namespace Scot {
 /**
  * @brief This class implements the DIPOA algorithm
  */

@@ -4,7 +4,7 @@
 
 #include "LogRegObjectiveFunction.h"
 
-namespace scot {
+namespace Scot {
 
 LogRegObjectiveFunction::LogRegObjectiveFunction() {
   number_of_columns_ = 0;

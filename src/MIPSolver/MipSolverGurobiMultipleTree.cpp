@@ -7,7 +7,7 @@
 #include "../Solver/Utils.h"
 #include "../Solver/Logger.h"
 
-namespace scot {
+namespace Scot {
 
 MipSolverGurobiMultipleTree::MipSolverGurobiMultipleTree(EnvironmentPtr env) {
   env_ = env;

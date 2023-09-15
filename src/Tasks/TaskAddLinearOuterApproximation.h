@@ -7,7 +7,7 @@
 
 #include "../Solver/Environment.h"
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskAddLinearOuterApproximation : public TaskBase {
 

@@ -6,7 +6,7 @@
 #define SCOT_SRC_ALGORITHM_DIHOA_H_
 #include "IAlgorithm.h"
 
-namespace scot {
+namespace Scot {
 
 class Dihoa: public IAlgorithm{
 

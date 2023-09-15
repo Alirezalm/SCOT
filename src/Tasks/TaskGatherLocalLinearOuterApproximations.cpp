@@ -8,7 +8,7 @@
 #include "../Solver/MessagePassingInterface.h"
 #include "../MIPSolver/IMIPSolver.h"
 
-namespace scot {
+namespace Scot {
 
 TaskGatherLocalLinearOuterApproximations::TaskGatherLocalLinearOuterApproximations(EnvironmentPtr env) : TaskBase(env) {
 

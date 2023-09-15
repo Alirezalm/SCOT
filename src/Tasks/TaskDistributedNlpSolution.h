@@ -8,7 +8,7 @@
 #include "TaskBase.h"
 #include "../PrimalSolver/InlpSolver.h"
 
-namespace scot {
+namespace Scot {
 /**
  * @brief This class is responsible for solving the distributed NLP problem
  */

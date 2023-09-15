@@ -7,7 +7,7 @@
 #include "gurobi_c++.h"
 #include "../ExternLibs/fmt/include/core.h"
 
-namespace scot {
+namespace Scot {
 
 TaskCreateMultipleTreeDualProblem::TaskCreateMultipleTreeDualProblem(EnvironmentPtr env) : TaskBase(env) {
   // creating invariant parts of scp master problem here: multiple tree version

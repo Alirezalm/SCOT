@@ -4,7 +4,7 @@
 
 #include "TaskSolveDualProblem.h"
 #include "../MIPSolver/IMIPSolver.h"
-namespace scot {
+namespace Scot {
 
 TaskSolveDualProblem::TaskSolveDualProblem(EnvironmentPtr env) : TaskBase(env) {
 

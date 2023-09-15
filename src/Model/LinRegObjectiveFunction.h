@@ -7,7 +7,7 @@
 
 #include "IObjective.h"
 
-namespace scot {
+namespace Scot {
 class LinRegObjectiveFunction : public IObjective {
  public:
   LinRegObjectiveFunction();

@@ -10,7 +10,7 @@
 #include "../Algorithm/IAlgorithm.h"
 #include "Enums.h"
 
-namespace scot {
+namespace Scot {
 /**
  * @brief ScotSolver calls appropriate algorithm based on the input parameters
  */

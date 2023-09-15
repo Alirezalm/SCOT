@@ -7,7 +7,7 @@
 #include <gurobi_c++.h>
 #include "../Solver/Environment.h"
 #include "MipSolverGurobiMultipleTree.h"
-namespace scot {
+namespace Scot {
 
 class MipGurobiCallback : public GRBCallback {
 

@@ -3,7 +3,7 @@
 //
 
 #include "LinRegObjectiveFunction.h"
-namespace scot {
+namespace Scot {
 
 void LinRegObjectiveFunction::setObjectiveData(const VectorDouble2D &samples_data, const VectorDouble &response_data) {
   assert(!samples_data.empty() && !response_data.empty());

@@ -7,7 +7,7 @@
 #define DISCOT_SRC_PRIMALSOLVER_INLPSOLVER_H_
 
 #include "../Solver/Environment.h"
-namespace scot {
+namespace Scot {
 
 class InlpSolver {
 

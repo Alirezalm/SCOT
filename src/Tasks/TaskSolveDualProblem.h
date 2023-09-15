@@ -6,7 +6,7 @@
 #define DISCOT_SRC_TASKS_TASKSOLVEDUALPROBLEM_H_
 #include "../Solver/Environment.h"
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskSolveDualProblem : public TaskBase {
  public:

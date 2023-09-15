@@ -4,7 +4,7 @@
 
 #include "Timer.h"
 
-namespace scot {
+namespace Scot {
 
 Timer::Timer(std::string name) {
   name_ = name;

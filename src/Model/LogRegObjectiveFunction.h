@@ -7,7 +7,7 @@
 
 #include "IObjective.h"
 
-namespace scot {
+namespace Scot {
 class LogRegObjectiveFunction : public IObjective {
  public:
   LogRegObjectiveFunction();

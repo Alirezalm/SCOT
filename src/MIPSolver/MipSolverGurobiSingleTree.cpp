@@ -10,7 +10,7 @@
 #include "../Tasks/TaskAddLinearOuterApproximation.h"
 #include "../Tasks/TaskGatherLocalLinearOuterApproximations.h"
 #include "../Solver/Utils.h"
-namespace scot {
+namespace Scot {
 
 MipGurobiCallback::MipGurobiCallback(GRBVar *xvars, EnvironmentPtr env) {
   env_ = env;

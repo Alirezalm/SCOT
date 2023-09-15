@@ -5,7 +5,7 @@
 #include "TaskInitializeNewIteration.h"
 #include "../Solver/Results.h"
 
-namespace scot {
+namespace Scot {
 
 void TaskInitializeNewIteration::initialize() {
 

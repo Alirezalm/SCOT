@@ -27,7 +27,11 @@ add_subdirectory(src/Solver)
 
 add_subdirectory(src/PrimalSolver)
 
-add_executable(${PROJECT_NAME} src/scot.cpp)
+add_executable(${PROJECT_NAME}
+        src/scot.cpp
+        src/cli_utils.cpp
+        src/cli_utils.h
+)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         "${PROJECT_SOURCE_DIR}/DOSE"

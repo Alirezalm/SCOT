@@ -7,7 +7,7 @@
 
 #include "TaskBase.h"
 
-namespace scot {
+namespace Scot {
 
 class TaskCreateMultipleTreeDualProblem : public TaskBase {
 

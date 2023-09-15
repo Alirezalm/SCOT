@@ -8,7 +8,7 @@
 #include "Environment.h"
 #include "../../ExternLibs/fmt/include/core.h"
 
-namespace scot {
+namespace Scot {
 
 class Report {
 

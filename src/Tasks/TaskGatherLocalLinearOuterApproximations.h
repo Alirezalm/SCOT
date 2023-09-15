@@ -6,7 +6,7 @@
 #define DISCOT_SRC_TASKS_TASKGATHERLOCALLINEAROUTERAPPROXIMATIONS_H_
 
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskGatherLocalLinearOuterApproximations : public TaskBase {
 

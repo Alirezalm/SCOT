@@ -27,7 +27,7 @@
 #include "../Tasks/TaskSolveSingleTreeDualProblem.h"
 #include "../Tasks/TaskCheckHybridEvent.h"
 #include "../Tasks/TaskCheckDuration.h"
-namespace scot {
+namespace Scot {
 
 Dihoa::Dihoa(EnvironmentPtr env) {
   env_ = env;

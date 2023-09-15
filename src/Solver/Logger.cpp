@@ -6,7 +6,7 @@
 
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/sinks/basic_file_sink.h"
-namespace scot {
+namespace Scot {
 //todo: adjust logger format
 Logger::Logger() {
   auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_st>();

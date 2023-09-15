@@ -6,7 +6,7 @@
 #define SCOT_SRC_TASKS_TASKCHECKHYBRIDEVENT_H_
 
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskCheckHybridEvent : public TaskBase {
  public:

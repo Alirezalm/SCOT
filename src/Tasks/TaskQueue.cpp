@@ -4,7 +4,7 @@
 
 #include "TaskQueue.h"
 #include "../Solver/Logger.h"
-namespace scot {
+namespace Scot {
 
 TaskQueue::TaskQueue(EnvironmentPtr env) {
   env_ = env;

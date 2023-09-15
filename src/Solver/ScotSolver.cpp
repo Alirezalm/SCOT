@@ -16,7 +16,7 @@
 #include "../Model/LinRegObjectiveFunction.h"
 #include "Timer.h"
 
-namespace scot {
+namespace Scot {
     ScotSolver::ScotSolver() {
 
         env_ = std::make_shared<Environment>();

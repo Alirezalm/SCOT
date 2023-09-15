@@ -5,7 +5,7 @@
 #ifndef SCOT_SRC_TASKS_TASKCHECKDURATION_H_
 #define SCOT_SRC_TASKS_TASKCHECKDURATION_H_
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskCheckDuration : public TaskBase {
  public:

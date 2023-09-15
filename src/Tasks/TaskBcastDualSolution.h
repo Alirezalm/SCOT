@@ -6,7 +6,7 @@
 #define DISCOT_SRC_TASKS_TASKBCASTDUALSOLUTION_H_
 
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskBcastDualSolution : public TaskBase {
  public:

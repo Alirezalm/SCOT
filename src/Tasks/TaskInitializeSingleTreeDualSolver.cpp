@@ -6,7 +6,7 @@
 #include "../MIPSolver/MipSolverGurobiSingleTree.h"
 #include "../Solver/Logger.h"
 
-namespace scot {
+namespace Scot {
 
 TaskInitializeSingleTreeDualSolver::TaskInitializeSingleTreeDualSolver(EnvironmentPtr env) : TaskBase(env) {
   env_ = env_;

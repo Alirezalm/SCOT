@@ -8,7 +8,7 @@
 #include "InlpSolver.h"
 #include "memory"
 
-namespace scot {
+namespace Scot {
 
 class DistributedOperatorSplittingEngine : public InlpSolver {
 

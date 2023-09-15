@@ -5,7 +5,7 @@
 #ifndef DISCOT_SRC_ALGORITHM_IALGORITHM_H_
 #define DISCOT_SRC_ALGORITHM_IALGORITHM_H_
 #include "../Solver/Environment.h"
-namespace scot {
+namespace Scot {
 /**
  * @brief This class is the base class for all scot algorithms
  */

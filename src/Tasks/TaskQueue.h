@@ -6,7 +6,7 @@
 #define DISCOT_SRC_TASKS_TASKMANAGER_H_
 #include "../Solver/Environment.h"
 #include "../Tasks/TaskBase.h"
-namespace scot {
+namespace Scot {
 class TaskQueue {
 
  public:

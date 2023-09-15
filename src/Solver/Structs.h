@@ -11,7 +11,7 @@
 
 #include "include/DOSE.h"
 
-namespace scot {
+namespace Scot {
 
 using VectorDouble = std::vector<double>;
 using VectorDouble2D = std::vector<VectorDouble>;

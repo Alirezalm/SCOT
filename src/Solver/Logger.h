@@ -9,7 +9,7 @@
 #include "memory"
 #include "string"
 
-namespace scot {
+namespace Scot {
 
 class Logger {
  public:

@@ -9,7 +9,7 @@
 #include "memory"
 #include "../../DOSE/include/DOSE.h"
 
-namespace scot {
+namespace Scot {
 class IObjective {
  public:
 

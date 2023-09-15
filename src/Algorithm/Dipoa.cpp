@@ -26,7 +26,7 @@
 #include "../Tasks/TaskCheckSocEvent.h"
 #include "../Tasks/TaskCheckDuration.h"
 
-namespace scot {
+namespace Scot {
 
 //todo: implement different switching between soc and foc based on settings
 
@@ -88,7 +88,7 @@ Dipoa::Dipoa(EnvironmentPtr env) {
   env_->task_queue_ptr_->addTask(task_check_duration, "t_check_duration");
 
 }
-bool scot::Dipoa::Run() {
+bool Scot::Dipoa::Run() {
   if (env_->settings_->getDblSetting("verbose")==1) {
 	outputIterHeader();
   }

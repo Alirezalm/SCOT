@@ -6,7 +6,7 @@
 #define SCOT_SRC_TASKS_TASKCHECKSOCEVENT_H_
 
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskCheckSocEvent : public TaskBase {
 

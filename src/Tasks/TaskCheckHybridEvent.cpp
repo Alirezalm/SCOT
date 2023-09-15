@@ -10,7 +10,7 @@
 #include "TaskCreateMultipleTreeDualProblem.h"
 #include "TaskAddQuadraticOuterApproximation.h"
 
-namespace scot {
+namespace Scot {
 
 TaskCheckHybridEvent::TaskCheckHybridEvent(EnvironmentPtr env) : TaskBase(env) {
 

@@ -8,7 +8,7 @@
 #include "Structs.h"
 #include "settings.h"
 
-namespace scot {
+namespace Scot {
 
 class Environment {
 

@@ -5,7 +5,7 @@
 #include "TaskComputeObjectiveGap.h"
 #include "../Solver/Results.h"
 #include "exception"
-namespace scot {
+namespace Scot {
 
 TaskComputeObjectiveGap::TaskComputeObjectiveGap(EnvironmentPtr env) : TaskBase(env) {
 

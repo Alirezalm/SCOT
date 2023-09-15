@@ -6,7 +6,7 @@
 #include "include/Types.h"
 // TODO: PRIMAL SETTINGS MISSED
 
-namespace scot {
+namespace Scot {
 
 DistributedOperatorSplittingEngine::DistributedOperatorSplittingEngine(EnvironmentPtr env) {
   env_ = env;

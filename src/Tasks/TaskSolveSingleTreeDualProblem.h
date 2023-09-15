@@ -5,7 +5,7 @@
 #ifndef SCOT_SRC_TASKS_TASKSOLVESINGLETREEDUALPROBLEM_H_
 #define SCOT_SRC_TASKS_TASKSOLVESINGLETREEDUALPROBLEM_H_
 #include "TaskBase.h"
-namespace scot {
+namespace Scot {
 
 class TaskSolveSingleTreeDualProblem: public TaskBase{
  public:

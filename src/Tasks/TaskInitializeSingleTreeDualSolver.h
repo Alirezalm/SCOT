@@ -6,7 +6,7 @@
 #define SCOT_SRC_TASKS_TASKINITIALIZESINGLETREEDUALSOLVER_H_
 #include "TaskBase.h"
 
-namespace scot {
+namespace Scot {
 
 class TaskInitializeSingleTreeDualSolver : public TaskBase {
  public:

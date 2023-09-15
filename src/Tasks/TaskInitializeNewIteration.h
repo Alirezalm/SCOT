@@ -7,7 +7,7 @@
 
 #include "TaskBase.h"
 
-namespace scot {
+namespace Scot {
 /**
  * @brief This class is responsible for initializing the new iteration.
  * @details This class is responsible for initializing the new iteration.

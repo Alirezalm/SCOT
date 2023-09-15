@@ -8,7 +8,7 @@
 
 #include "../Solver/Environment.h"
 
-namespace scot {
+namespace Scot {
 
 /**
  * @brief abstract class for all tasks.

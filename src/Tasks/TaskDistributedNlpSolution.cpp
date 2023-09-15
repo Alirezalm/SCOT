@@ -8,7 +8,7 @@
 
 #include "../PrimalSolver/DistributedOperatorSplittingEngine.h"
 
-namespace scot {
+namespace Scot {
 
 TaskDistributedNlpSolution::TaskDistributedNlpSolution(EnvironmentPtr env) : TaskBase(env) {}
 

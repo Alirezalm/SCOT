@@ -7,7 +7,7 @@
 //todo: change interface based on needs
 
 #include "../Solver/Environment.h"
-namespace scot {
+namespace Scot {
 
 class IMipSolver {
  public:

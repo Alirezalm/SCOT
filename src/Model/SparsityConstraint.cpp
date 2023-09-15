@@ -3,8 +3,7 @@
 //
 
 #include "SparsityConstraint.h"
-namespace scot
-{
+namespace Scot {
 
 	SparsityConstraint::SparsityConstraint(int number_of_non_zeros, double big_m_parameter) : number_of_non_zeros_(
 		number_of_non_zeros), big_m_parameter_(big_m_parameter)

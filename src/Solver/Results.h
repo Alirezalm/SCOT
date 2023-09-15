@@ -9,7 +9,7 @@
 #include "Structs.h"
 #include "Iteration.h"
 
-namespace scot {
+namespace Scot {
 
 class Results {
 

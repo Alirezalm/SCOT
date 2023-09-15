@@ -6,7 +6,7 @@
 #include "../Solver/Logger.h"
 #include "../MIPSolver/IMIPSolver.h"
 #include "../MIPSolver/MipSolverGurobiMultipleTree.h"
-namespace scot {
+namespace Scot {
 
 TaskInitializeMultipleTreeDualSolver::TaskInitializeMultipleTreeDualSolver(EnvironmentPtr env) : TaskBase(env) {
   //todo: check mip solver gurobi, clpex or cbc based on settings. for now just gurobi

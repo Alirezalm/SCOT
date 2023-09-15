@@ -7,7 +7,7 @@
 #include "../Solver/Results.h"
 #include "../Solver/MessagePassingInterface.h"
 #include "../MIPSolver/IMIPSolver.h"
-namespace scot {
+namespace Scot {
 
 TaskGatherLocalQuadraticOuterApproximations::TaskGatherLocalQuadraticOuterApproximations(EnvironmentPtr env) : TaskBase(env) {
 

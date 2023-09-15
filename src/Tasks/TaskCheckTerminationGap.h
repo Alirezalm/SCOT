@@ -5,7 +5,7 @@
 #ifndef DISCOT_SRC_TASKS_TASKCHECKTERMINATIONGAP_H_
 #define DISCOT_SRC_TASKS_TASKCHECKTERMINATIONGAP_H_
 #include "TaskBase.h"
-namespace scot{
+namespace Scot {
 
 class TaskCheckTerminationGap: public TaskBase{
 

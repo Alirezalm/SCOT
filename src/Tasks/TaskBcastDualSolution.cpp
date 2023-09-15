@@ -5,7 +5,7 @@
 #include "TaskBcastDualSolution.h"
 #include "../Solver/Results.h"
 #include "../Solver/MessagePassingInterface.h"
-namespace scot {
+namespace Scot {
 
 TaskBcastDualSolution::TaskBcastDualSolution(EnvironmentPtr env) : TaskBase(env) {
 }
