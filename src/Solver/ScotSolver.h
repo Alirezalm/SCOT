@@ -2,8 +2,8 @@
 // Created by alireza on 30/05/22.
 //
 
-#ifndef SCOT_SRC_SOLVER_MAINSOLVER_H_
-#define SCOT_SRC_SOLVER_MAINSOLVER_H_
+#ifndef SCOT_SRC_SOLVER_SCOTSOLVER_H_
+#define SCOT_SRC_SOLVER_SCOTSOLVER_H_
 
 #include "../Algorithm/IAlgorithm.h"
 #include "Enums.h"
@@ -44,15 +44,15 @@ public:
   EnvironmentPtr getEnvironment();
 
 private:
-  // methods
+  // select an appropriate algorithm based on use defined setting
   void selectAlgorithm();
 
   // data members
-  EnvironmentPtr Env;
+  EnvironmentPtr Env; // solver environment
   IAlgorithmPtr SolutionAlgorithm;
   int NumberOfNonzeros;
-  int TotalNodes;
-  int Rank;
+  int TotalNodes; // total number of MPI nodes
+  int Rank; // MPI rank
   double Upperbound;
   VectorDouble Response;
   VectorDouble2D Samples;
@@ -61,4 +61,4 @@ private:
 };
 } // namespace Scot
 
-#endif // SCOT_SRC_SOLVER_MAINSOLVER_H_
+#endif // SCOT_SRC_SOLVER_SCOTSOLVER_H_
