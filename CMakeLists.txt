@@ -4,7 +4,7 @@ project(scot VERSION 1.0.0 DESCRIPTION "Distributed Sparse Convex Optimization T
 
 find_package(MPI REQUIRED)
 
-set(CMAKE_CXX_FLAGS "-march=native -O2")
+set(CMAKE_CXX_FLAGS "-O2")
 
 set(CMAKE_CXX_COMPILER mpicxx)
 

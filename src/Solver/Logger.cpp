@@ -9,16 +9,16 @@
 namespace Scot {
 //todo: adjust logger format
 Logger::Logger() {
-  auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_st>();
-  console_sink->set_level(spdlog::level::debug);
+  auto consoleSink = std::make_shared<spdlog::sinks::stdout_color_sink_st>();
+  consoleSink->set_level(spdlog::level::debug);
 
 //  auto file_sink = std::make_shared<spdlog::sinks::basic_file_sink_st>("../logs/logs.txt", true);
 //  file_sink->set_level(spdlog::level::debug);
 
 //  spdlog::sinks_init_list sinks = {file_sink, console_sink};
-  logger_ = std::make_shared<spdlog::logger>("console logger", console_sink);
+  logger_ = std::make_shared<spdlog::logger>("console logger", consoleSink);
 //  logger_->set_pattern(">>>%^%l%$ %v<<<");
-  logger_->set_level(spdlog::level::critical);
+  logger_->set_level(spdlog::level::warn);
 
 }
 void Logger::logCritical(std::string message, int rank) {
