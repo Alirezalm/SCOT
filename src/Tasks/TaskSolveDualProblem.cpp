@@ -14,7 +14,7 @@ void TaskSolveDualProblem::initialize() {
 }
 void TaskSolveDualProblem::execute() {
 
-  env_->mip_solver_->solve();
+  env_->MipSolver->solve();
 }
 
 }

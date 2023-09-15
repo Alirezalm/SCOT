@@ -39,28 +39,28 @@ void Report::printIterationInfo(int nfoc,
 void Report::printProblemDetails() {
 
   fmt::print("\nProblem details:\n―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――\n");
-  fmt::print(fmt::format("\tnumber of nodes: {}\n", env_->model_->getNumberOfNodes()));
-  switch (env_->model_->getProblemType()) {
+  fmt::print(fmt::format("\tnumber of nodes: {}\n", env_->Model->getNumberOfNodes()));
+  switch (env_->Model->getProblemType()) {
     case dose::LINEAR_REGRESSION: fmt::print(fmt::format("\tproblem type: {}\n", "Sparse Regression"));
       break;
     case dose::LOGISTIC_REGRESSION:fmt::print(fmt::format("\tproblem type: {}\n", "Sparse Classification"));
       break;
   }
-  fmt::print(fmt::format("\tnumber of variables: {}\n", env_->model_->getNumberOfVariables()));
+  fmt::print(fmt::format("\tnumber of variables: {}\n", env_->Model->getNumberOfVariables()));
   fmt::print(fmt::format("\tnumber of rows per node: {}\n",
-                         env_->model_->getObjectiveFunction()->getNumberOfRows()));
+                         env_->Model->getObjectiveFunction()->getNumberOfRows()));
   fmt::print(fmt::format("\ttotal number of rows: {}\n",
-                         env_->model_->getNumberOfNodes() * env_->model_->getObjectiveFunction()->getNumberOfRows()));
+                         env_->Model->getNumberOfNodes() * env_->Model->getObjectiveFunction()->getNumberOfRows()));
 
-  fmt::print(fmt::format("\tnumber of nonzeros: {}\n", env_->model_->getNumberOfNonzeros()));
+  fmt::print(fmt::format("\tnumber of nonzeros: {}\n", env_->Model->getNumberOfNonzeros()));
 
-  fmt::print(fmt::format("\tbigM parameter: {}\n", env_->model_->getBigMParam()));
+  fmt::print(fmt::format("\tbigM parameter: {}\n", env_->Model->getBigMParam()));
   fmt::print("\n");
 
 }
 void Report::printSolverDetails() {
   fmt::print("\nSCOT settings:\n―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――\n");
-  fmt::print(fmt::format("\tAlgorithm: {}\n", env_->settings_->getStrSetting("algorithm")));
+  fmt::print(fmt::format("\tAlgorithm: {}\n", env_->Settings->getStrSetting("algorithm")));
   //todo: to be completed
   fmt::print("\nNLP solver settings:\n―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――\n");
   fmt::print("\tAlgorithm Type: Distributed\n");

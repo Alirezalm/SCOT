@@ -22,12 +22,12 @@ void Results::addIncumbent(IncumbentSolution current_incumbent) {
   incumbent_solutions_.push_back(incumbent_solution_); // since primal solutions are feasible without constraints
   setBestPrimalBound(incumbent_solution_.total_obj_value);
 
-  env_->logger_->logDebug("new incumbent solution added", env_->model_->getRank());
+  env_->Logger->logDebug("new incumbent solution added", env_->Model->getRank());
 
 }
 void Results::setBestPrimalBound(double value) {
   if (value >= best_primal_bound_) {
-    env_->logger_->logDebug("primal objective bound not improved", env_->model_->getRank());
+    env_->Logger->logDebug("primal objective bound not improved", env_->Model->getRank());
   }
   // we always store current best primal bound
   best_primal_bound_ = std::min(best_primal_bound_, value);
@@ -41,15 +41,15 @@ double Results::getBestIncumbentBound() {
 void Results::addDualSolution(DualSolution dual_solution) {
   dual_solution_ = dual_solution;
   dual_solutions_.push_back(dual_solution);
-  env_->logger_->logDebug("new dual solution is added", env_->model_->getRank());
+  env_->Logger->logDebug("new dual solution is added", env_->Model->getRank());
   setBestDualBound(dual_solution.objective_value);
 
 }
 void Results::setBestDualBound(double value) {
   if (value < best_dual_bound_) {
-    env_->logger_->logWarning(
+    env_->Logger->logWarning(
         fmt::format("dual objective bound is not strictly increasing with gap {}.", best_dual_bound_ - value),
-        env_->model_->getRank()
+        env_->Model->getRank()
         );
   }
   best_dual_bound_ = value;

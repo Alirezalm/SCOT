@@ -19,7 +19,7 @@ void TaskDistributedNlpSolution::execute() {
   createNlpSolver();
   initialize();
   auto nlp_solution = getNlpSolution();
-  env_->results_->addIncumbent(nlp_solution);
+  env_->Results->addIncumbent(nlp_solution);
 }
 
 void TaskDistributedNlpSolution::createNlpSolver() {
@@ -30,21 +30,21 @@ void TaskDistributedNlpSolution::createNlpSolver() {
 
 void TaskDistributedNlpSolution::initialize() {
 
-  if (env_->results_->getCurrentIteration()->iteration_number_==1) {
+  if (env_->Results->getCurrentIteration()->iteration_number_==1) {
 
-	auto current_dual_solution = std::vector<double>(env_->model_->getNumberOfVariables(), 0);
+	auto current_dual_solution = std::vector<double>(env_->Model->getNumberOfVariables(), 0);
 
 	nlp_solver_->setFixedBinaryVariables(current_dual_solution);
 
 	//todo: feasiblity pump applies here
-	env_->logger_->logDebug("initial binary combination set to zero", env_->model_->getRank());
+	env_->Logger->logDebug("initial binary combination set to zero", env_->Model->getRank());
 
   } else {
-	auto current_dual_solution = env_->results_->getCurrentDualSolution();
+	auto current_dual_solution = env_->Results->getCurrentDualSolution();
 
 	nlp_solver_->setFixedBinaryVariables(current_dual_solution.binary_vector);
 
-	env_->logger_->logDebug("querying new binary combination for nlp solver", env_->model_->getRank());
+	env_->Logger->logDebug("querying new binary combination for nlp solver", env_->Model->getRank());
 
   }
 

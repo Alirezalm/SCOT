@@ -15,16 +15,16 @@ void TaskPrintIterationInfo::initialize() {
 
 }
 void TaskPrintIterationInfo::execute() {
-  if (env_->model_->getRank() == 0) {
-  auto current_iter = env_->results_->getCurrentIteration();
-  env_->report_->printIterationInfo(
+  if (env_->Model->getRank() == 0) {
+  auto current_iter = env_->Results->getCurrentIteration();
+  env_->Report->printIterationInfo(
       current_iter->number_first_order_oa_cuts_,
       current_iter->number_second_order_oa_cuts_,
-      env_->results_->getBestIncumbentBound(),
-      env_->results_->getBestDualBound(),
-      env_->results_->getAbsoluteOptimalityGap(),
-      env_->results_->getRelativeOptimalityGap(),
-	  env_->timer_->elapsed()
+      env_->Results->getBestIncumbentBound(),
+      env_->Results->getBestDualBound(),
+      env_->Results->getAbsoluteOptimalityGap(),
+      env_->Results->getRelativeOptimalityGap(),
+	  env_->Timer->elapsed()
   );
   }
 }

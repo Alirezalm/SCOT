@@ -16,13 +16,13 @@ void TaskBcastDualSolution::execute() {
 
   DualSolution dual_solution;
 
-  if (env_->model_->getRank() == 0) {
-    dual_solution = env_->results_->getCurrentDualSolution();
+  if (env_->Model->getRank() == 0) {
+    dual_solution = env_->Results->getCurrentDualSolution();
   }
 
-  dual_solution = env_->mpi_->bcast(dual_solution);
-  if (env_->model_->getRank() != 0) {
-    env_->results_->addDualSolution(dual_solution);
+  dual_solution = env_->Mpi->bcast(dual_solution);
+  if (env_->Model->getRank() != 0) {
+    env_->Results->addDualSolution(dual_solution);
   }
 }
 }

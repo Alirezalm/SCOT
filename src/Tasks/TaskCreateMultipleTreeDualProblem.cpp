@@ -13,67 +13,67 @@ TaskCreateMultipleTreeDualProblem::TaskCreateMultipleTreeDualProblem(Environment
   // creating invariant parts of scp master problem here: multiple tree version
 
   //initializing model
-  env_->mip_solver_->initializeModel();
+  env_->MipSolver->initializeModel();
 
   //todo: replace grb_infty with DISCOT infty
 
-  for (int i = 0; i < env_->model_->getNumberOfNodes(); ++i) {
+  for (int i = 0; i < env_->Model->getNumberOfNodes(); ++i) {
     std::string gama_var_name = fmt::format("gamma_{}", i);
-    env_->mip_solver_->addVariable(gama_var_name, VariableType::CONTINUOUS, -GRB_INFINITY,
+    env_->MipSolver->addVariable(gama_var_name, VariableType::CONTINUOUS, -GRB_INFINITY,
                                                  GRB_INFINITY);
   }
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
     std::string node_var_name = fmt::format("x_{}", i);
-    env_->mip_solver_->addVariable(node_var_name, VariableType::CONTINUOUS, -GRB_INFINITY,
+    env_->MipSolver->addVariable(node_var_name, VariableType::CONTINUOUS, -GRB_INFINITY,
                                                  GRB_INFINITY);
   }
 
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
     std::string lfc_var_name = fmt::format("delta_{}", i);
-    env_->mip_solver_->addVariable(lfc_var_name, VariableType::BINARY, -GRB_INFINITY,
+    env_->MipSolver->addVariable(lfc_var_name, VariableType::BINARY, -GRB_INFINITY,
                                                  GRB_INFINITY);
   }
 
 
 
   //initializing objective function
-  env_->mip_solver_->initializeObjectiveFunction();
+  env_->MipSolver->initializeObjectiveFunction();
 
   // creating objective function
-  for (int i = 0; i < env_->model_->getNumberOfNodes(); ++i) {
-    env_->mip_solver_->addObjectiveLinearTerm(1.0, i); // sum of gammas in the objective function
+  for (int i = 0; i < env_->Model->getNumberOfNodes(); ++i) {
+    env_->MipSolver->addObjectiveLinearTerm(1.0, i); // sum of gammas in the objective function
   }
 
-  env_->mip_solver_->addObjectiveToModel();
+  env_->MipSolver->addObjectiveToModel();
 
   // creating big-m constraints -inf <= x - M * delta <= 0
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
-    env_->mip_solver_->initializeConstraint();
-    env_->mip_solver_->addConstraintLinearTerm(1.0, env_->model_->getNumberOfNodes() + i);
-    env_->mip_solver_->addConstraintLinearTerm(-env_->model_->getBigMParam(),
-                                                             env_->model_->getNumberOfNodes()
-                                                                 + env_->model_->getNumberOfVariables() + i);
-    env_->mip_solver_->addConstraintToModel(0.0);
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
+    env_->MipSolver->initializeConstraint();
+    env_->MipSolver->addConstraintLinearTerm(1.0, env_->Model->getNumberOfNodes() + i);
+    env_->MipSolver->addConstraintLinearTerm(-env_->Model->getBigMParam(),
+                                                             env_->Model->getNumberOfNodes()
+                                                                 + env_->Model->getNumberOfVariables() + i);
+    env_->MipSolver->addConstraintToModel(0.0);
 
   }
   // creating big-m constraints  -x - M * delta <= 0
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
-    env_->mip_solver_->initializeConstraint();
-    env_->mip_solver_->addConstraintLinearTerm(-1.0, env_->model_->getNumberOfNodes() + i);
-    env_->mip_solver_->addConstraintLinearTerm(-env_->model_->getBigMParam(),
-                                                             env_->model_->getNumberOfNodes()
-                                                                 + env_->model_->getNumberOfVariables() + i);
-    env_->mip_solver_->addConstraintToModel(0.0);
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
+    env_->MipSolver->initializeConstraint();
+    env_->MipSolver->addConstraintLinearTerm(-1.0, env_->Model->getNumberOfNodes() + i);
+    env_->MipSolver->addConstraintLinearTerm(-env_->Model->getBigMParam(),
+                                                             env_->Model->getNumberOfNodes()
+                                                                 + env_->Model->getNumberOfVariables() + i);
+    env_->MipSolver->addConstraintToModel(0.0);
 
   }
   //creating cardinality constraint sum delta_i <= kappa
-  env_->mip_solver_->initializeConstraint();
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
-    env_->mip_solver_->addConstraintLinearTerm(1.0,
-                                                             env_->model_->getNumberOfNodes()
-                                                                 + env_->model_->getNumberOfVariables() + i);
+  env_->MipSolver->initializeConstraint();
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
+    env_->MipSolver->addConstraintLinearTerm(1.0,
+                                                             env_->Model->getNumberOfNodes()
+                                                                 + env_->Model->getNumberOfVariables() + i);
   }
-  env_->mip_solver_->addConstraintToModel(env_->model_->getNumberOfNonzeros());
+  env_->MipSolver->addConstraintToModel(env_->Model->getNumberOfNonzeros());
 }
 
 void TaskCreateMultipleTreeDualProblem::initialize() {

@@ -14,7 +14,7 @@ void TaskSolveSingleTreeDualProblem::initialize() {
 
 }
 void TaskSolveSingleTreeDualProblem::execute() {
-  env_->mip_solver_->solveSingleTree();
+  env_->MipSolver->solveSingleTree();
 }
 
 }

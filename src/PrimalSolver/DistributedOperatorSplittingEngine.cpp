@@ -12,12 +12,12 @@ DistributedOperatorSplittingEngine::DistributedOperatorSplittingEngine(Environme
   env_ = env;
 
   distributed_solver_ = std::make_shared<dose::DOSE>(
-      env->model_->getObjectiveFunction()->getSamplingData(),
-      env->model_->getObjectiveFunction()->getResponseData(),
-      env_->model_->getProblemType(),
-      env->model_->getRank(),
-      env->model_->getNumberOfNodes(),
-      env->model_->getBigMParam()
+      env->Model->getObjectiveFunction()->getSamplingData(),
+      env->Model->getObjectiveFunction()->getResponseData(),
+      env_->Model->getProblemType(),
+      env->Model->getRank(),
+      env->Model->getNumberOfNodes(),
+      env->Model->getBigMParam()
   );
   auto settings = std::make_shared<dose::RHADMMSettings>();
   settings->verbose = false;//todo: for test IMPORTANT

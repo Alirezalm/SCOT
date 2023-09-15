@@ -15,10 +15,10 @@ void TaskCheckDuration::initialize() {
 
 }
 void TaskCheckDuration::execute() {
-  auto max_time = env_->settings_->getDblSetting("max_time");
-  if (env_->timer_->elapsed() >= max_time ) {
+  auto max_time = env_->Settings->getDblSetting("max_time");
+  if (env_->Timer->elapsed() >= max_time ) {
     MPI_Abort(MPI_COMM_WORLD, -1); //todo: for benchmark
-    env_->task_queue_ptr_->clearTasks();
+    env_->TaskQueue->clearTasks();
     throw std::out_of_range("maximum time limit reached.\n");
   }
 

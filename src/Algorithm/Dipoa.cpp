@@ -35,66 +35,66 @@ Dipoa::Dipoa(EnvironmentPtr env) {
 
 // adding tasks to the task queue
   auto task_initialize_new_iteration = std::make_shared<TaskInitializeNewIteration>(env_);
-  env_->task_queue_ptr_->addTask(task_initialize_new_iteration, "t_initialize_new_iteration");
+  env_->TaskQueue->addTask(task_initialize_new_iteration, "t_initialize_new_iteration");
 
   auto task_initialize_dual_solver = std::make_shared<TaskInitializeMultipleTreeDualSolver>(env_);
-  env_->task_queue_ptr_->addTask(task_initialize_dual_solver, "t_initialize_dual_solver");
+  env_->TaskQueue->addTask(task_initialize_dual_solver, "t_initialize_dual_solver");
 
   auto task_solve_nlp = std::make_shared<TaskDistributedNlpSolution>(env_);
-  env_->task_queue_ptr_->addTask(task_solve_nlp, "t_solve_nlp");
+  env_->TaskQueue->addTask(task_solve_nlp, "t_solve_nlp");
 
   auto task_gather_linear_oa = std::make_shared<TaskGatherLocalLinearOuterApproximations>(env_);
-  env_->task_queue_ptr_->addTask(task_gather_linear_oa, "t_gather_lin_oa");
+  env_->TaskQueue->addTask(task_gather_linear_oa, "t_gather_lin_oa");
 //
   auto task_gather_quadratic_oa = std::make_shared<TaskGatherLocalQuadraticOuterApproximations>(env_);
-  env_->task_queue_ptr_->addTask(task_gather_quadratic_oa, "t_gather_quad_oa");
+  env_->TaskQueue->addTask(task_gather_quadratic_oa, "t_gather_quad_oa");
   task_gather_quadratic_oa->deactivate();
 //
   auto task_create_dual_problem = std::make_shared<TaskCreateMultipleTreeDualProblem>(env_);
-  env_->task_queue_ptr_->addTask(task_create_dual_problem, "t_create_dual_problem");
+  env_->TaskQueue->addTask(task_create_dual_problem, "t_create_dual_problem");
 //
   auto task_add_linear_oa_cut = std::make_shared<TaskAddLinearOuterApproximation>(env_);
-  env_->task_queue_ptr_->addTask(task_add_linear_oa_cut, "t_add_linear_oa_cut");
+  env_->TaskQueue->addTask(task_add_linear_oa_cut, "t_add_linear_oa_cut");
 //
   auto task_add_quadratic_oa_cut = std::make_shared<TaskAddQuadraticOuterApproximation>(env_);
-  env_->task_queue_ptr_->addTask(task_add_quadratic_oa_cut, "t_add_quadratic_oa_cut");
+  env_->TaskQueue->addTask(task_add_quadratic_oa_cut, "t_add_quadratic_oa_cut");
   task_add_quadratic_oa_cut->deactivate();
 //
   auto task_solve_dual_problem = std::make_shared<TaskSolveDualProblem>(env_);
-  env_->task_queue_ptr_->addTask(task_solve_dual_problem, "t_solve_dual_problem");
+  env_->TaskQueue->addTask(task_solve_dual_problem, "t_solve_dual_problem");
 //
   auto task_add_dual_solution = std::make_shared<TaskAddDualSolution>(env_);
-  env_->task_queue_ptr_->addTask(task_add_dual_solution, "t_add_dual_solution");
+  env_->TaskQueue->addTask(task_add_dual_solution, "t_add_dual_solution");
 //
   auto task_bcast_dual_solution = std::make_shared<TaskBcastDualSolution>(env_);
-  env->task_queue_ptr_->addTask(task_bcast_dual_solution, "t_bcast_dual_solution");
+  env->TaskQueue->addTask(task_bcast_dual_solution, "t_bcast_dual_solution");
   task_bcast_dual_solution->deactivate();
 //
   auto task_compute_gaps = std::make_shared<TaskComputeObjectiveGap>(env_);
-  env->task_queue_ptr_->addTask(task_compute_gaps, "t_compute_gaps");
+  env->TaskQueue->addTask(task_compute_gaps, "t_compute_gaps");
 //
-  if (env_->settings_->getDblSetting("verbose")==1) {
+  if (env_->Settings->getDblSetting("verbose")==1) {
 	auto task_print_iteration = std::make_shared<TaskPrintIterationInfo>(env_);
-	env_->task_queue_ptr_->addTask(task_print_iteration, "t_print_iteration");
+	env_->TaskQueue->addTask(task_print_iteration, "t_print_iteration");
   }
 
   auto task_check_soc_event = std::make_shared<TaskCheckSocEvent>(env_);
-  env_->task_queue_ptr_->addTask(task_check_soc_event, "t_check_soc_event");
+  env_->TaskQueue->addTask(task_check_soc_event, "t_check_soc_event");
 //
   auto task_check_termination_gap = std::make_shared<TaskCheckTerminationGap>(env_);
-  env_->task_queue_ptr_->addTask(task_check_termination_gap, "t_check_termination_gap");
+  env_->TaskQueue->addTask(task_check_termination_gap, "t_check_termination_gap");
 
   auto task_check_duration = std::make_shared<TaskCheckDuration>(env_);
-  env_->task_queue_ptr_->addTask(task_check_duration, "t_check_duration");
+  env_->TaskQueue->addTask(task_check_duration, "t_check_duration");
 
 }
 bool Scot::Dipoa::run() {
-  if (env_->settings_->getDblSetting("verbose")==1) {
+  if (env_->Settings->getDblSetting("verbose")==1) {
 	outputIterHeader();
   }
   try {
-	while (!env_->task_queue_ptr_->isTaskQueueEmpty()) {
-	  for (const auto &task : env_->task_queue_ptr_->tasks_) {
+	while (!env_->TaskQueue->isTaskQueueEmpty()) {
+	  for (const auto &task : env_->TaskQueue->tasks_) {
 		if (task.first->isActive()) {
 		  task.first->execute();
 		}
@@ -102,14 +102,14 @@ bool Scot::Dipoa::run() {
 	}
 	return true;
   } catch (std::exception &exception) {
-	env_->logger_->logWarning(exception.what(), env_->model_->getRank());
+	env_->Logger->logWarning(exception.what(), env_->Model->getRank());
 	return false;
   }
 
 }
 void Dipoa::outputIterHeader() {
-  if (env_->model_->getRank()==0) {
-	env_->report_->printIterationHeader();
+  if (env_->Model->getRank()==0) {
+	env_->Report->printIterationHeader();
   }
 }
 }

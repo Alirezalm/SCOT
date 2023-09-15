@@ -16,23 +16,23 @@ class Environment {
   Environment() = default;
   ~Environment() = default;
 
-  ModelPtr model_;
+  ModelPtr Model;
 
-  ResultsPtr results_;
+  ResultsPtr Results;
 
-  TaskQueuePtr task_queue_ptr_;
+  TaskQueuePtr TaskQueue;
 
-  MipSolverPtr mip_solver_;
+  MipSolverPtr MipSolver;
 
-  MessagePassingInterfacePtr mpi_;
+  MessagePassingInterfacePtr Mpi;
 
-  LoggerPtr logger_;
+  LoggerPtr Logger;
 
-  ReportPtr report_;
+  ReportPtr Report;
 
-  SettingsPtr settings_;
+  SettingsPtr Settings;
 
-  TimerPtr timer_;
+  TimerPtr Timer;
 
 };
 using EnvironmentPtr = std::shared_ptr<Environment>;

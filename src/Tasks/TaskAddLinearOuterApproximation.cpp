@@ -17,10 +17,10 @@ void TaskAddLinearOuterApproximation::initialize() {
 void TaskAddLinearOuterApproximation::execute() {
 
   LinearOuterApproximation lin_oa;
-  for (int i = 0; i < env_->model_->getNumberOfNodes(); ++i) {
-    lin_oa = env_->mip_solver_->getTotalLinearOuterApproximations().at(i);
+  for (int i = 0; i < env_->Model->getNumberOfNodes(); ++i) {
+    lin_oa = env_->MipSolver->getTotalLinearOuterApproximations().at(i);
 
-    env_->mip_solver_->addLinearOuterApproximation(lin_oa, i);
+    env_->MipSolver->addLinearOuterApproximation(lin_oa, i);
   }
 }
 }

@@ -11,8 +11,7 @@ TaskQueue::TaskQueue(EnvironmentPtr env) {
 }
 
 void TaskQueue::addTask(TaskBasePtr task, std::string task_id) {
-  env_->logger_
-	  ->logDebug(fmt::format("adding task {} to task queue", task_id), env_->model_->getRank());
+  env_->Logger->logDebug(fmt::format("adding task {} to task queue", task_id), env_->Model->getRank());
 
   current_task_ = std::make_pair(task, task_id);
 

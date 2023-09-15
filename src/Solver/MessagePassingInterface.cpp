@@ -12,12 +12,12 @@ const int kRootNode = 0;
 
 MessagePassingInterface::MessagePassingInterface(EnvironmentPtr env) {
   env_ = env;
-  mpi_gather_rcv_x_.resize(env_->model_->getNumberOfVariables() * env->model_->getNumberOfNodes());
-  mpi_gather_rcv_gx_.resize(env_->model_->getNumberOfVariables() * env->model_->getNumberOfNodes());
-  mpi_gather_rcv_obj_.resize(env_->model_->getNumberOfNodes());
+  mpi_gather_rcv_x_.resize(env_->Model->getNumberOfVariables() * env->Model->getNumberOfNodes());
+  mpi_gather_rcv_gx_.resize(env_->Model->getNumberOfVariables() * env->Model->getNumberOfNodes());
+  mpi_gather_rcv_obj_.resize(env_->Model->getNumberOfNodes());
 
-  linear_outer_approximations_.resize(env_->model_->getNumberOfNodes());
-  mpi_gather_rcv_min_eig_.resize(env_->model_->getNumberOfNodes());
+  linear_outer_approximations_.resize(env_->Model->getNumberOfNodes());
+  mpi_gather_rcv_min_eig_.resize(env_->Model->getNumberOfNodes());
 }
 void MessagePassingInterface::gather(LinearOuterApproximation linear_outer_approximation) {
   try {
@@ -52,7 +52,7 @@ void MessagePassingInterface::gather(LinearOuterApproximation linear_outer_appro
     );
   } catch (std::exception &exception) {
 
-    env_->logger_->logCritical(exception.what(), env_->model_->getRank());
+    env_->Logger->logCritical(exception.what(), env_->Model->getRank());
 
   }
 
@@ -100,7 +100,7 @@ void MessagePassingInterface::gather(QuadraticOuterApproximation quadratic_outer
 
   } catch (std::exception &exception) {
 
-    env_->logger_->logCritical(exception.what(), env_->model_->getRank());
+    env_->Logger->logCritical(exception.what(), env_->Model->getRank());
 
   }
 
@@ -108,9 +108,9 @@ void MessagePassingInterface::gather(QuadraticOuterApproximation quadratic_outer
 LinearOuterApproximation MessagePassingInterface::getLinearOuterApproximation(int node_index) {
   //todo: make sure gather is run before
 
-  auto begin = node_index * env_->model_->getNumberOfVariables();
+  auto begin = node_index * env_->Model->getNumberOfVariables();
 
-  auto end = begin + env_->model_->getNumberOfVariables();
+  auto end = begin + env_->Model->getNumberOfVariables();
 
   auto local_x = std::vector<double>(mpi_gather_rcv_x_.begin() + begin, mpi_gather_rcv_x_.begin() + end);
   auto local_gx = std::vector<double>(mpi_gather_rcv_gx_.begin() + begin, mpi_gather_rcv_gx_.begin() + end);
@@ -125,9 +125,9 @@ LinearOuterApproximation MessagePassingInterface::getLinearOuterApproximation(in
   return local_oa_cut;
 }
 QuadraticOuterApproximation MessagePassingInterface::getQuadraticOuterApproximation(int node_index) {
-  auto begin = node_index * env_->model_->getNumberOfVariables();
+  auto begin = node_index * env_->Model->getNumberOfVariables();
 
-  auto end = begin + env_->model_->getNumberOfVariables();
+  auto end = begin + env_->Model->getNumberOfVariables();
 
   auto local_x = std::vector<double>(mpi_gather_rcv_x_.begin() + begin, mpi_gather_rcv_x_.begin() + end);
   auto local_gx = std::vector<double>(mpi_gather_rcv_gx_.begin() + begin, mpi_gather_rcv_gx_.begin() + end);
@@ -144,8 +144,8 @@ QuadraticOuterApproximation MessagePassingInterface::getQuadraticOuterApproximat
 }
 DualSolution MessagePassingInterface::bcast(DualSolution dual_solution) {
 
-  dual_solution.real_vector.resize(env_->model_->getNumberOfVariables());
-  dual_solution.binary_vector.resize(env_->model_->getNumberOfVariables());
+  dual_solution.real_vector.resize(env_->Model->getNumberOfVariables());
+  dual_solution.binary_vector.resize(env_->Model->getNumberOfVariables());
 
   MPI_Bcast(
       dual_solution.binary_vector.data(),
@@ -171,7 +171,7 @@ DualSolution MessagePassingInterface::bcast(DualSolution dual_solution) {
     );
   } catch (std::exception &exception) {
 
-    env_->logger_->logCritical(exception.what(), env_->model_->getRank());
+    env_->Logger->logCritical(exception.what(), env_->Model->getRank());
 
   }
 

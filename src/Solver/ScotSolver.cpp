@@ -21,53 +21,53 @@ ScotSolver::ScotSolver() {
 
   Env = std::make_shared<Environment>();
 
-  Env->task_queue_ptr_ = std::make_shared<TaskQueue>(Env);
+  Env->TaskQueue = std::make_shared<TaskQueue>(Env);
 
-  Env->results_ = std::make_shared<Results>(Env);
+  Env->Results = std::make_shared<Results>(Env);
 
-  Env->logger_ = std::make_shared<Logger>();
+  Env->Logger = std::make_shared<Logger>();
 
-  Env->report_ = std::make_shared<Report>(Env);
+  Env->Report = std::make_shared<Report>(Env);
 
-  Env->settings_ = std::make_shared<Settings>();
+  Env->Settings = std::make_shared<Settings>();
 
-  Env->timer_ = std::make_shared<Timer>("scot_timer");
+  Env->Timer = std::make_shared<Timer>("scot_timer");
 }
 
 EnvironmentPtr ScotSolver::getEnvironment() { return Env; }
 
 bool ScotSolver::solve() {
-  if (Env->settings_->getDblSetting("verbose") == 1) {
+  if (Env->Settings->getDblSetting("verbose") == 1) {
     outputHeader();
   }
   selectAlgorithm();
-  Env->timer_->start();
+  Env->Timer->start();
   return SolutionAlgorithm->run();
 }
 
 void ScotSolver::selectAlgorithm() {
 
-  auto alg = Env->settings_->getStrSetting("algorithm");
+  auto alg = Env->Settings->getStrSetting("algorithm");
   if (alg == "dipoa") {
 
     SolutionAlgorithm = std::make_shared<Dipoa>(Env);
-    Env->logger_->logInfo("multi-tree algorithm, dipoa, selected.",
-                          Env->model_->getRank());
+    Env->Logger->logInfo("multi-tree algorithm, dipoa, selected.",
+                          Env->Model->getRank());
 
   } else if (alg == "dihoa") {
     SolutionAlgorithm = std::make_shared<Dihoa>(Env);
-    Env->logger_->logInfo("single-tree algorithm, dihoa, selected.",
-                          Env->model_->getRank());
+    Env->Logger->logInfo("single-tree algorithm, dihoa, selected.",
+                          Env->Model->getRank());
   } else {
     throw std::invalid_argument("no valid algorithm\n");
   }
 }
 
 void ScotSolver::outputHeader() {
-  if (Env->model_->getRank() == 0) {
-    Env->report_->printSolverHeader();
-    Env->report_->printProblemDetails();
-    Env->report_->printSolverDetails();
+  if (Env->Model->getRank() == 0) {
+    Env->Report->printSolverHeader();
+    Env->Report->printProblemDetails();
+    Env->Report->printSolverDetails();
   }
 }
 
@@ -95,8 +95,8 @@ bool ScotSolver::setProblemData(std::filesystem::path &inputPath) {
   } else {
     throw std::invalid_argument("unknown problem in solver.\n");
   }
-  Upperbound = Env->settings_->getDblSetting("variable_bound");
-  Env->model_ = std::make_shared<Model>(TotalNodes, Rank, Upperbound);
+  Upperbound = Env->Settings->getDblSetting("variable_bound");
+  Env->Model = std::make_shared<Model>(TotalNodes, Rank, Upperbound);
   return false;
 }
 
@@ -115,19 +115,19 @@ bool ScotSolver::setObjective() {
   }
 
   obj->setObjectiveData(Samples, Response);
-  Env->model_->setObjectiveFunction(obj);
+  Env->Model->setObjectiveFunction(obj);
   return true;
 }
 
 bool ScotSolver::setSparseConstraints() {
   auto sparsityConstraint =
       std::make_shared<SparsityConstraint>(NumberOfNonzeros, Upperbound);
-  Env->model_->setSparsityConstraint(sparsityConstraint);
+  Env->Model->setSparsityConstraint(sparsityConstraint);
   return true;
 }
 
 bool ScotSolver::setMpi() {
-  Env->mpi_ = std::make_shared<MessagePassingInterface>(Env);
+  Env->Mpi = std::make_shared<MessagePassingInterface>(Env);
   return true;
 }
 
@@ -151,7 +151,7 @@ bool ScotSolver::setNumberOfNonzeros(int nzeros) {
     throw std::invalid_argument(
         "SCOT error: number of non-zeros must be positive.\n");
   }
-  int totalNumberOfVariables = Env->model_->getNumberOfVariables();
+  int totalNumberOfVariables = Env->Model->getNumberOfVariables();
 
   if (nzeros >= totalNumberOfVariables) {
     throw std::invalid_argument(

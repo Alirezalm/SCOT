@@ -11,9 +11,9 @@ namespace Scot {
 TaskInitializeMultipleTreeDualSolver::TaskInitializeMultipleTreeDualSolver(EnvironmentPtr env) : TaskBase(env) {
   //todo: check mip solver gurobi, clpex or cbc based on settings. for now just gurobi
 
-  env_->mip_solver_ = std::make_shared<MipSolverGurobiMultipleTree>(env_);
+  env_->MipSolver = std::make_shared<MipSolverGurobiMultipleTree>(env_);
 
-  env_->logger_->logDebug("gurobi selected as MIP solver.", env_->model_->getRank());
+  env_->Logger->logDebug("gurobi selected as MIP solver.", env_->Model->getRank());
 }
 
 void TaskInitializeMultipleTreeDualSolver::initialize() {}

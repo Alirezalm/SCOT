@@ -15,10 +15,10 @@ void TaskAddQuadraticOuterApproximation::initialize() {
 }
 void TaskAddQuadraticOuterApproximation::execute() {
 QuadraticOuterApproximation quad_oa;
-  for (int i = 0; i < env_->model_->getNumberOfNodes(); ++i) {
-    quad_oa = env_->mip_solver_->getTotalQuadraticOuterApproximations().at(i);
+  for (int i = 0; i < env_->Model->getNumberOfNodes(); ++i) {
+    quad_oa = env_->MipSolver->getTotalQuadraticOuterApproximations().at(i);
 
-    env_->mip_solver_->addQuadraticOuterApproximation(quad_oa, i);
+    env_->MipSolver->addQuadraticOuterApproximation(quad_oa, i);
   }
 }
 }

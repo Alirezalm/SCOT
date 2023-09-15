@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
 
   // todo: cli only receives the input file name and setting file name
   Scot::ScotSolver solver;
-  auto settings = solver.getEnvironment()->settings_;
+  auto settings = solver.getEnvironment()->Settings;
   auto cmd = argh::parser(argc, argv);
 
   if (cmd[{"-v", "--version"}]) {
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
   try {
     numberOfNonzeros = std::stoi(cmd("nz").str());
     if (numberOfNonzeros < 1) {
-      fmt::print("number of non-zeros is not provided.\n");
+      fmt::print("number of non-zeros must be positive integer.\n");
       MPI_Finalize();
       return 0;
     }
@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
   if (cmd("ub")) {
     bigM = std::stod(cmd("ub").str());
     if (bigM <= 0) {
-      fmt::print("Error: Big-M value must be positive");
+      fmt::print("Error: Big-M value must be positive\n");
       MPI_Finalize();
       return 0;
     }

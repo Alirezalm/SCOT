@@ -11,8 +11,8 @@ namespace Scot {
 
 MipSolverGurobiMultipleTree::MipSolverGurobiMultipleTree(EnvironmentPtr env) {
   env_ = env;
-  gathered_linear_outer_approximations_.resize(env_->model_->getNumberOfNodes());
-  gathered_quadratic_outer_approximations_.resize(env_->model_->getNumberOfNodes());
+  gathered_linear_outer_approximations_.resize(env_->Model->getNumberOfNodes());
+  gathered_quadratic_outer_approximations_.resize(env_->Model->getNumberOfNodes());
 }
 
 void MipSolverGurobiMultipleTree::initializeModel() {
@@ -20,7 +20,7 @@ void MipSolverGurobiMultipleTree::initializeModel() {
     gurobi_environment_ = std::make_shared<GRBEnv>();
     gurobi_model_ = std::make_shared<GRBModel>(gurobi_environment_.get());
   } catch (GRBException &e) {
-    env_->logger_->logCritical("gurobi initialization error: " + e.getMessage(), env_->model_->getRank());
+    env_->Logger->logCritical("gurobi initialization error: " + e.getMessage(), env_->Model->getRank());
   }
 
 }
@@ -38,7 +38,7 @@ void MipSolverGurobiMultipleTree::addVariable(std::string name, VariableType vty
       default: break;
     }
   } catch (GRBException &e) {
-    env_->logger_->logCritical("gurobi variable initialization error: " + e.getMessage(), env_->model_->getRank());
+    env_->Logger->logCritical("gurobi variable initialization error: " + e.getMessage(), env_->Model->getRank());
   }
 
 }
@@ -48,9 +48,9 @@ void MipSolverGurobiMultipleTree::initializeObjectiveFunction() {
     gurobi_model_->update();
     objective_linear_expression_ = GRBLinExpr(0); // zero obj
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi objective function initialization error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 }
@@ -59,9 +59,9 @@ void MipSolverGurobiMultipleTree::addObjectiveLinearTerm(double coefficient, int
     objective_linear_expression_ += coefficient * gurobi_model_->getVar(variable_index);
 
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi objective function adding linear term error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 }
@@ -69,9 +69,9 @@ void MipSolverGurobiMultipleTree::addObjectiveConstantTerm(double constant) {
   try {
     objective_linear_expression_ += constant;
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi objective function adding constant term error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 
@@ -81,9 +81,9 @@ void MipSolverGurobiMultipleTree::addObjectiveToModel() {
   try {
     gurobi_model_->setObjective(objective_linear_expression_, GRB_MINIMIZE);
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi setting objective function error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 
@@ -95,9 +95,9 @@ void MipSolverGurobiMultipleTree::initializeConstraint() {
     constraint_quadratic_expression_ = GRBQuadExpr(0);
 
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi constraint initialization error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 }
@@ -107,9 +107,9 @@ void MipSolverGurobiMultipleTree::addConstraintLinearTerm(double coefficient, in
     constraint_linear_expression_ += coefficient * gurobi_model_->getVar(variable_index);
 
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi adding linear term to constraint error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 }
@@ -120,9 +120,9 @@ void MipSolverGurobiMultipleTree::addConstraintQuadraticTerm(double coefficient,
     constraint_quadratic_expression_ +=
         coefficient * gurobi_model_->getVar(variable_index_1) * gurobi_model_->getVar(variable_index_2);
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi adding quadratic term to constraint error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 }
@@ -135,9 +135,9 @@ void MipSolverGurobiMultipleTree::addConstraintToModel(double rhs) {
     try {
       gurobi_model_->addConstr(constraint_linear_expression_ <= rhs);
     } catch (GRBException &e) {
-      env_->logger_->logCritical(
+      env_->Logger->logCritical(
           "gurobi adding linear constraint to model error: " + e.getMessage(),
-          env_->model_->getRank()
+          env_->Model->getRank()
       );
     }
 
@@ -147,9 +147,9 @@ void MipSolverGurobiMultipleTree::addConstraintToModel(double rhs) {
       gurobi_model_->addQConstr(constraint_quadratic_expression_ + constraint_linear_expression_ <= rhs);
 
     } catch (GRBException &e) {
-      env_->logger_->logCritical(
+      env_->Logger->logCritical(
           "gurobi adding quadratic constraint to model error: " + e.getMessage(),
-          env_->model_->getRank()
+          env_->Model->getRank()
       );
     }
   }
@@ -171,9 +171,9 @@ void MipSolverGurobiMultipleTree::solve() {
     auto status = gurobi_model_->get(GRB_IntAttr_Status);
     saveAllSolutions();
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi solving model error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 
@@ -182,9 +182,9 @@ void MipSolverGurobiMultipleTree::addLinearOuterApproximation(LinearOuterApproxi
                                                               int node_index) {
   initializeConstraint();
   addConstraintLinearTerm(-1.0, node_index);
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
     addConstraintLinearTerm(linear_outer_approximation.local_gradient_at_feasible_point[i],
-                            env_->model_->getNumberOfNodes() + i);
+                            env_->Model->getNumberOfNodes() + i);
   }
   double right_hand_side = -linear_outer_approximation.local_objective_value_at_feasible_point + Utils::dot(
       linear_outer_approximation.local_gradient_at_feasible_point,
@@ -199,21 +199,21 @@ void MipSolverGurobiMultipleTree::addQuadraticOuterApproximation(QuadraticOuterA
   initializeConstraint();
   addConstraintLinearTerm(-1.0, node_index);
   // multiple for loops just to test //todo: handle constraints in one loop
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
     addConstraintLinearTerm(quadratic_outer_approximation.local_gradient_at_feasible_point[i],
-                            env_->model_->getNumberOfNodes() + i);
+                            env_->Model->getNumberOfNodes() + i);
   }
 
-  for (int i = 0; i < env_->model_->getNumberOfVariables(); ++i) {
+  for (int i = 0; i < env_->Model->getNumberOfVariables(); ++i) {
     addConstraintQuadraticTerm(
         0.5 * quadratic_outer_approximation.local_min_eig_at_feasible_point,
-        env_->model_->getNumberOfNodes() + i,
-        env_->model_->getNumberOfNodes() + i
+        env_->Model->getNumberOfNodes() + i,
+        env_->Model->getNumberOfNodes() + i
     );
     addConstraintLinearTerm(
         -quadratic_outer_approximation.local_min_eig_at_feasible_point
             * quadratic_outer_approximation.consensus_feasible_point[i],
-        env_->model_->getNumberOfNodes() + i
+        env_->Model->getNumberOfNodes() + i
     );
   }
 
@@ -228,17 +228,17 @@ void MipSolverGurobiMultipleTree::addQuadraticOuterApproximation(QuadraticOuterA
 }
 
 VectorDouble MipSolverGurobiMultipleTree::getBinarySolution() {
-  VectorDouble bin_sol = std::vector<double>(env_->model_->getNumberOfVariables());
+  VectorDouble bin_sol = std::vector<double>(env_->Model->getNumberOfVariables());
   try {
 
     for (int i = 0; i < bin_sol.size(); ++i) {
-      bin_sol[i] = solution_[env_->model_->getNumberOfNodes() + env_->model_->getNumberOfVariables() + i];
+      bin_sol[i] = solution_[env_->Model->getNumberOfNodes() + env_->Model->getNumberOfVariables() + i];
 
     }
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi getting binary solution error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
   return bin_sol;
@@ -252,23 +252,23 @@ void MipSolverGurobiMultipleTree::saveAllSolutions() {
       solution_.at(i) = gurobi_model_->getVar(i).get(GRB_DoubleAttr_X);
     }
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi getting all solutions error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
 
 }
 VectorDouble MipSolverGurobiMultipleTree::getContinuesSolution() {
-  VectorDouble cont_sol = std::vector<double>(env_->model_->getNumberOfVariables());
+  VectorDouble cont_sol = std::vector<double>(env_->Model->getNumberOfVariables());
   try {
     for (int i = 0; i < cont_sol.size(); ++i) {
-      cont_sol[i] = solution_[env_->model_->getNumberOfNodes() + i];
+      cont_sol[i] = solution_[env_->Model->getNumberOfNodes() + i];
     }
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi getting continuous solutions error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
   return cont_sol;
@@ -279,9 +279,9 @@ double MipSolverGurobiMultipleTree::getObjectiveValue() {
     obj_val = gurobi_model_->get(GRB_DoubleAttr_ObjVal);
 
   } catch (GRBException &e) {
-    env_->logger_->logCritical(
+    env_->Logger->logCritical(
         "gurobi getting objective value error: " + e.getMessage(),
-        env_->model_->getRank()
+        env_->Model->getRank()
     );
   }
   return obj_val;

@@ -12,6 +12,6 @@ void TaskInitializeNewIteration::initialize() {
 }
 
 void TaskInitializeNewIteration::execute() {
-  env_->results_->makeIteration();
+  env_->Results->makeIteration();
 }
 }
