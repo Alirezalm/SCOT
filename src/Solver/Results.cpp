@@ -7,89 +7,91 @@
 #include "../ExternLibs/fmt/include/core.h"
 namespace Scot {
 
-Results::Results(EnvironmentPtr env) {
-  env_ = env;
+Results::Results(EnvironmentPtr env) { Env = env;
 
 }
 Results::~Results() {
-  incumbent_solutions_.clear();
-  dual_solutions_.clear();
-  iterations_.clear();
+  IncumbentSolutions.clear();
+  DualSolutions.clear();
+  Iterations.clear();
 }
 
-void Results::addIncumbent(IncumbentSolution current_incumbent) {
-  incumbent_solution_ = current_incumbent;
-  incumbent_solutions_.push_back(incumbent_solution_); // since primal solutions are feasible without constraints
-  setBestPrimalBound(incumbent_solution_.total_obj_value);
+void Results::addIncumbent(IncumbentSolution currentIncumbent) {
+  CurrentIncumbentSolution = currentIncumbent;
+  IncumbentSolutions.push_back(
+      CurrentIncumbentSolution); // since primal solutions are feasible without constraints
+  setBestPrimalBound(CurrentIncumbentSolution.total_obj_value);
 
-  env_->Logger->logDebug("new incumbent solution added", env_->Model->getRank());
+  Env->Logger->logDebug("new incumbent solution added", Env->Model->getRank());
 
 }
 void Results::setBestPrimalBound(double value) {
-  if (value >= best_primal_bound_) {
-    env_->Logger->logDebug("primal objective bound not improved", env_->Model->getRank());
+  if (value >= BestPrimalBound) {
+    Env->Logger->logDebug("primal objective bound not improved",
+                          Env->Model->getRank());
   }
   // we always store current best primal bound
-  best_primal_bound_ = std::min(best_primal_bound_, value);
-  best_primal_bounds_.push_back(best_primal_bound_);
+  BestPrimalBound = std::min(BestPrimalBound, value);
+  BestPrimalBounds.push_back(BestPrimalBound);
 
 }
 
 double Results::getBestIncumbentBound() {
-  return best_primal_bound_;
+  return BestPrimalBound;
 }
-void Results::addDualSolution(DualSolution dual_solution) {
-  dual_solution_ = dual_solution;
-  dual_solutions_.push_back(dual_solution);
-  env_->Logger->logDebug("new dual solution is added", env_->Model->getRank());
-  setBestDualBound(dual_solution.objective_value);
+void Results::addDualSolution(DualSolution dualSolution) {
+  CurrentDualSolution = dualSolution;
+  DualSolutions.push_back(dualSolution);
+  Env->Logger->logDebug("new dual solution is added", Env->Model->getRank());
+  setBestDualBound(dualSolution.objective_value);
 
 }
 void Results::setBestDualBound(double value) {
-  if (value < best_dual_bound_) {
-    env_->Logger->logWarning(
-        fmt::format("dual objective bound is not strictly increasing with gap {}.", best_dual_bound_ - value),
-        env_->Model->getRank()
+  if (value < BestDualBound) {
+    Env->Logger->logWarning(
+        fmt::format("dual objective bound is not strictly increasing with gap {}.",
+            BestDualBound - value),
+        Env->Model->getRank()
         );
   }
-  best_dual_bound_ = value;
-  best_dual_bounds_.push_back(best_dual_bound_);
+  BestDualBound = value;
+  BestDualBounds.push_back(BestDualBound);
 }
 
 double Results::getBestDualBound() {
-  return best_dual_bound_;
+  return BestDualBound;
 }
 
 void Results::makeIteration() {
-  iterations_.push_back(std::make_shared<Iteration>(env_));
+  Iterations.push_back(std::make_shared<Iteration>(Env));
 }
 
 IterationPtr Results::getCurrentIteration() {
-  return iterations_.back();
+  return Iterations.back();
 }
 
 int Results::getNumberOfIterations() {
-  return static_cast<int>(iterations_.size());
+  return static_cast<int>(Iterations.size());
 }
 IncumbentSolution Results::getCurrentIncumbent() {
-  return incumbent_solution_;
+  return CurrentIncumbentSolution;
 }
 DualSolution Results::getCurrentDualSolution() {
-  return dual_solution_;
+  return CurrentDualSolution;
 }
 double Results::getAbsoluteOptimalityGap() {
-  return best_abs_gap_;
+  return BestAbsGap;
 }
-void Results::setAbsoluteOptimalityGap(double abs_gap) {
-  best_abs_gap_pre_ = best_abs_gap_;
-  best_abs_gap_ = abs_gap;
+void Results::setAbsoluteOptimalityGap(double absGap) {
+  BestAbsGapPre = BestAbsGap;
+  BestAbsGap = absGap;
 }
 double Results::getRelativeOptimalityGap() {
-  return best_rel_gap_;
+  return BestRelGap;
 }
-void Results::setRelativeOptimalityGap(double rel_gap) {
-  best_rel_gap_pre_ = best_rel_gap_;
-  best_rel_gap_ = rel_gap;
+void Results::setRelativeOptimalityGap(double relGap) {
+  BestRelGapPre = BestRelGap;
+  BestRelGap = relGap;
 }
 
 }

@@ -42,7 +42,13 @@ bool ScotSolver::solve() {
   }
   selectAlgorithm();
   Env->Timer->start();
-  return SolutionAlgorithm->run();
+  bool isSolved = SolutionAlgorithm->run();
+
+  if (Env->Model->getRank()==0){
+
+    Env->Report->printOutputReport(isSolved);
+  }
+  return isSolved;
 }
 
 void ScotSolver::selectAlgorithm() {

@@ -5,14 +5,14 @@
 #ifndef DISCOT_SRC_SOLVER_REPORT_H_
 #define DISCOT_SRC_SOLVER_REPORT_H_
 
-#include "Environment.h"
 #include "../../ExternLibs/fmt/include/core.h"
+#include "Environment.h"
 
 namespace Scot {
 
 class Report {
 
- public:
+public:
   explicit Report(EnvironmentPtr env);
   ~Report() = default;
 
@@ -20,13 +20,14 @@ class Report {
   void printProblemDetails();
   void printSolverDetails();
   void printIterationHeader();
-  void printIterationInfo(int nfoc, int nsoc, double incumbent, double dual, double abs_gap, double rel_gap,
-                          double elapsed);
+  void printIterationInfo(int nfoc, int nsoc, double incumbent, double dual,
+                          double absGap, double relGap, double elapsed);
+  void printOutputReport(bool isSolved);
 
- private:
+private:
   EnvironmentPtr env_;
 };
 
-}
+} // namespace Scot
 
-#endif //DISCOT_SRC_SOLVER_REPORT_H_
+#endif // DISCOT_SRC_SOLVER_REPORT_H_

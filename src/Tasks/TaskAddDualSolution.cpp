@@ -20,7 +20,7 @@ void TaskAddDualSolution::execute() {
   //todo: performs checks after before to the results
 
   env_->Results->addDualSolution(dual_solution_);
-  env_->Results->iterations_.back()->number_first_order_oa_cuts_ += env_->Model->getNumberOfNodes();
+  env_->Results->Iterations.back()->number_first_order_oa_cuts_ += env_->Model->getNumberOfNodes();
 
 }
 }

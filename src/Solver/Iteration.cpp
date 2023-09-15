@@ -14,13 +14,13 @@ Iteration::Iteration(EnvironmentPtr env) {
   if (iteration_number_ != 1) {
 
     total_number_of_cuts_ =
-        env_->Results->iterations_.back()->total_number_of_cuts_;
+        env_->Results->Iterations.back()->total_number_of_cuts_;
     number_first_order_oa_cuts_ =
-        env->Results->iterations_.back()->number_first_order_oa_cuts_;
+        env->Results->Iterations.back()->number_first_order_oa_cuts_;
 
     number_second_order_oa_cuts_ =
-        env->Results->iterations_.back()->number_second_order_oa_cuts_;
-    number_ecp_cuts_ = env->Results->iterations_.back()->number_ecp_cuts_;
+        env->Results->Iterations.back()->number_second_order_oa_cuts_;
+    number_ecp_cuts_ = env->Results->Iterations.back()->number_ecp_cuts_;
   }
 
   env_->Logger->logDebug("new iteration created.", env_->Model->getRank());

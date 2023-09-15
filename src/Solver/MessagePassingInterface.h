@@ -2,33 +2,33 @@
 // Created by alireza on 20/06/22.
 //
 
-#ifndef DISCOT_SRC_MESSAGEPASSINGINTERFACE_H_
-#define DISCOT_SRC_MESSAGEPASSINGINTERFACE_H_
-//todo: voids -> bool and error check
+#ifndef SCOT_SRC_SOLVER_MESSAGEPASSINGINTERFACE_H_
+#define SCOT_SRC_SOLVER_MESSAGEPASSINGINTERFACE_H_
+// todo: voids -> bool and error check
 #include "Environment.h"
 
 namespace Scot {
 class MessagePassingInterface {
 
- public:
+public:
   explicit MessagePassingInterface(EnvironmentPtr env);
   ~MessagePassingInterface() = default;
 
-  void gather(LinearOuterApproximation linear_outer_approximation);
-  void gather(QuadraticOuterApproximation quadratic_outer_approximation);
+  void gather(LinearOuterApproximation linearOuterApproximation);
+  void gather(QuadraticOuterApproximation quadraticOuterApproximation);
 
-  DualSolution bcast(DualSolution dual_solution);
-  LinearOuterApproximation getLinearOuterApproximation(int node_index);
-  QuadraticOuterApproximation getQuadraticOuterApproximation(int node_index);
- private:
+  DualSolution bcast(DualSolution dualSolution);
+  LinearOuterApproximation getLinearOuterApproximation(int nodeIndex);
+  QuadraticOuterApproximation getQuadraticOuterApproximation(int nodeIndex);
 
-  EnvironmentPtr env_;
-  VectorDouble mpi_gather_rcv_x_;
-  VectorDouble mpi_gather_rcv_gx_;
-  VectorDouble mpi_gather_rcv_obj_;
-  VectorDouble mpi_gather_rcv_min_eig_;
-  std::vector<LinearOuterApproximation> linear_outer_approximations_;
+private:
+  EnvironmentPtr Env;
+  VectorDouble MpiGatherRcvX;
+  VectorDouble MpiGatherRcvGx;
+  VectorDouble MpiGatherRcvObj;
+  VectorDouble MpiGatherRcvMinEig;
+  std::vector<LinearOuterApproximation> LinearOuterApproximations;
 };
-}
+} // namespace Scot
 
-#endif //DISCOT_SRC_MESSAGEPASSINGINTERFACE_H_
+#endif // SCOT_SRC_SOLVER_MESSAGEPASSINGINTERFACE_H_

@@ -2,23 +2,24 @@
 // Created by alireza on 02/06/22.
 //
 
-#ifndef DISCOT_SRC_SOLVER_RESULTS_H_
-#define DISCOT_SRC_SOLVER_RESULTS_H_
+#ifndef SCOT_SRC_SOLVER_RESULTS_H_
+#define SCOT_SRC_SOLVER_RESULTS_H_
 
 #include "Environment.h"
-#include "Structs.h"
 #include "Iteration.h"
+#include "Structs.h"
 
 namespace Scot {
 
 class Results {
 
- public:
+public:
+
   explicit Results(EnvironmentPtr env);
   ~Results(); // clear the vectors
 
-  void addIncumbent(IncumbentSolution current_incumbent);
-  void addDualSolution(DualSolution dual_solution);
+  void addIncumbent(IncumbentSolution currentIncumbent);
+  void addDualSolution(DualSolution dualSolution);
 
   IncumbentSolution getCurrentIncumbent();
   DualSolution getCurrentDualSolution();
@@ -26,54 +27,53 @@ class Results {
   double getBestIncumbentBound();
   double getBestDualBound();
 
+  // todo: methods related to termination must be implemented
 
-//todo: methods related to termination must be implemented
-
-//  bool isRelativeOptimalityGapMet();
-//
-//  bool isAbsoluteOptimalityGapMet();
+  //  bool isRelativeOptimalityGapMet();
+  //
+  //  bool isAbsoluteOptimalityGapMet();
 
   double getRelativeOptimalityGap();
-  void setRelativeOptimalityGap(double rel_gap);
-//
+  void setRelativeOptimalityGap(double relGap);
+  //
   double getAbsoluteOptimalityGap();
-  void setAbsoluteOptimalityGap(double abs_gap);
+  void setAbsoluteOptimalityGap(double absGap);
 
   void makeIteration();
 
-  std::vector<IterationPtr> iterations_;
+  std::vector<IterationPtr> Iterations;
   IterationPtr getCurrentIteration();
   int getNumberOfIterations();
 
-  //Todo: maybe enum of MIP solvers?
-  //TODO: file operations (e.g. saving results to json etc)
+  // Todo: maybe enum of MIP solvers?
+  // TODO: file operations (e.g. saving results to json etc)
 
-  double best_abs_gap_pre_;
-  double best_rel_gap_pre_;
- private:
+  double BestAbsGapPre;
+  double BestRelGapPre;
+
+private:
   void setBestPrimalBound(double value);
   void setBestDualBound(double value);
 
-  IncumbentSolution incumbent_solution_;
-  std::vector<IncumbentSolution> incumbent_solutions_;
+  IncumbentSolution CurrentIncumbentSolution;
+  std::vector<IncumbentSolution> IncumbentSolutions;
 
-  DualSolution dual_solution_;
-  std::vector<DualSolution> dual_solutions_;
+  DualSolution CurrentDualSolution;
+  std::vector<DualSolution> DualSolutions;
 
-  VectorDouble best_dual_bounds_;
-  VectorDouble best_primal_bounds_;
+  VectorDouble BestDualBounds;
+  VectorDouble BestPrimalBounds;
 
-  double best_abs_gap_;
-  double best_rel_gap_;
+  double BestAbsGap;
+  double BestRelGap;
 
+  EnvironmentPtr Env;
 
-  EnvironmentPtr env_;
-
-  //todo: must move to constants
-  double best_dual_bound_ = -1e10;
-  double best_primal_bound_ = 1e10;
+  // todo: must move to constants
+  double BestDualBound = -1e10;
+  double BestPrimalBound = 1e10;
 };
 
-}
+} // namespace Scot
 
-#endif //DISCOT_SRC_SOLVER_RESULTS_H_
+#endif // SCOT_SRC_SOLVER_RESULTS_H_

@@ -17,7 +17,7 @@ void TaskCheckSocEvent::initialize() {
 void TaskCheckSocEvent::execute() {
   //todo: error handling tasks finding
   auto current_abs_gap = env_->Results->getAbsoluteOptimalityGap();
-  auto prev_abs_gap = env_->Results->best_abs_gap_pre_;
+  auto prev_abs_gap = env_->Results->BestAbsGapPre;
 
   auto gap_diff = abs(prev_abs_gap - current_abs_gap) / prev_abs_gap;
 
