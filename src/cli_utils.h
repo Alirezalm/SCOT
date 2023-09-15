@@ -19,5 +19,5 @@ string getHelpMessage();
 /// \param totalNodes  total number of nodes
 void initializeMpi(int &argc, char *argv[], int &rank, int &totalNodes);
 
-string toLower(string txt);
+void toLower(string &txt);
 #endif // SCOT_SRC_CLI_UTILS_H_

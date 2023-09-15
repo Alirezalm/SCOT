@@ -45,7 +45,7 @@ namespace Scot {
         }
         selectAlgorithm();
         env_->timer_->start();
-        return solution_algorithm_->Run();
+        return solution_algorithm_->run();
     }
 
     void ScotSolver::selectAlgorithm() {

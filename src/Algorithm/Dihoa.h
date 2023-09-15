@@ -14,7 +14,7 @@ class Dihoa: public IAlgorithm{
   explicit Dihoa(EnvironmentPtr env);
   ~Dihoa() override = default;
 
-  bool Run() override;
+  bool run() override;
 
   void outputIterHeader();
 

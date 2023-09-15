@@ -27,7 +27,7 @@ class Dipoa : public IAlgorithm {
    * @brief run the algorithm
    * @return true if the algorithm is successful
    */
-  bool Run() override;
+  bool run() override;
 
   /**
    * @brief output the header of the iteration table

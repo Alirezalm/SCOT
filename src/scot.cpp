@@ -26,6 +26,7 @@ employs enhancement techniques such as quadratic cuts.
 #include "include/Utilities.h"
 
 using namespace std;
+vector<string> algorithms = {"dipoa", "dihoa"};
 
 int main(int argc, char *argv[]) {
 
@@ -33,16 +34,12 @@ int main(int argc, char *argv[]) {
 
   initializeMpi(argc, argv, rank, totalNodes);
 
-  Scot::ScotSolver solver;
-
   // todo: cli only receives the input file name and setting file name
 
   auto cmd = argh::parser(argc, argv);
 
-  string helpMessage = getHelpMessage();
-
   if (cmd[{"-v", "--version"}]) {
-    fmt::print("SCOT\tv0.1.0\n");
+    fmt::print("SCOT\t0.1.0\n");
     MPI_Finalize();
     return 0;
   }
@@ -52,79 +49,93 @@ int main(int argc, char *argv[]) {
     verbose = 1;
   }
 
-  filesystem::path dirPath;
-
+  string helpMessage = getHelpMessage();
   if (cmd("help")) {
     fmt::print(helpMessage);
     MPI_Finalize();
     return 0;
   }
 
+  filesystem::path dirPath;
   if (!cmd("dir") && !cmd("input") && !cmd("nz") && !cmd("alg")) {
     fmt::print(helpMessage);
     MPI_Finalize();
     return 0;
   }
 
-  if ((cmd("dir"))) {
-    dirPath = cmd("dir").str();
-  } else {
+  if (!(cmd("dir"))) {
     fmt::print("input directory is not provided.\n");
     MPI_Finalize();
-    return -1;
+    return 0;
   }
+
+  dirPath = cmd("dir").str();
   int numberOfNonzeros;
-  if ((cmd("nz"))) {
-    try {
 
-      numberOfNonzeros = std::stoi(cmd("nz").str());
-    } catch (std::exception &exception) {
-      fmt::print(fmt::format("{}: nz must be an integer\n", exception.what()));
-      MPI_Finalize();
-      return -1;
-    }
-
-  } else {
+  if (!(cmd("nz"))) {
     fmt::print("number of non-zeros is not provided.\n");
     MPI_Finalize();
-    return -1;
+    return 0;
   }
 
-  if ((cmd("input"))) {
-
-    auto file_name = cmd("input").str();
-    if (file_name.find(".dist.json") == string::npos) {
-      file_name += ".dist.json";
+  try {
+    numberOfNonzeros = std::stoi(cmd("nz").str());
+    if (numberOfNonzeros < 1) {
+      fmt::print("number of non-zeros is not provided.\n");
+      MPI_Finalize();
+      return 0;
     }
-    file_name = fmt::format("node_{0}_", rank) + file_name;
+  } catch (std::exception &exception) {
+    fmt::print(
+        fmt::format("{}: nz must be a positive integer\n", exception.what()));
+    MPI_Finalize();
+    return 0;
+  }
 
-    dirPath.append(file_name);
-  } else {
+  if (!(cmd("input"))) {
     fmt::print("input file name is not provided.\n");
     MPI_Finalize();
-    return -1;
+    return 0;
   }
+  string fileName = cmd("input").str();
+
+  if (fileName.find(".dist.json") == string::npos) {
+    fileName += ".dist.json";
+  }
+  fileName = fmt::format("node_{0}_", rank) + fileName;
+
+  dirPath.append(fileName);
+
   string algorithm = "dipoa";
   if (cmd("alg")) {
-    algorithm = toLower(cmd("alg").str());
+    algorithm = cmd("alg").str();
+    toLower(algorithm);
+  }
+  auto foundAlgorithm =
+      std::find(algorithms.begin(), algorithms.end(), algorithm);
+
+  if (foundAlgorithm == algorithms.end()) {
+    fmt::print("{0} algorithm does not exit", algorithm);
+    MPI_Finalize();
+    return 0;
   }
 
   if (!filesystem::exists(dirPath)) {
-    fmt::print(
-        fmt::format("input file path {0} does not exist.\n", dirPath.string()));
+    auto fse =
+        fmt::format("input file path {0} does not exist.\n", dirPath.string());
+    fmt::print(fse);
     MPI_Finalize();
-    return -1;
-  } else {
-    fmt::print(fmt::format("{0}: {1}\n", dirPath.string(), "✓"));
-  };
+    return 0;
+  }
+  fmt::print(fmt::format("{0}: {1}\n", dirPath.string(), "✓"));
 
-  double max_time = 1e10;
+  double maxTime = 1e10;
 
   if (cmd("tlim")) {
-    max_time = std::stod(cmd("tlim").str());
+    maxTime = std::stod(cmd("tlim").str());
   }
 
-  double rgap = 1e-5; // default gap //todo: handle consts
+  double rgap = 1e-5;
 
   if (cmd("rgap")) {
     rgap = std::stod(cmd("rgap").str());
@@ -132,6 +143,7 @@ int main(int argc, char *argv[]) {
 
   // instantiate the main solver
   try {
+    Scot::ScotSolver solver;
     solver.setRank(rank);
     solver.setTotalNodes(totalNodes);
     solver.setProblemData(dirPath);
@@ -142,12 +154,14 @@ int main(int argc, char *argv[]) {
 
     // set settings
     auto settings = solver.getEnvironment()->settings_;
+
     settings->setStrSetting("algorithm", algorithm);
     settings->setDblSetting("verbose", verbose);
-    settings->setDblSetting("max_time", max_time);
+
+    settings->setDblSetting("max_time", maxTime);
     settings->setDblSetting("rel_gap", rgap);
-    settings->setDblSetting(
-        "abs_gap", rgap); // todo: uniform setting handling will be implemented
+
+    settings->setDblSetting("abs_gap", rgap);
 
     if (!solver.solve()) {
       MPI_Finalize();
@@ -157,6 +171,6 @@ int main(int argc, char *argv[]) {
   } catch (std::exception &e) {
     fmt::print(e.what());
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 }

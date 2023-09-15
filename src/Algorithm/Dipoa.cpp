@@ -88,7 +88,7 @@ Dipoa::Dipoa(EnvironmentPtr env) {
   env_->task_queue_ptr_->addTask(task_check_duration, "t_check_duration");
 
 }
-bool Scot::Dipoa::Run() {
+bool Scot::Dipoa::run() {
   if (env_->settings_->getDblSetting("verbose")==1) {
 	outputIterHeader();
   }

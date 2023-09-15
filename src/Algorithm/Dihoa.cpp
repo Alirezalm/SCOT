@@ -75,7 +75,7 @@ Dihoa::Dihoa(EnvironmentPtr env) {
   env_->task_queue_ptr_->addTask(task_check_duration, "t_check_duration");
 
 }
-bool Dihoa::Run() {
+bool Dihoa::run() {
   if (env_->settings_->getDblSetting("verbose") == 1) {
     outputIterHeader();
   }

@@ -18,7 +18,7 @@ class IAlgorithm {
    * @brief run the algorithm
    * @return true if the algorithm is successful
    */
-  virtual bool Run() = 0;
+  virtual bool run() = 0;
 
  protected:
   EnvironmentPtr env_;
