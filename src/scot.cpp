@@ -35,7 +35,8 @@ int main(int argc, char *argv[]) {
   initializeMpi(argc, argv, rank, totalNodes);
 
   // todo: cli only receives the input file name and setting file name
-
+  Scot::ScotSolver solver;
+  auto settings = solver.getEnvironment()->settings_;
   auto cmd = argh::parser(argc, argv);
 
   if (cmd[{"-v", "--version"}]) {
@@ -144,15 +145,17 @@ int main(int argc, char *argv[]) {
   double bigM = 1e3; // default Big-M parameter
 
   if (cmd("ub")) {
+    bigM = std::stod(cmd("ub").str());
     if (bigM <= 0) {
-      fmt::print("Big-M value must be positive");
+      fmt::print("Error: Big-M value must be positive");
+      MPI_Finalize();
+      return 0;
     }
-    rgap = std::stod(cmd("ub").str());
   }
-
+  settings->setDblSetting("variable_bound", bigM);
   // instantiate the main solver
   try {
-    Scot::ScotSolver solver;
+
     solver.setRank(rank);
     solver.setTotalNodes(totalNodes);
     solver.setProblemData(dirPath);
@@ -162,7 +165,6 @@ int main(int argc, char *argv[]) {
     solver.setMpi();
 
     // set settings
-    auto settings = solver.getEnvironment()->settings_;
 
     settings->setStrSetting("algorithm", algorithm);
     settings->setDblSetting("verbose", verbose);
@@ -171,16 +173,18 @@ int main(int argc, char *argv[]) {
     settings->setDblSetting("rel_gap", rgap);
 
     settings->setDblSetting("abs_gap", rgap);
-    settings->setDblSetting("variable_bound", bigM);
 
-    if (!solver.solve()) {
+    if (solver.solve()) {
       MPI_Finalize();
       return 0;
     }
+    fmt::print("SCOT did not converge");
+    MPI_Finalize();
+    return 0;
 
   } catch (std::exception &e) {
     fmt::print(e.what());
     MPI_Finalize();
-    return -1;
+    return 0;
   }
 }
