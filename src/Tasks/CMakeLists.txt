@@ -22,4 +22,4 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 install(TARGETS tasks DESTINATION lib )
 
-install(FILES ${INC} DESTINATION Tasks )
+#install(FILES ${INC} DESTINATION Tasks )

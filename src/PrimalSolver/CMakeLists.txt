@@ -18,4 +18,4 @@ file(GLOB INC "*.h")
 
 install(TARGETS primal DESTINATION lib )
 
-install(FILES ${INC} DESTINATION PrimalSolver )
+#install(FILES ${INC} DESTINATION PrimalSolver )

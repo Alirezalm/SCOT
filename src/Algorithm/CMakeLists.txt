@@ -12,4 +12,4 @@ file(GLOB INC "*.h")
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 install(TARGETS algorithms DESTINATION lib )
 
-install(FILES ${INC} DESTINATION Algorithm )
+#install(FILES ${INC} DESTINATION Algorithm )

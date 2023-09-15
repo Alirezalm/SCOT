@@ -20,4 +20,4 @@ file(GLOB INC "*.h")
 
 install(TARGETS mip DESTINATION lib )
 
-install(FILES ${INC} DESTINATION MIPSolver )
+#install(FILES ${INC} DESTINATION MIPSolver )

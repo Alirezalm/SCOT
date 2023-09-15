@@ -9,4 +9,4 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 file(GLOB INC "include/*.h")
 install(TARGETS dose DESTINATION lib )
 
-install(FILES ${INC} DESTINATION DOSE/include )
+#install(FILES ${INC} DESTINATION DOSE/include )
