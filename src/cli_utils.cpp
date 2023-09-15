@@ -15,6 +15,7 @@ const string OPTION_ALG = "--alg";
 const string OPTION_TLIM = "--tlim";
 const string OPTION_RGAP = "--rgap";
 const string OPTION_VERBOSE = "--verbose";
+const string OPTION_BIG_M = "--ub";
 
 const string DESCRIPTION_DIR = "Directory of input files";
 const string DESCRIPTION_INPUT = "Input file name (without prefix and postfix)";
@@ -23,6 +24,7 @@ const string DESCRIPTION_ALG = "Algorithm to use";
 const string DESCRIPTION_TLIM = "Time limit";
 const string DESCRIPTION_RGAP = "Relative gap";
 const string DESCRIPTION_VERBOSE = "Verbosity";
+const string DESCRIPTION_BIG_M = "Big-M parameter";
 
 void initializeMpi(int &argc, char *argv[], int &rank, int &totalNodes) {
   int initResult = MPI_Init(&argc, &argv);
@@ -48,6 +50,7 @@ string getHelpMessage() {
   message << "  " << OPTION_TLIM << "\t" << DESCRIPTION_TLIM << "\n";
   message << "  " << OPTION_RGAP << "\t" << DESCRIPTION_RGAP << "\n";
   message << "  " << OPTION_VERBOSE << "\t" << DESCRIPTION_VERBOSE << "\n";
+  message << "  " << OPTION_BIG_M << "\t" << DESCRIPTION_BIG_M << "\n";
 
   return message.str();
 }

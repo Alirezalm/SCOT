@@ -59,8 +59,6 @@ void ScotSolver::selectAlgorithm() {
     Env->logger_->logInfo("single-tree algorithm, dihoa, selected.",
                           Env->model_->getRank());
   } else {
-    //    env_->logger_->logCritical("no algorithm provided, dipoa is selected",
-    //    env_->model_->getRank());
     throw std::invalid_argument("no valid algorithm\n");
   }
 }
@@ -73,17 +71,23 @@ void ScotSolver::outputHeader() {
   }
 }
 
-bool ScotSolver::setProblemData(std::filesystem::path inputPath) {
+bool ScotSolver::setProblemData(std::filesystem::path &inputPath) {
 
   std::ifstream input(inputPath);
 
-  nlohmann::json problem_json;
+  nlohmann::json problemJsonFormat;
 
-  input >> problem_json;
+  input >> problemJsonFormat;
+  try {
 
-  problem_json.at("response").get_to(Response);
-  problem_json.at("samples").get_to(Samples);
-  problem_json.at("type").get_to(Ptype);
+    problemJsonFormat.at("response").get_to(Response);
+    problemJsonFormat.at("samples").get_to(Samples);
+    problemJsonFormat.at("type").get_to(Ptype);
+  } catch (std::exception &exception) {
+
+    throw std::invalid_argument("invalid problem data");
+  }
+
   if (Ptype == "classification") {
     ProblemType = ProbType::CLASSIFICATION;
   } else if (Ptype == "regression") {
@@ -91,13 +95,14 @@ bool ScotSolver::setProblemData(std::filesystem::path inputPath) {
   } else {
     throw std::invalid_argument("unknown problem in solver.\n");
   }
-  Upperbound = 30; // todo: for now
+  Upperbound = Env->settings_->getDblSetting("variable_bound");
   Env->model_ = std::make_shared<Model>(TotalNodes, Rank, Upperbound);
   return false;
 }
 
 bool ScotSolver::setObjective() {
   std::shared_ptr<IObjective> obj;
+
   switch (ProblemType) {
   case ProbType::CLASSIFICATION:
     obj = std::make_shared<LogRegObjectiveFunction>();
@@ -105,6 +110,8 @@ bool ScotSolver::setObjective() {
   case ProbType::REGRESSION:
     obj = std::make_shared<LinRegObjectiveFunction>();
     break;
+  default:
+    throw std::invalid_argument("Error: Unsupported problem type.");
   }
 
   obj->setObjectiveData(Samples, Response);
@@ -113,9 +120,9 @@ bool ScotSolver::setObjective() {
 }
 
 bool ScotSolver::setSparseConstraints() {
-  auto sparsity_constraint =
+  auto sparsityConstraint =
       std::make_shared<SparsityConstraint>(NumberOfNonzeros, Upperbound);
-  Env->model_->setSparsityConstraint(sparsity_constraint);
+  Env->model_->setSparsityConstraint(sparsityConstraint);
   return true;
 }
 
@@ -124,19 +131,31 @@ bool ScotSolver::setMpi() {
   return true;
 }
 
-void ScotSolver::setTotalNodes(int totalNodes) { TotalNodes = totalNodes; }
+void ScotSolver::setTotalNodes(int totalNodes) {
+  if (totalNodes < 1) {
+    throw std::invalid_argument(
+        "Error: number of nodes must be positive integer");
+  }
+  TotalNodes = totalNodes;
+}
 
-void ScotSolver::setRank(int rank) { Rank = rank; }
+void ScotSolver::setRank(int rank) {
+  if (rank < 0) {
+    throw std::invalid_argument("Error: MPI rank cannot be negative");
+  }
+  Rank = rank;
+}
 
 bool ScotSolver::setNumberOfNonzeros(int nzeros) {
-  // todo: perform checks
   if (nzeros < 1) {
     throw std::invalid_argument(
-        "SCOT error: number of nonzeros must be positive.\n");
+        "SCOT error: number of non-zeros must be positive.\n");
   }
-  if (nzeros >= Env->model_->getNumberOfVariables()) {
+  int totalNumberOfVariables = Env->model_->getNumberOfVariables();
+
+  if (nzeros >= totalNumberOfVariables) {
     throw std::invalid_argument(
-        "SCOT error: number of nonzeros cannot be larger than variables.\n");
+        "SCOT error: number of non-zeros cannot be larger than variables.\n");
   }
   NumberOfNonzeros = nzeros;
   return true;

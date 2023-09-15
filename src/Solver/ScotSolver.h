@@ -25,7 +25,7 @@ public:
 
   void outputHeader();
 
-  bool setProblemData(std::filesystem::path inputPath);
+  bool setProblemData(std::filesystem::path &inputPath);
 
   bool setNumberOfNonzeros(int nzeros);
 
@@ -52,7 +52,7 @@ private:
   IAlgorithmPtr SolutionAlgorithm;
   int NumberOfNonzeros;
   int TotalNodes; // total number of MPI nodes
-  int Rank; // MPI rank
+  int Rank;       // MPI rank
   double Upperbound;
   VectorDouble Response;
   VectorDouble2D Samples;

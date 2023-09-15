@@ -141,6 +141,15 @@ int main(int argc, char *argv[]) {
     rgap = std::stod(cmd("rgap").str());
   }
 
+  double bigM = 1e3; // default Big-M parameter
+
+  if (cmd("ub")) {
+    if (bigM <= 0) {
+      fmt::print("Big-M value must be positive");
+    }
+    rgap = std::stod(cmd("ub").str());
+  }
+
   // instantiate the main solver
   try {
     Scot::ScotSolver solver;
@@ -162,6 +171,7 @@ int main(int argc, char *argv[]) {
     settings->setDblSetting("rel_gap", rgap);
 
     settings->setDblSetting("abs_gap", rgap);
+    settings->setDblSetting("variable_bound", bigM);
 
     if (!solver.solve()) {
       MPI_Finalize();
