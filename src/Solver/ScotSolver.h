@@ -5,18 +5,17 @@
 #ifndef SCOT_SRC_SOLVER_MAINSOLVER_H_
 #define SCOT_SRC_SOLVER_MAINSOLVER_H_
 
-#include "filesystem"
-#include "Environment.h"
 #include "../Algorithm/IAlgorithm.h"
 #include "Enums.h"
+#include "Environment.h"
+#include "filesystem"
 
 namespace Scot {
 /**
- * @brief ScotSolver calls appropriate algorithm based on the input parameters
+ * @brief SCOT solver main API
  */
 class ScotSolver {
- public:
-  //todo: solver can receive no argument and construct the environment **IMPORTANT**
+public:
   /**
    * @brief default constructor
    */
@@ -26,7 +25,7 @@ class ScotSolver {
 
   void outputHeader();
 
-  bool setProblemData(std::filesystem::path input_path);
+  bool setProblemData(std::filesystem::path inputPath);
 
   bool setNumberOfNonzeros(int nzeros);
 
@@ -36,7 +35,7 @@ class ScotSolver {
 
   bool setMpi();
 
-  void setTotalNodes(int total_nodes);
+  void setTotalNodes(int totalNodes);
 
   void setRank(int rank);
 
@@ -44,22 +43,22 @@ class ScotSolver {
 
   EnvironmentPtr getEnvironment();
 
- private:
+private:
   // methods
   void selectAlgorithm();
 
   // data members
-  EnvironmentPtr env_;
-  IAlgorithmPtr solution_algorithm_;
-  int number_of_nonzeros_;
-  int total_nodes_;
-  int rank_;
-  double upperbound_;
-  VectorDouble response_;
-  VectorDouble2D samples_;
-  ProbType problem_type_;
-  std::string ptype_;
+  EnvironmentPtr Env;
+  IAlgorithmPtr SolutionAlgorithm;
+  int NumberOfNonzeros;
+  int TotalNodes;
+  int Rank;
+  double Upperbound;
+  VectorDouble Response;
+  VectorDouble2D Samples;
+  ProbType ProblemType;
+  std::string Ptype;
 };
-}
+} // namespace Scot
 
-#endif //SCOT_SRC_SOLVER_MAINSOLVER_H_
+#endif // SCOT_SRC_SOLVER_MAINSOLVER_H_
