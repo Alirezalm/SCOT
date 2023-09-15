@@ -18,7 +18,7 @@ Logger::Logger() {
 //  spdlog::sinks_init_list sinks = {file_sink, console_sink};
   logger_ = std::make_shared<spdlog::logger>("console logger", consoleSink);
 //  logger_->set_pattern(">>>%^%l%$ %v<<<");
-  logger_->set_level(spdlog::level::warn);
+  logger_->set_level(spdlog::level::critical);
 
 }
 void Logger::logCritical(std::string message, int rank) {

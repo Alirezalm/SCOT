@@ -44,11 +44,31 @@ bool ScotSolver::solve() {
   Env->Timer->start();
   bool isSolved = SolutionAlgorithm->run();
 
-  if (Env->Model->getRank()==0){
+  if (Env->Model->getRank() == 0) {
 
     Env->Report->printOutputReport(isSolved);
+
+    VectorDouble x = Env->Results->getCurrentIncumbent().consensus_solution;
+
+    sparsify(x);
+    saveResults(x);
+    return isSolved;
   }
-  return isSolved;
+}
+void ScotSolver::sparsify(VectorDouble &x) const {
+  for (auto &item : x) {
+    if (abs(item) <= 1e-6) {
+      item = 0.0;
+    }
+  }
+}
+void ScotSolver::saveResults(VectorDouble &x) {
+  nlohmann::json res;
+  res["objval"] = Env->Results->getCurrentIncumbent().total_obj_value;
+  res["x"] = x;
+  res["time"] = Env->Timer->elapsed();
+  std::ofstream out("output.json");
+  out << res;
 }
 
 void ScotSolver::selectAlgorithm() {
@@ -58,12 +78,12 @@ void ScotSolver::selectAlgorithm() {
 
     SolutionAlgorithm = std::make_shared<Dipoa>(Env);
     Env->Logger->logInfo("multi-tree algorithm, dipoa, selected.",
-                          Env->Model->getRank());
+                         Env->Model->getRank());
 
   } else if (alg == "dihoa") {
     SolutionAlgorithm = std::make_shared<Dihoa>(Env);
     Env->Logger->logInfo("single-tree algorithm, dihoa, selected.",
-                          Env->Model->getRank());
+                         Env->Model->getRank());
   } else {
     throw std::invalid_argument("no valid algorithm\n");
   }

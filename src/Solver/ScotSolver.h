@@ -47,6 +47,7 @@ private:
   // select an appropriate algorithm based on use defined setting
   void selectAlgorithm();
 
+  void saveResults(VectorDouble &x);
   // data members
   EnvironmentPtr Env; // solver environment
   IAlgorithmPtr SolutionAlgorithm;
@@ -58,6 +59,7 @@ private:
   VectorDouble2D Samples;
   ProbType ProblemType;
   std::string Ptype;
+  void sparsify(VectorDouble &x) const;
 };
 } // namespace Scot
 
