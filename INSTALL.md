@@ -19,8 +19,17 @@ To set up **SCOT**, you need the following prerequisites:
 1. Ubuntu 21.10 or WSL2.
 2. macOS
 
+## Automatic Installation 
 
-## Installation on Ubuntu OS
+define the following environment variable in either .bashrc or in the terminal
+```commandline
+export LD_LIBRARY_PATH=$GUROBI_HOME/lib:/usr/local/lib:/usr/lib
+```
+run the following script
+```commandline
+sh ./install.sh
+```
+## Manual Installation 
 
 ### Build with CMake
 
