@@ -74,3 +74,7 @@ Optimization Methods and Software, pp. 1–27, 2023.
 convex programming with separable structures,* Journal of Global Optimization, vol. 86, no. 3, pp. 637–670, 2023.
 4. A. Olama, N. Bastianello, P. R. Mendes, and E. Camponogara, *Relaxed hybrid consensus ADMM for distributed convex
 optimisation with coupling constraints,* IET Control Theory & Applications, vol. 13, no. 17, pp. 2828–2837, 2019.
+
+## Acknowledgement
+We would like to express our gratitude to [FAPESC](https://fapesc.sc.gov.br/) for their support in funding this
+project. 
