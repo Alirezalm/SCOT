@@ -49,3 +49,28 @@ mpirun -n 2 ./bin/scot --dir=/path/to/.dist.json/files --input=logistic_regressi
 2. rank_1_output.json
 ```
 These files contain essential information about the solution to the given problem.
+
+## Numerical Benchmarks
+
+### Small scale instances
+
+![sc I](./media/scenario_1_90.jpg)
+
+### Medium scale instances
+
+![sc II](./media/scenario_3_90.jpg)
+
+### Large scale instances
+
+![sc III](./media/scenario_3_90.jpg)
+
+## Publications
+
+1. A. Olama, *A Distributed Framework for Sparse Convex Optimization: Algorithms and Tools.* PhD thesis,
+Federal University of Santa Catarina (UFSC), Brazil, 2023.
+2. Olama, E. Camponogara, and P. R. Mendes, *Distributed primal outer approximation algorithm for sparse
+convex programming with separable structures,* Journal of Global Optimization, vol. 86, no. 3, pp. 637–670, 2023.
+3. A. Olama, E. Camponogara, and J. Kronqvist, *Sparse convex optimization toolkit: a mixed-integer framework,* 
+Optimization Methods and Software, pp. 1–27, 2023.
+4. A. Olama, N. Bastianello, P. R. Mendes, and E. Camponogara, *Relaxed hybrid consensus ADMM for distributed convex
+optimisation with coupling constraints,* IET Control Theory & Applications, vol. 13, no. 17, pp. 2828–2837, 2019.
