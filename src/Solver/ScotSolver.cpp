@@ -44,7 +44,7 @@ bool ScotSolver::solve() {
   Env->Timer->start();
   bool isSolved = SolutionAlgorithm->run();
 
-  if (Env->Model->getRank() == 0) {
+  if (Env->Model->getRank() == 1) {
 
     Env->Report->printOutputReport(isSolved);
 
@@ -57,18 +57,21 @@ bool ScotSolver::solve() {
 }
 void ScotSolver::sparsify(VectorDouble &x) const {
   for (auto &item : x) {
-    if (abs(item) <= 1e-6) {
+    if (abs(item) <= 1e-5) {
       item = 0.0;
     }
   }
 }
 void ScotSolver::saveResults(VectorDouble &x) {
   nlohmann::json res;
+  nlohmann::json j(x);
   res["objval"] = Env->Results->getCurrentIncumbent().total_obj_value;
-  res["x"] = x;
   res["time"] = Env->Timer->elapsed();
-  std::ofstream out("output.json");
-  out << res;
+  res["x"] = j;
+  auto msg = fmt::format("rank_{0}_output.json", Env->Model->getRank());
+  std::ofstream out(msg);
+  out << std::setw(4) << res;
+  out.close();
 }
 
 void ScotSolver::selectAlgorithm() {
