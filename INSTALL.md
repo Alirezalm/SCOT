@@ -16,8 +16,8 @@ To set up **SCOT**, you need the following prerequisites:
 
 **SCOT** is compatible with the following platforms:
 
-1. Ubuntu 21.10 or WSL2.
-2. macOS
+1. Ubuntu 20.04 or higher
+2. Microsoft Windows with WSL2
 
 ## Automatic Installation 
 
