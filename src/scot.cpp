@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
   if (cmd[{"-v", "--version"}]) {
     fmt::print("SCOT\t0.1.0\n");
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   int verbose = 0;
@@ -54,20 +54,20 @@ int main(int argc, char *argv[]) {
   if (cmd("help")) {
     fmt::print(helpMessage);
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   filesystem::path dirPath;
   if (!cmd("dir") && !cmd("input") && !cmd("nz") && !cmd("alg")) {
     fmt::print(helpMessage);
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   if (!(cmd("dir"))) {
     fmt::print("input directory is not provided.\n");
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   dirPath = cmd("dir").str();
@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
   if (!(cmd("nz"))) {
     fmt::print("number of non-zeros is not provided.\n");
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   try {
@@ -84,19 +84,19 @@ int main(int argc, char *argv[]) {
     if (numberOfNonzeros < 1) {
       fmt::print("number of non-zeros must be positive integer.\n");
       MPI_Finalize();
-      return 0;
+      return -1;
     }
   } catch (std::exception &exception) {
     fmt::print(
         fmt::format("{}: nz must be a positive integer\n", exception.what()));
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   if (!(cmd("input"))) {
     fmt::print("input file name is not provided.\n");
     MPI_Finalize();
-    return 0;
+    return -1;
   }
   string fileName = cmd("input").str();
 
@@ -118,7 +118,7 @@ int main(int argc, char *argv[]) {
   if (foundAlgorithm == algorithms.end()) {
     fmt::print("{0} algorithm does not exit", algorithm);
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 
   if (!filesystem::exists(dirPath)) {
@@ -126,7 +126,7 @@ int main(int argc, char *argv[]) {
         fmt::format("input file path {0} does not exist.\n", dirPath.string());
     fmt::print(fse);
     MPI_Finalize();
-    return 0;
+    return -1;
   }
   fmt::print(fmt::format("{0}: {1}\n", dirPath.string(), "✓"));
 
@@ -149,7 +149,7 @@ int main(int argc, char *argv[]) {
     if (bigM <= 0) {
       fmt::print("Error: Big-M value must be positive\n");
       MPI_Finalize();
-      return 0;
+      return -1;
     }
   }
   settings->setDblSetting("variable_bound", bigM);
@@ -180,11 +180,11 @@ int main(int argc, char *argv[]) {
     }
     fmt::print("SCOT did not converge");
     MPI_Finalize();
-    return 0;
+    return -1;
 
   } catch (std::exception &e) {
     fmt::print(e.what());
     MPI_Finalize();
-    return 0;
+    return -1;
   }
 }
