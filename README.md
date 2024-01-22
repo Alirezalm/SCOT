@@ -87,4 +87,4 @@ These files contain essential information about the solution to the given proble
 
 ## Acknowledgement
 This work is part of the project “Distributed Optimization for Cooperative Machine Learning in Complex Networks” (No PGR10067) which has received
-funding from Fundacao de Amparo a Pesquisa e Inovacao do Estado de Santa Catarina (FAPESC), in Brazil, under grant 2021TR2265 and the Ministero degli Affari Esteri e della Cooperazione Internazionale (MAECI), in Italy. Technical support from Digital Futures at KTH and C3.ai Digital Transformation Institute for the project ``AI Techniques for Power Systems Under Cyberattacks`` is also gratefully acknowledged. 
+funding from Fundacao de Amparo a Pesquisa e Inovacao do Estado de Santa Catarina (FAPESC), in Brazil, under grant 2021TR2265 and the Ministero degli Affari Esteri e della Cooperazione Internazionale (MAECI), in Italy. Technical support from Digital Futures at KTH and C3.ai Digital Transformation Institute for the project "AI Techniques for Power Systems Under Cyberattacks" is also gratefully acknowledged. 
