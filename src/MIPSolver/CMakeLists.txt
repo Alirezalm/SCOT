@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 file(GLOB SCOT_MIP_SOLVER "*.cpp")
 
-add_library(mip SHARED ${SCOT_MIP_SOLVER})
+add_library(mip STATIC ${SCOT_MIP_SOLVER})
 
 target_include_directories(mip PRIVATE
         "${CMAKE_SOURCE_DIR}/DOSE"
@@ -12,7 +12,7 @@ target_include_directories(mip PRIVATE
 target_link_directories(mip PUBLIC "$ENV{GUROBI_HOME}/lib")
 
 target_link_libraries(mip gurobi_c++)
-target_link_libraries(mip gurobi100)
+target_link_libraries(mip gurobi110)
 
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 

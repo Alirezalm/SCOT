@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 file(GLOB SCOT_SOLVER "*.cpp")
 
-add_library(solver SHARED ${SCOT_SOLVER})
+add_library(solver STATIC ${SCOT_SOLVER})
 
 target_include_directories(solver PRIVATE
         "${CMAKE_SOURCE_DIR}/DOSE"

@@ -4,6 +4,7 @@
 
 #include "cli_utils.h"
 #include "sstream"
+#include "iostream"
 
 using std::ostringstream;
 using std::string;

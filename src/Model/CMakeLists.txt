@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 file(GLOB SCOT_MODEL "*.cpp")
 
-add_library(model SHARED ${SCOT_MODEL})
+add_library(model STATIC ${SCOT_MODEL})
 
 target_include_directories(model PRIVATE
         "${CMAKE_SOURCE_DIR}/DOSE"

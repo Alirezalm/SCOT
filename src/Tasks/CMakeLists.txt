@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 file(GLOB SCOT_TASKS "*.cpp")
 
-add_library(tasks SHARED ${SCOT_TASKS})
+add_library(tasks STATIC ${SCOT_TASKS})
 
 target_include_directories(tasks PRIVATE
         "${CMAKE_SOURCE_DIR}/DOSE"
