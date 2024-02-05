@@ -64,15 +64,15 @@ These files contain essential information about the solution to the given proble
 
 ### Small scale instances
 
-<img src="./media/scenario_1_90.jpg" alt="Alt Text" width="600" height="450">
+<img src="./media/scenario_1_90.jpg" alt="Alt Text" width="400" height="300">
 
 ### Medium scale instances
 
-<img src="./media/scenario_3_90.jpg" alt="Alt Text" width="600" height="450">
+<img src="./media/scenario_3_90.jpg" alt="Alt Text" width="400" height="300">
 
 ### Large scale instances
 
-<img src="./media/scenario_5_90.jpg" alt="Alt Text" width="600" height="450">
+<img src="./media/scenario_5_90.jpg" alt="Alt Text" width="400" height="300">
 
 ## Publications
 
